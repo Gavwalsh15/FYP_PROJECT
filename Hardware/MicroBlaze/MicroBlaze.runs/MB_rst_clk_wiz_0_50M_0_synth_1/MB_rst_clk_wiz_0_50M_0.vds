@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Sun Feb  9 15:14:52 2025
+# Process ID: 14576
+# Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_rst_clk_wiz_0_50M_0_synth_1
+# Command line: vivado.exe -log MB_rst_clk_wiz_0_50M_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_rst_clk_wiz_0_50M_0.tcl
+# Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_rst_clk_wiz_0_50M_0_synth_1/MB_rst_clk_wiz_0_50M_0.vds
+# Journal file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_rst_clk_wiz_0_50M_0_synth_1\vivado.jou
+# Running On        :DESKTOP-R5RVK16
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor            
+# CPU Frequency     :3693 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :68637 MB
+# Swap memory       :10200 MB
+# Total Virtual     :78838 MB
+# Available Virtual :56064 MB
+#-----------------------------------------------------------
+source MB_rst_clk_wiz_0_50M_0.tcl -notrace
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 507.918 ; gain = 137.660
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1367.945 ; gain = 446.934
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1484.504 ; gain = 563.492
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1484.504 ; gain = 563.492
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1484.504 ; gain = 563.492
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1484.504 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1502.688 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1507.496 ; gain = 4.809
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_rst_clk_wiz_0_50M_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP = true for ext_reset_in. (constraint file  auto generated constraint).
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1507.496 ; gain = 586.484
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |     5|
+|2     |LUT2  |     9|
+|3     |LUT3  |     1|
+|4     |LUT4  |     6|
+|5     |LUT5  |     3|
+|6     |LUT6  |     1|
+|7     |SRL16 |     1|
+|8     |FDR   |     8|
+|9     |FDRE  |    28|
+|10    |FDSE  |     4|
++------+------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1507.496 ; gain = 586.484
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1507.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1507.496 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1507.496 ; gain = 987.676
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1507.496 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1507.496 ; gain = 0.000

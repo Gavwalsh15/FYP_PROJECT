@@ -1,0 +1,187 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Sun Feb  9 15:14:52 2025
+# Process ID: 22584
+# Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_axi_smc_3_synth_1
+# Command line: vivado.exe -log MB_axi_smc_3.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_axi_smc_3.tcl
+# Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_axi_smc_3_synth_1/MB_axi_smc_3.vds
+# Journal file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_axi_smc_3_synth_1\vivado.jou
+# Running On        :DESKTOP-R5RVK16
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor            
+# CPU Frequency     :3693 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :68637 MB
+# Swap memory       :10200 MB
+# Total Virtual     :78838 MB
+# Available Virtual :56124 MB
+#-----------------------------------------------------------
+source MB_axi_smc_3.tcl -notrace
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 506.359 ; gain = 127.844
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1404.148 ; gain = 445.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1689.949 ; gain = 731.312
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1689.949 ; gain = 731.312
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1689.949 ; gain = 731.312
+Netlist sorting complete. Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1823.281 ; gain = 17.223
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2189.301 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.312 . Memory (MB): peak = 2225.242 ; gain = 35.832
+Finished Constraint Validation : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_axi_smc_3_synth_1/dont_touch.xdc, line 462).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_nodes/m00_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_nodes/m01_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_nodes/m02_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_nodes/m03_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_nodes/m04_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_nodes/s01_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_exit_pipeline/m00_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m01_exit_pipeline/m01_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m02_exit_pipeline/m02_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m03_exit_pipeline/m03_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m04_exit_pipeline/m04_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_mmu/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_si_converter/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_transaction_regulator/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_entry_pipeline/s01_mmu/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_entry_pipeline/s01_si_converter/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s01_entry_pipeline/s01_transaction_regulator/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_w_node/inst/inst_si_handler/\gen_si_handler.gen_request_fifos.gen_req_fifo[0].inst_req_fifo /\gen_xpm_memory_fifo.inst_fifo /\gen_mem_rep[0].inst_xpm_memory . (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/switchboards/i_nodes/i_w_node/inst/inst_si_handler/\gen_si_handler.gen_request_fifos.gen_req_fifo[1].inst_req_fifo /\gen_xpm_memory_fifo.inst_fifo /\gen_mem_rep[0].inst_xpm_memory . (constraint file  auto generated constraint).
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:20 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+|Module Name                                                                                                                                                                                                      | RTL Object                       | Inference      | Size (Depth x Width) | Primitives    | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+|inst/i_2/\switchboards/i_nodes/i_w_node/inst /\inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[0].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst | gen_wr_a.gen_word_narrow.mem_reg | User Attribute | 4 x 1                | RAM16X1D x 1  | 
+|inst/i_2/\switchboards/i_nodes/i_w_node/inst /\inst_si_handler/gen_si_handler.gen_request_fifos.gen_req_fifo[1].inst_req_fifo/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory /xpm_memory_base_inst | gen_wr_a.gen_word_narrow.mem_reg | User Attribute | 4 x 1                | RAM16X1D x 1  | 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------+----------------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:24 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Timing Optimization : Time (s): cpu = 00:01:26 ; elapsed = 00:01:28 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Technology Mapping : Time (s): cpu = 00:01:27 ; elapsed = 00:01:30 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished IO Insertion : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |LUT1     |   246|
+|2     |LUT2     |   147|
+|3     |LUT3     |   398|
+|4     |LUT4     |   114|
+|5     |LUT5     |   189|
+|6     |LUT6     |   198|
+|7     |RAM16X1D |     2|
+|8     |SRL16    |     1|
+|9     |SRL16E   |     2|
+|10    |FDCE     |   273|
+|11    |FDR      |     4|
+|12    |FDRE     |   628|
+|13    |FDSE     |    71|
++------+---------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:34 . Memory (MB): peak = 2225.242 ; gain = 1266.605
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.435 . Memory (MB): peak = 2225.242 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2225.242 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:38 ; elapsed = 00:01:41 . Memory (MB): peak = 2225.242 ; gain = 1673.512
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2225.242 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2225.242 ; gain = 0.000

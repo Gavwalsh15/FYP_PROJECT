@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="simple_axi_writer_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="simple_axi_writer_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="915.001 ns"></ZoomEndTime>
+      <Cursor1Time time="155.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="274"></NameColumnWidth>
+      <ValueColumnWidth column_width="652"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/simple_axi_writer_tb/M_AXI_ACLK" type="logic">
+      <obj_property name="ElementShortName">M_AXI_ACLK</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ACLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/M_AXI_ARESETN" type="logic">
+      <obj_property name="ElementShortName">M_AXI_ARESETN</obj_property>
+      <obj_property name="ObjectShortName">M_AXI_ARESETN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/hash" type="array">
+      <obj_property name="ElementShortName">hash[255:0]</obj_property>
+      <obj_property name="ObjectShortName">hash[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/e" type="array">
+      <obj_property name="ElementShortName">e[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/sigma0" type="array">
+      <obj_property name="ElementShortName">sigma0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sigma0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/sigma1" type="array">
+      <obj_property name="ElementShortName">sigma1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sigma1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/t1_next" type="array">
+      <obj_property name="ElementShortName">t1_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">t1_next[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simple_axi_writer_tb/uut/sha/t2_next" type="array">
+      <obj_property name="ElementShortName">t2_next[31:0]</obj_property>
+      <obj_property name="ObjectShortName">t2_next[31:0]</obj_property>
+   </wvobject>
+</wave_config>

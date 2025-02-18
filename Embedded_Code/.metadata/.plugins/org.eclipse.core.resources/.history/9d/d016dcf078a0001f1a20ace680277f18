@@ -1,0 +1,118 @@
+#include "xgpio.h"
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "sleep.h"
+
+// Define the base address of the BRAM
+#define BRAM_BASE_ADDR 0xC0000000
+#define BRAM_SIZE_WORDS 1024
+
+#define GPIO_BASE_ADDR 0x40000000
+#define GPIO_TRI_ADDR (GPIO_BASE_ADDR + 0x04)
+volatile uint32_t *gpio_io_o = (volatile uint32_t *)(GPIO_BASE_ADDR);   // GPIO output
+volatile uint32_t *gpio_io_tri = (volatile uint32_t *)(GPIO_TRI_ADDR);   // GPIO output
+
+// Define the BRAM pointer
+volatile uint32_t *bram_ptr = (volatile uint32_t *)BRAM_BASE_ADDR;
+
+XGpio gpio_input;
+XGpio gpio_output;
+
+#define GPIO_DEVICE_ID XPAR_GPIO_0_DEVICE_ID  // Device ID for GPIO
+
+// Function to initialise the GPIO devices
+int gpio_init() {
+    int status;
+
+    status = XGpio_Initialize(&gpio_input, GPIO_DEVICE_ID);
+    if (status != XST_SUCCESS) {
+        xil_printf("GPIO Input Initialisation Failed\n");
+        return XST_FAILURE;
+    }
+
+    status = XGpio_Initialize(&gpio_output, GPIO_DEVICE_ID);
+    if (status != XST_SUCCESS) {
+        xil_printf("GPIO Output Initialisation Failed\n");
+        return XST_FAILURE;
+    }
+
+    // Configure GPIO as input or output
+    // XGpio_SetDataDirection(&gpio_input, 2, 0xFFFFFFFF);  // Set all GPIO pins as input
+    // XGpio_SetDataDirection(&gpio_output, 1, 0x0);        // Set all GPIO pins as output
+
+    return XST_SUCCESS;
+}
+
+// Function to read GPIO input state
+uint32_t read_gpio() {
+    volatile uint32_t gpio_state = XGpio_DiscreteRead(&gpio_input, 2);
+    xil_printf("GPIO Output State: 0x%08X\r\n", gpio_state);
+
+    return gpio_state;
+}
+
+// Function to set GPIO pin high (write mode)
+void set_gpio_high() {
+	xil_printf("Here 1\r\n");
+    *gpio_io_o = 0x1;
+}
+
+// Function to set GPIO pin low (write mode)
+void set_gpio_low() {
+    *gpio_io_o = 0x0;  // Set GPIO output to low (drive the output pin low)
+}
+
+// Function to write a specified data value to the BRAM at a given offset
+void write_to_bram(uint32_t offset, uint32_t data) {
+    if (offset < BRAM_SIZE_WORDS) {
+        bram_ptr[offset] = data;
+        xil_printf("Wrote 0x%08X to BRAM at address 0x%08X\r\n",
+                   (unsigned int)data,
+                   (unsigned int)(BRAM_BASE_ADDR + offset * 4));
+    } else {
+        xil_printf("Error: Offset out of BRAM bounds\r\n");
+    }
+}
+
+// Function to read a specified word from BRAM
+uint32_t read_from_bram(uint32_t address) {
+    uint32_t data = *bram_ptr;  // Dereference the address
+    xil_printf("Read 0x%08X from BRAM at address 0x%08X\r\n",
+               (unsigned int)data,
+               (unsigned int)address);
+    return data;
+}
+
+int main() {
+    int status = gpio_init();
+    if (status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    uint32_t data_to_write = 0x12345600;  // Initial data to write to BRAM
+    uint32_t bram_offset = 0;
+    *gpio_io_tri = 0x0;
+
+    xil_printf("GPIO Initialised Successfully.\r\n");
+
+    while (1) {
+    	xil_printf("Writing data to BRAM...\r\n");
+		write_to_bram(bram_offset, data_to_write);
+
+		xil_printf("Setting GPIO output high to trigger write...\r\n");
+		*gpio_io_o = 0x1;
+		sleep(1);
+		*gpio_io_o = 0x0;
+
+		xil_printf("Here 2\r\n");
+		while(read_gpio() != 1);
+
+		uint32_t bram_data = read_from_bram(BRAM_BASE_ADDR + 4);
+
+		data_to_write = bram_data + 0x1;
+		xil_printf("Complete the Computation\r\n");
+		sleep(5);
+    }
+
+    return 0;
+}

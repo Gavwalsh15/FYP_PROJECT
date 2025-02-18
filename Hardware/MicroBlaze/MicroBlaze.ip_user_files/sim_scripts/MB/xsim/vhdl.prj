@@ -1,0 +1,23 @@
+vhdl axi_lite_ipif_v3_0_4  \
+"../../../../MicroBlaze.srcs/sources_1/bd/MB/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
+
+vhdl mdm_v3_2_26  \
+"../../../../MicroBlaze.srcs/sources_1/bd/MB/ipshared/feb7/hdl/mdm_v3_2_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../bd/MB/ip/MB_mdm_1_5/sim/MB_mdm_1_5.vhd" \
+"../../../bd/MB/ip/MB_axi_bram_ctrl_0_3/sim/MB_axi_bram_ctrl_0_3.vhd" \
+"../../../bd/MB/ip/MB_axi_intc_0_0/sim/MB_axi_intc_0_0.vhd" \
+"../../../bd/MB/ip/MB_axi_gpio_1_0/sim/MB_axi_gpio_1_0.vhd" \
+"../../../bd/MB/ip/MB_axi_gpio_0_0/sim/MB_axi_gpio_0_0.vhd" \
+"../../../bd/MB/ip/MB_axi_uartlite_0_1/sim/MB_axi_uartlite_0_1.vhd" \
+"../../../bd/MB/ip/MB_axi_smc_3/bd_0/ip/ip_1/sim/bd_c147_psr_aclk_0.vhd" \
+"../../../bd/MB/ip/MB_microblaze_0_6/sim/MB_microblaze_0_6.vhd" \
+"../../../bd/MB/ip/MB_dlmb_v10_8/sim/MB_dlmb_v10_8.vhd" \
+"../../../bd/MB/ip/MB_ilmb_v10_8/sim/MB_ilmb_v10_8.vhd" \
+"../../../bd/MB/ip/MB_dlmb_bram_if_cntlr_8/sim/MB_dlmb_bram_if_cntlr_8.vhd" \
+"../../../bd/MB/ip/MB_ilmb_bram_if_cntlr_8/sim/MB_ilmb_bram_if_cntlr_8.vhd" \
+"../../../bd/MB/ip/MB_rst_clk_wiz_0_50M_0/sim/MB_rst_clk_wiz_0_50M_0.vhd" \
+
+# Do not sort compile order
+nosort
