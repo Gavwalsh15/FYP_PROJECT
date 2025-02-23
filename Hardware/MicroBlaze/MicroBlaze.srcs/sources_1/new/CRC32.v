@@ -1,199 +1,273 @@
-module simple_axi_writer
-  #(
+// Top level module containing both SHA-256 and AXI interfaces
+module simple_axi_writer #(
     parameter integer AXI_ADDR_WIDTH = 32,
-    parameter integer AXI_DATA_WIDTH = 32
-  )
-  (
-    input wire                           GPIO_start,
-    output reg                           GPIO_complete,
-  
-    input                                M_AXI_ACLK,
-    input                                M_AXI_ARESETN,
+    parameter integer AXI_DATA_WIDTH = 32,
+    parameter READ_ADDR = 32'hC000_0000,
+    parameter WRITE_ADDR = 32'hC000_0100
+)(
+    input  wire [1:0] GPIO_start,
+    output reg        GPIO_complete,
+    input  wire       M_AXI_ACLK,
+    input  wire       M_AXI_ARESETN,
 
-    // AXI interface signals
-    output wire [AXI_ADDR_WIDTH-1 : 0]   M_AXI_AWADDR,
-    output wire [2 : 0]                  M_AXI_AWPROT,
-    output reg                           M_AXI_AWVALID,
-    input wire                           M_AXI_AWREADY,
-    output wire [AXI_DATA_WIDTH-1 : 0]   M_AXI_WDATA,
+    // AXI write interface
+    output wire [AXI_DATA_WIDTH-1:0]     M_AXI_WDATA,
     output wire [AXI_DATA_WIDTH/8-1 : 0] M_AXI_WSTRB,
-    output reg                           M_AXI_WVALID,
-    input wire                           M_AXI_WREADY,
-    input wire [1 : 0]                   M_AXI_BRESP,
-    input wire                           M_AXI_BVALID,
-    output reg                           M_AXI_BREADY,
-    output wire [AXI_ADDR_WIDTH-1 : 0]   M_AXI_ARADDR,
-    output wire [2 : 0]                  M_AXI_ARPROT,
-    output reg                           M_AXI_ARVALID,
-    input wire                           M_AXI_ARREADY,
-    input wire [AXI_DATA_WIDTH-1 : 0]    M_AXI_RDATA,
-    input wire [1 : 0]                   M_AXI_RRESP,
-    input wire                           M_AXI_RVALID,
-    output reg                           M_AXI_RREADY
-  );
+    output wire [31:0]                   M_AXI_AWADDR,
+    output wire [2:0]  M_AXI_AWPROT,
+    output wire        M_AXI_AWVALID,
+    input  wire        M_AXI_AWREADY,
+    output wire        M_AXI_WVALID,
+    input  wire        M_AXI_WREADY,
+    input  wire [1:0]  M_AXI_BRESP,
+    input  wire        M_AXI_BVALID,
+    output wire        M_AXI_BREADY,
 
-  // Address constants
-  localparam SOURCE_ADDR = 32'hC000_0000;
-  localparam TARGET_ADDR = 32'h4001_0000;
+    // AXI read interface
+    output wire [31:0] M_AXI_ARADDR,
+    output wire [2:0]  M_AXI_ARPROT,
+    output wire        M_AXI_ARVALID,
+    input  wire        M_AXI_ARREADY,
+    input  wire [AXI_DATA_WIDTH-1:0] M_AXI_RDATA,
+    input  wire [1:0]  M_AXI_RRESP,
+    input  wire        M_AXI_RVALID,
+    output wire        M_AXI_RREADY
+);
 
-  // Internal registers
-  reg [511:0] message_block;
-  reg [255:0] hash_result;
-  reg [4:0] read_count;
-  reg [4:0] write_count;
-  reg start_transaction;
-  reg GPIO_d;
-  
-  // SHA256 interface signals
-  reg sha256_start;
-  wire sha256_ready;
-  wire [255:0] hash_output;
+    // State definitions
+    localparam [4:0]
+        IDLE          = 5'b00000,
+        READ_BLOCK    = 5'b00001,
+        WAIT_READ     = 5'b00010,
+        STORE_WORD    = 5'b00011,
+        START_HASH    = 5'b00100,
+        WRITING       = 5'b00101,
+        WAIT_WRITE    = 5'b00110,
+        RESPONSE      = 5'b00111,
+        NEXT_WORD     = 5'b01000,
+        DONE          = 5'b01001;
+        
+    // Control signal definitions
+    localparam [1:0]
+        NO_OP      = 2'b00,
+        START_HASH_SIGNAL = 2'b01,
+        RESET_HASH_SIGNAL = 2'b10;
 
-  // State encoding
-  localparam IDLE          = 4'b0000;
-  localparam READ_BLOCK    = 4'b0001;
-  localparam SHA256_CALC   = 4'b0010;
-  localparam WRITE_HASH    = 4'b0011;
-  localparam WRITE_RESP    = 4'b0100;
-  localparam COMPLETE      = 4'b0101;
+    // Internal registers
+    reg [4:0] state;
+    wire [255:0] hash_out;
+    wire hash_done;
+    reg hash_start;
+    reg reset_hash;  // New reset signal
+    reg [255:0] final_hash;
+    reg [3:0] word_counter;  
+    reg [31:0] current_word;
+    reg [511:0] message_block;
+    reg axi_awvalid;
+    reg axi_wvalid;
+    reg axi_bready;
+    reg axi_arvalid;
+    reg axi_rready;
+    reg [31:0] read_addr;
+    reg [31:0] write_addr;
 
-  reg [3:0] state, next_state;
+    // Fixed assignments
+    assign M_AXI_AWADDR = write_addr;
+    assign M_AXI_ARADDR = read_addr;
+    assign M_AXI_AWVALID = axi_awvalid;
+    assign M_AXI_WVALID = axi_wvalid;
+    assign M_AXI_BREADY = axi_bready;
+    assign M_AXI_ARVALID = axi_arvalid;
+    assign M_AXI_RREADY = axi_rready;
+    assign M_AXI_WSTRB = 4'b1111;
+    assign M_AXI_AWPROT = 3'b000;
+    assign M_AXI_ARPROT = 3'b000;
+    assign M_AXI_WDATA = current_word;
 
-  // Instantiate SHA256 module
-  sha256 sha256_inst (
-    .clk(M_AXI_ACLK),
-    .rst(~M_AXI_ARESETN),
-    .start(sha256_start),
-    .message_block(message_block),
-    .hash(hash_output),
-    .ready(sha256_ready)
-  );
+    // SHA-256 instance
+    sha256 sha256_inst (
+        .clk(M_AXI_ACLK),
+        .rst(~M_AXI_ARESETN),
+        .reset_hash(reset_hash),
+        .start(hash_start),
+        .message_block(message_block),
+        .hash(hash_out),
+        .done(hash_done)
+    );
 
-  // Fixed assignments
-  assign M_AXI_AWPROT = 3'b000;
-  assign M_AXI_WSTRB = 4'b1111;    
-  assign M_AXI_ARPROT = 3'b000;
-
-  // Address and data multiplexing
-  assign M_AXI_ARADDR = SOURCE_ADDR + (read_count << 2);
-  assign M_AXI_AWADDR = TARGET_ADDR + (write_count << 2);
-  assign M_AXI_WDATA = hash_result[(write_count*32) +: 32];
-
-  // Start transaction detection
-  always @(posedge M_AXI_ACLK) begin
-    if (~M_AXI_ARESETN) begin
-      GPIO_d <= 1'b0;
-    end else begin
-      GPIO_d <= GPIO_start;
-    end
-    start_transaction <= ~GPIO_d & GPIO_start;
-  end
-
-  // State register
-  always @(posedge M_AXI_ACLK) begin
-    if (~M_AXI_ARESETN) begin
-      state <= IDLE;
-      read_count <= 0;
-      write_count <= 0;
-      message_block <= 0;
-      hash_result <= 0;
-    end else begin
-      state <= next_state;
-      
-      // Read message block from BRAM
-      if (state == READ_BLOCK && M_AXI_RVALID) begin
-        message_block[(read_count*32) +: 32] <= M_AXI_RDATA;
-        read_count <= read_count + 1;
-      end
-      
-      // Store hash result when ready
-      if (state == SHA256_CALC && sha256_ready) begin
-        hash_result <= hash_output;
-        write_count <= 0;
-      end
-      
-      // Increment write counter
-      if (state == WRITE_HASH && M_AXI_WREADY && M_AXI_WVALID) begin
-        write_count <= write_count + 1;
-      end
-    end
-  end
-  
-  // FSM combinational logic
-  always @* begin
-    // Default values
-    M_AXI_ARVALID = 1'b0;
-    M_AXI_RREADY = 1'b0;
-    M_AXI_AWVALID = 1'b0;
-    M_AXI_WVALID = 1'b0;
-    M_AXI_BREADY = 1'b0;
-    sha256_start = 1'b0;
-    
-    case (state)
-      IDLE: begin
-        if (start_transaction) begin
-          next_state = READ_BLOCK;
-          GPIO_complete = 1'b0;
-        end else begin
-          next_state = IDLE;
-          GPIO_complete = 1'b1;
+    // Main state machine
+    always @(posedge M_AXI_ACLK) begin
+        if (~M_AXI_ARESETN) begin
+            state <= IDLE;
+            reset_hash <= 1'b0;
+            axi_awvalid <= 1'b0;
+            axi_wvalid <= 1'b0;
+            axi_bready <= 1'b0;
+            axi_arvalid <= 1'b0;
+            axi_rready <= 1'b0;
+            GPIO_complete <= 1'b0;
+            hash_start <= 1'b0;
+            word_counter <= 4'b0000;
+            read_addr <= READ_ADDR;
+            write_addr <= WRITE_ADDR;
+            message_block <= 512'b0;
+            current_word <= 32'b0;
+            final_hash <= 256'b0;
         end
-      end
+        else begin
+            case (state)
+                IDLE: begin
+                    case (GPIO_start)
+                        START_HASH_SIGNAL: begin
+                            reset_hash <= 1'b0;
+                            state <= READ_BLOCK;
+                            word_counter <= 4'b0000;
+                            read_addr <= READ_ADDR;
+                            axi_arvalid <= 1'b1;
+                            axi_rready <= 1'b1;
+                            GPIO_complete <= 1'b0;
+                        end
+                
+                        RESET_HASH_SIGNAL: begin
+                            reset_hash <= 1'b1;
+                            state <= IDLE;
+                            axi_awvalid <= 1'b0;
+                            axi_wvalid <= 1'b0;
+                            axi_bready <= 1'b0;
+                            axi_arvalid <= 1'b0;
+                            axi_rready <= 1'b0;
+                            GPIO_complete <= 1'b0;
+                            hash_start <= 1'b0;
+                            word_counter <= 4'b0000;
+                            read_addr <= READ_ADDR;
+                            write_addr <= WRITE_ADDR;
+                            message_block <= 512'b0;
+                            current_word <= 32'b0;
+                            final_hash <= 256'b0;
+                        end
+                
+                        default: begin
+                            reset_hash <= 1'b0;
+                            state <= IDLE;
+                            hash_start <= 1'b0;
+                        end
+                    endcase
+                end
 
-      READ_BLOCK: begin
-        M_AXI_ARVALID = 1'b1;
-        M_AXI_RREADY = 1'b1;
-        if (read_count == 16) begin  
-          next_state = SHA256_CALC;
-          sha256_start = 1'b1;
-        end else
-          next_state = READ_BLOCK;
-      end
+                READ_BLOCK: begin
+                    if (M_AXI_ARREADY && axi_arvalid) begin
+                        axi_arvalid <= 1'b0;
+                        state <= WAIT_READ;
+                    end
+                end
 
-      SHA256_CALC: begin
-        if (sha256_ready)
-          next_state = WRITE_HASH;
-        else
-          next_state = SHA256_CALC;
-      end
+                WAIT_READ: begin
+                    if (M_AXI_RVALID && axi_rready) begin
+                        state <= STORE_WORD;
+                    end
+                end
 
-      WRITE_HASH: begin
-        M_AXI_AWVALID = 1'b1;
-        M_AXI_WVALID = 1'b1;
-        if (write_count == 8 && M_AXI_WREADY)  
-          next_state = WRITE_RESP;
-        else
-          next_state = WRITE_HASH;
-      end
+                STORE_WORD: begin
+                    message_block[511-word_counter*32 -: 32] <= M_AXI_RDATA;
+                    
+                    if (word_counter == 4'b1111) begin
+                        state <= START_HASH;
+                        axi_rready <= 1'b0;
+                    end else begin
+                        word_counter <= word_counter + 1;
+                        read_addr <= read_addr + 4;
+                        axi_arvalid <= 1'b1;
+                        state <= READ_BLOCK;
+                    end
+                end
 
-      WRITE_RESP: begin
-        M_AXI_BREADY = 1'b1;
-        if (M_AXI_BVALID) begin
-          GPIO_complete = 1'b1;
-          next_state = COMPLETE;
-        end else
-          next_state = WRITE_RESP;
-      end
+                START_HASH: begin
+                    hash_start <= 1'b1;
+                    state <= WRITING;
+                    word_counter <= 3'b000;
+                    write_addr <= WRITE_ADDR;
+                end
 
-      COMPLETE: begin
-        GPIO_complete = 1'b1;
-        next_state = IDLE;
-      end
+                // In the WRITING state, we'll assert BREADY along with AWVALID/WVALID
+                WRITING: begin
+                    hash_start <= 1'b0;
+                    
+                    if (hash_done) begin
+                        final_hash <= hash_out;
+                        case (word_counter)
+                            3'b000: current_word <= hash_out[255:224];
+                            3'b001: current_word <= hash_out[223:192];
+                            3'b010: current_word <= hash_out[191:160];
+                            3'b011: current_word <= hash_out[159:128];
+                            3'b100: current_word <= hash_out[127:96];
+                            3'b101: current_word <= hash_out[95:64];
+                            3'b110: current_word <= hash_out[63:32];
+                            3'b111: current_word <= hash_out[31:0];
+                        endcase
+                        axi_awvalid <= 1'b1;
+                        axi_wvalid <= 1'b1;
+                        axi_bready <= 1'b1;  // Assert BREADY here
+                        state <= WAIT_WRITE;
+                    end
+                end
+                
+                WAIT_WRITE: begin
+                    if (M_AXI_AWREADY && M_AXI_AWVALID) begin
+                        axi_awvalid <= 1'b0;
+                    end
+                
+                    if (M_AXI_WREADY && M_AXI_WVALID) begin
+                        axi_wvalid <= 1'b0;
+                        state <= RESPONSE;
+                        // Don't deassert axi_bready here anymore
+                    end
+                end
+                
+                RESPONSE: begin
+                    if (M_AXI_BVALID && M_AXI_BREADY) begin
+                        axi_bready <= 1'b0;  // Only deassert after receiving response
+                        if (word_counter == 3'b111) begin
+                            state <= DONE;
+                            GPIO_complete <= 1'b1;
+                        end else begin
+                            state <= NEXT_WORD;
+                        end
+                    end
+                end
 
-      default: next_state = IDLE;
-    endcase
-  end
+                NEXT_WORD: begin
+                    word_counter <= word_counter + 1;
+                    write_addr <= write_addr + 4;
+                    state <= WRITING;
+                end
+
+                DONE: begin
+                    axi_awvalid <= 1'b0;
+                    axi_wvalid <= 1'b0;
+                    axi_bready <= 1'b0;
+                    GPIO_complete <= 1'b1;
+                    hash_start <= 1'b0;
+                    if(GPIO_start == RESET_HASH_SIGNAL) 
+                        state <= IDLE;
+                end
+
+                default: state <= IDLE;
+            endcase
+        end
+    end
 
 endmodule
 
-
+// SHA-256 module with reset modification
 module sha256 (
     input wire clk,
     input wire rst,
+    input wire reset_hash,
     input wire start,
     input wire [511:0] message_block,
     output reg [255:0] hash,
-    output reg ready
+    output reg done,
+    output reg [31:0] hash_probe
 );
 
     // State definitions
@@ -203,12 +277,12 @@ module sha256 (
 
     reg [1:0] state;
     reg [5:0] round_count;
-    reg [31:0] a, b, c, d, e, f, g, h;
-    reg [31:0] T1, T2;
-    wire [31:0] ch, maj, s0, s1;
     
     // Hash registers
     reg [31:0] H0, H1, H2, H3, H4, H5, H6, H7;
+    reg [31:0] a, b, c, d, e, f, g, h;
+    reg [31:0] T1, T2;
+    wire [31:0] ch, maj, s0, s1;
 
     // Message schedule array
     reg [31:0] W [0:63];
@@ -259,10 +333,11 @@ module sha256 (
     wire [31:0] t2_next = s0 + maj;
 
     always @(posedge clk or posedge rst) begin
-        if (rst) begin
+        if (rst || reset_hash) begin
             state <= IDLE;
             round_count <= 0;
-            ready <= 0;
+            done <= 0;
+            hash_probe <= 0;
             
             // Initialize hash values
             H0 <= 32'h6a09e667;
@@ -318,7 +393,7 @@ module sha256 (
                         
                         state <= PROCESS;
                         round_count <= 0;
-                        ready <= 0;
+                        done <= 0;
                     end
                 end 
 
@@ -362,7 +437,8 @@ module sha256 (
                     // Output final hash
                     hash <= {H0 + a, H1 + b, H2 + c, H3 + d,
                             H4 + e, H5 + f, H6 + g, H7 + h};
-                    ready <= 1;
+                    done <= 1;
+                    hash_probe <= H0 + a;
                     state <= IDLE;
                 end
             endcase

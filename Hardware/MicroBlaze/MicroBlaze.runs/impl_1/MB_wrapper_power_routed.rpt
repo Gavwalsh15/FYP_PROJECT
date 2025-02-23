@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date             : Sun Feb  9 15:20:33 2025
+| Date             : Sun Feb 23 20:24:26 2025
 | Host             : DESKTOP-R5RVK16 running 64-bit major release  (build 9200)
 | Command          : report_power -file MB_wrapper_power_routed.rpt -pb MB_wrapper_power_summary_routed.pb -rpx MB_wrapper_power_routed.rpx
 | Design           : MB_wrapper
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.245        |
+| Total On-Chip Power (W)  | 0.214        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.173        |
-| Device Static (W)        | 0.072        |
+| Dynamic (W)              | 0.142        |
+| Device Static (W)        | 0.073        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 83.9         |
+| Junction Temperature (C) | 26.1         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.012 |        7 |       --- |             --- |
-| Slice Logic              |     0.022 |    15481 |       --- |             --- |
-|   LUT as Logic           |     0.019 |     5808 |     20800 |           27.92 |
-|   F7/F8 Muxes            |    <0.001 |     1228 |     32600 |            3.77 |
-|   CARRY4                 |    <0.001 |      206 |      8150 |            2.53 |
-|   Register               |    <0.001 |     6109 |     41600 |           14.69 |
-|   LUT as Distributed RAM |    <0.001 |       68 |      9600 |            0.71 |
-|   LUT as Shift Register  |    <0.001 |       79 |      9600 |            0.82 |
-|   Others                 |    <0.001 |      820 |       --- |             --- |
-| Signals                  |     0.031 |     9731 |       --- |             --- |
-| Block RAM                |     0.001 |        6 |        50 |           12.00 |
+| Clocks                   |     0.015 |        8 |       --- |             --- |
+| Slice Logic              |     0.008 |    19349 |       --- |             --- |
+|   LUT as Logic           |     0.007 |     7063 |     20800 |           33.96 |
+|   CARRY4                 |    <0.001 |      262 |      8150 |            3.21 |
+|   Register               |    <0.001 |     8007 |     41600 |           19.25 |
+|   LUT as Distributed RAM |    <0.001 |       92 |      9600 |            0.96 |
+|   LUT as Shift Register  |    <0.001 |      240 |      9600 |            2.50 |
+|   F7/F8 Muxes            |    <0.001 |     1201 |     32600 |            3.68 |
+|   Others                 |    <0.001 |     1007 |       --- |             --- |
+| Signals                  |     0.009 |    12395 |       --- |             --- |
+| Block RAM                |     0.004 |     11.5 |        50 |           23.00 |
 | MMCM                     |     0.106 |        1 |         5 |           20.00 |
-| I/O                      |    <0.001 |       20 |       106 |           18.87 |
-| Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.245 |          |           |                 |
+| I/O                      |    <0.001 |        4 |       106 |            3.77 |
+| Static Power             |     0.073 |          |           |                 |
+| Total                    |     0.214 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.077 |       0.067 |      0.010 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.046 |       0.036 |      0.010 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -85,7 +85,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -129,15 +129,16 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+------------------------------------------------------+---------------------------------------------+-----------------+
-| Clock                                                | Domain                                      | Constraint (ns) |
-+------------------------------------------------------+---------------------------------------------+-----------------+
-| MB_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK   | MB_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK           |            33.3 |
-| MB_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE | MB_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0   |            33.3 |
-| clk_out1_MB_clk_wiz_0_2                              | MB_i/clk_wiz_0/inst/clk_out1_MB_clk_wiz_0_2 |            20.0 |
-| clkfbout_MB_clk_wiz_0_2                              | MB_i/clk_wiz_0/inst/clkfbout_MB_clk_wiz_0_2 |            10.0 |
-| sys_clock                                            | sys_clock                                   |            10.0 |
-+------------------------------------------------------+---------------------------------------------+-----------------+
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
+| Clock                                                                                      | Domain                                                            | Constraint (ns) |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
+| MB_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK                                         | MB_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                                 |            33.3 |
+| MB_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE                                       | MB_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0                         |            33.3 |
+| clk_out1_MB_clk_wiz_0_2                                                                    | MB_i/clk_wiz_0/inst/clk_out1_MB_clk_wiz_0_2                       |            20.0 |
+| clkfbout_MB_clk_wiz_0_2                                                                    | MB_i/clk_wiz_0/inst/clkfbout_MB_clk_wiz_0_2                       |            10.0 |
+| dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/TCK |            33.0 |
+| sys_clock                                                                                  | sys_clock                                                         |            10.0 |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -146,19 +147,25 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------------------+-----------+
-| Name                    | Power (W) |
-+-------------------------+-----------+
-| MB_wrapper              |     0.173 |
-|   MB_i                  |     0.173 |
-|     axi_smc             |     0.004 |
-|       inst              |     0.004 |
-|     clk_wiz_0           |     0.106 |
-|       inst              |     0.106 |
-|     microblaze_0        |     0.008 |
-|       U0                |     0.008 |
-|     simple_axi_writer_0 |     0.050 |
-|       inst              |     0.050 |
-+-------------------------+-----------+
++--------------------------+-----------+
+| Name                     | Power (W) |
++--------------------------+-----------+
+| MB_wrapper               |     0.142 |
+|   MB_i                   |     0.133 |
+|     axi_smc              |     0.003 |
+|       inst               |     0.003 |
+|     clk_wiz_0            |     0.106 |
+|       inst               |     0.106 |
+|     microblaze_0         |     0.005 |
+|       U0                 |     0.005 |
+|     simple_axi_writer_0  |     0.015 |
+|       inst               |     0.015 |
+|   dbg_hub                |     0.002 |
+|     inst                 |     0.002 |
+|       BSCANID.u_xsdbm_id |     0.002 |
+|   u_ila_0                |     0.006 |
+|     inst                 |     0.006 |
+|       ila_core_inst      |     0.006 |
++--------------------------+-----------+
 
 

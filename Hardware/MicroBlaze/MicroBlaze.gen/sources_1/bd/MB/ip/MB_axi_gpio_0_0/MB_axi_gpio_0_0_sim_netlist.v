@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-// Date        : Wed Nov 13 19:34:56 2024
+// Date        : Sun Feb 23 17:38:35 2025
 // Host        : DESKTOP-R5RVK16 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/ip/MB_axi_gpio_0_0/MB_axi_gpio_0_0_sim_netlist.v
@@ -38,9 +38,9 @@ module MB_axi_gpio_0_0
     ip2intc_irpt,
     gpio_io_o,
     gpio2_io_i);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S_AXI_ACLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ACLK, ASSOCIATED_BUSIF S_AXI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 S_AXI_ARESETN RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI_ARESETN, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
+  (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [8:0]s_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWVALID" *) input s_axi_awvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI AWREADY" *) output s_axi_awready;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI WDATA" *) input [31:0]s_axi_wdata;
@@ -58,12 +58,12 @@ module MB_axi_gpio_0_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
   (* x_interface_info = "xilinx.com:signal:interrupt:1.0 IP2INTC_IRQ INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME IP2INTC_IRQ, SENSITIVITY LEVEL_HIGH, PortWidth 1" *) output ip2intc_irpt;
-  (* x_interface_info = "xilinx.com:interface:gpio:1.0 GPIO TRI_O" *) (* x_interface_parameter = "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE" *) output [0:0]gpio_io_o;
+  (* x_interface_info = "xilinx.com:interface:gpio:1.0 GPIO TRI_O" *) (* x_interface_parameter = "XIL_INTERFACENAME GPIO, BOARD.ASSOCIATED_PARAM GPIO_BOARD_INTERFACE" *) output [1:0]gpio_io_o;
   (* x_interface_info = "xilinx.com:interface:gpio:1.0 GPIO2 TRI_I" *) (* x_interface_parameter = "XIL_INTERFACENAME GPIO2, BOARD.ASSOCIATED_PARAM GPIO2_BOARD_INTERFACE" *) input [0:0]gpio2_io_i;
 
   wire \<const0> ;
   wire [0:0]gpio2_io_i;
-  wire [0:0]gpio_io_o;
+  wire [1:0]gpio_io_o;
   wire ip2intc_irpt;
   wire s_axi_aclk;
   wire [8:0]s_axi_araddr;
@@ -83,7 +83,7 @@ module MB_axi_gpio_0_0
   wire s_axi_wvalid;
   wire [0:0]NLW_U0_gpio2_io_o_UNCONNECTED;
   wire [0:0]NLW_U0_gpio2_io_t_UNCONNECTED;
-  wire [0:0]NLW_U0_gpio_io_t_UNCONNECTED;
+  wire [1:0]NLW_U0_gpio_io_t_UNCONNECTED;
   wire [1:0]NLW_U0_s_axi_bresp_UNCONNECTED;
   wire [1:0]NLW_U0_s_axi_rresp_UNCONNECTED;
 
@@ -101,7 +101,7 @@ module MB_axi_gpio_0_0
   (* C_DOUT_DEFAULT_2 = "32'b00000000000000000000000000000000" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_GPIO2_WIDTH = "1" *) 
-  (* C_GPIO_WIDTH = "1" *) 
+  (* C_GPIO_WIDTH = "2" *) 
   (* C_INTERRUPT_PRESENT = "1" *) 
   (* C_IS_DUAL = "1" *) 
   (* C_S_AXI_ADDR_WIDTH = "9" *) 
@@ -114,9 +114,9 @@ module MB_axi_gpio_0_0
        (.gpio2_io_i(gpio2_io_i),
         .gpio2_io_o(NLW_U0_gpio2_io_o_UNCONNECTED[0]),
         .gpio2_io_t(NLW_U0_gpio2_io_t_UNCONNECTED[0]),
-        .gpio_io_i(1'b0),
+        .gpio_io_i({1'b0,1'b0}),
         .gpio_io_o(gpio_io_o),
-        .gpio_io_t(NLW_U0_gpio_io_t_UNCONNECTED[0]),
+        .gpio_io_t(NLW_U0_gpio_io_t_UNCONNECTED[1:0]),
         .ip2intc_irpt(ip2intc_irpt),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr({s_axi_araddr[8:2],1'b0,1'b0}),
@@ -142,89 +142,78 @@ endmodule
 (* ORIG_REF_NAME = "GPIO_Core" *) 
 module MB_axi_gpio_0_0_GPIO_Core
    (GPIO2_intr,
+    GPIO_xferAck_i,
+    gpio_xferAck_Reg,
     \Dual.gpio2_Data_In ,
     reg3,
     reg1,
     \Dual.gpio2_OE_reg[0]_0 ,
-    gpio_io_o,
-    iGPIO_xferAck_reg_0,
-    ip2bus_wrack_i,
     ip2bus_rdack_i,
-    rst,
+    gpio_io_o,
+    bus2ip_reset,
     s_axi_aclk,
     \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31]_0 ,
     \Dual.gpio2_OE_reg[0]_1 ,
-    \Dual.gpio_Data_Out_reg[0]_0 ,
     bus2ip_cs,
-    Q,
     bus2ip_rnw,
-    ip2Bus_WrAck_intr_reg_hole,
-    intr2bus_wrack,
-    ip2Bus_RdAck_intr_reg_hole,
     intr2bus_rdack,
-    gpio2_io_i);
+    ip2Bus_RdAck_intr_reg_hole,
+    gpio2_io_i,
+    s_axi_wdata,
+    Q,
+    \Dual.gpio_Data_Out_reg[0]_0 );
   output GPIO2_intr;
+  output GPIO_xferAck_i;
+  output gpio_xferAck_Reg;
   output \Dual.gpio2_Data_In ;
   output [0:0]reg3;
-  output [0:0]reg1;
+  output [1:0]reg1;
   output \Dual.gpio2_OE_reg[0]_0 ;
-  output [0:0]gpio_io_o;
-  output iGPIO_xferAck_reg_0;
-  output ip2bus_wrack_i;
   output ip2bus_rdack_i;
-  input rst;
+  output [1:0]gpio_io_o;
+  input bus2ip_reset;
   input s_axi_aclk;
   input \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31]_0 ;
   input \Dual.gpio2_OE_reg[0]_1 ;
-  input \Dual.gpio_Data_Out_reg[0]_0 ;
   input [0:0]bus2ip_cs;
-  input [0:0]Q;
   input bus2ip_rnw;
-  input ip2Bus_WrAck_intr_reg_hole;
-  input intr2bus_wrack;
-  input ip2Bus_RdAck_intr_reg_hole;
   input intr2bus_rdack;
+  input ip2Bus_RdAck_intr_reg_hole;
   input [0:0]gpio2_io_i;
+  input [1:0]s_axi_wdata;
+  input [0:0]Q;
+  input \Dual.gpio_Data_Out_reg[0]_0 ;
 
   wire \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31]_0 ;
-  wire \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[31]_i_1_n_0 ;
+  wire \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[30]_i_1_n_0 ;
+  wire \Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].reg1[31]_i_1_n_0 ;
   wire \Dual.gen_interrupt_dual.gpio2_data_in_xor_reg_reg_n_0_[0] ;
   wire \Dual.gpio2_Data_In ;
   wire \Dual.gpio2_OE_reg[0]_0 ;
   wire \Dual.gpio2_OE_reg[0]_1 ;
   wire \Dual.gpio2_data_in_xor ;
   wire \Dual.gpio2_io_i_d2 ;
+  wire \Dual.gpio_Data_Out[0]_i_1_n_0 ;
+  wire \Dual.gpio_Data_Out[1]_i_1_n_0 ;
   wire \Dual.gpio_Data_Out_reg[0]_0 ;
   wire GPIO2_intr;
   wire GPIO_xferAck_i;
   wire [0:0]Q;
   wire [0:0]bus2ip_cs;
+  wire bus2ip_reset;
   wire bus2ip_rnw;
   wire [0:0]gpio2_io_i;
-  wire [0:0]gpio_io_o;
+  wire [1:0]gpio_io_o;
   wire gpio_xferAck_Reg;
   wire iGPIO_xferAck;
-  wire iGPIO_xferAck_reg_0;
   wire intr2bus_rdack;
-  wire intr2bus_wrack;
   wire ip2Bus_RdAck_intr_reg_hole;
-  wire ip2Bus_WrAck_intr_reg_hole;
   wire ip2bus_rdack_i;
-  wire ip2bus_wrack_i;
-  wire [0:0]reg1;
+  wire [1:0]reg1;
   wire [0:0]reg3;
-  wire rst;
   wire s_axi_aclk;
+  wire [1:0]s_axi_wdata;
 
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
-  LUT4 #(
-    .INIT(16'h0004)) 
-    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3[31]_i_2 
-       (.I0(GPIO_xferAck_i),
-        .I1(bus2ip_cs),
-        .I2(gpio_xferAck_Reg),
-        .I3(Q),
-        .O(iGPIO_xferAck_reg_0));
   FDRE \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] 
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -233,20 +222,35 @@ module MB_axi_gpio_0_0_GPIO_Core
         .R(1'b0));
   LUT5 #(
     .INIT(32'h00200000)) 
-    \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[31]_i_1 
-       (.I0(bus2ip_rnw),
-        .I1(gpio_xferAck_Reg),
+    \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[30]_i_1 
+       (.I0(gpio_io_o[1]),
+        .I1(GPIO_xferAck_i),
         .I2(bus2ip_cs),
-        .I3(GPIO_xferAck_i),
-        .I4(gpio_io_o),
-        .O(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[31]_i_1_n_0 ));
-  FDRE \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1_reg[31] 
+        .I3(gpio_xferAck_Reg),
+        .I4(bus2ip_rnw),
+        .O(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[30]_i_1_n_0 ));
+  FDRE \Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1_reg[30] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[31]_i_1_n_0 ),
-        .Q(reg1),
+        .D(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[0].reg1[30]_i_1_n_0 ),
+        .Q(reg1[1]),
         .R(1'b0));
-  MB_axi_gpio_0_0_cdc_sync \Dual.INPUT_DOUBLE_REGS5 
+  LUT5 #(
+    .INIT(32'h00200000)) 
+    \Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].reg1[31]_i_1 
+       (.I0(gpio_io_o[0]),
+        .I1(GPIO_xferAck_i),
+        .I2(bus2ip_cs),
+        .I3(gpio_xferAck_Reg),
+        .I4(bus2ip_rnw),
+        .O(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].reg1[31]_i_1_n_0 ));
+  FDRE \Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].reg1_reg[31] 
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(\Dual.ALLOUT0_ND_G1.READ_REG_GEN[1].reg1[31]_i_1_n_0 ),
+        .Q(reg1[0]),
+        .R(1'b0));
+  MB_axi_gpio_0_0_cdc_sync__parameterized0 \Dual.INPUT_DOUBLE_REGS5 
        (.\Dual.gpio2_Data_In (\Dual.gpio2_Data_In ),
         .\Dual.gpio2_data_in_xor (\Dual.gpio2_data_in_xor ),
         .gpio2_io_i(gpio2_io_i),
@@ -257,13 +261,13 @@ module MB_axi_gpio_0_0_GPIO_Core
         .CE(1'b1),
         .D(\Dual.gen_interrupt_dual.gpio2_data_in_xor_reg_reg_n_0_[0] ),
         .Q(GPIO2_intr),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE \Dual.gen_interrupt_dual.gpio2_data_in_xor_reg_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\Dual.gpio2_data_in_xor ),
         .Q(\Dual.gen_interrupt_dual.gpio2_data_in_xor_reg_reg_n_0_[0] ),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE \Dual.gpio2_Data_In_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -277,91 +281,113 @@ module MB_axi_gpio_0_0_GPIO_Core
         .CE(1'b1),
         .D(\Dual.gpio2_OE_reg[0]_1 ),
         .Q(\Dual.gpio2_OE_reg[0]_0 ),
-        .S(rst));
+        .S(bus2ip_reset));
+  LUT6 #(
+    .INIT(64'hBA8AFFFFBA8A0000)) 
+    \Dual.gpio_Data_Out[0]_i_1 
+       (.I0(s_axi_wdata[0]),
+        .I1(Q),
+        .I2(bus2ip_cs),
+        .I3(s_axi_wdata[1]),
+        .I4(\Dual.gpio_Data_Out_reg[0]_0 ),
+        .I5(gpio_io_o[1]),
+        .O(\Dual.gpio_Data_Out[0]_i_1_n_0 ));
+  LUT5 #(
+    .INIT(32'h08FF0800)) 
+    \Dual.gpio_Data_Out[1]_i_1 
+       (.I0(s_axi_wdata[0]),
+        .I1(bus2ip_cs),
+        .I2(Q),
+        .I3(\Dual.gpio_Data_Out_reg[0]_0 ),
+        .I4(gpio_io_o[0]),
+        .O(\Dual.gpio_Data_Out[1]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \Dual.gpio_Data_Out_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\Dual.gpio_Data_Out_reg[0]_0 ),
-        .Q(gpio_io_o),
-        .R(rst));
+        .D(\Dual.gpio_Data_Out[0]_i_1_n_0 ),
+        .Q(gpio_io_o[1]),
+        .R(bus2ip_reset));
+  FDRE #(
+    .INIT(1'b0)) 
+    \Dual.gpio_Data_Out_reg[1] 
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(\Dual.gpio_Data_Out[1]_i_1_n_0 ),
+        .Q(gpio_io_o[0]),
+        .R(bus2ip_reset));
   FDRE gpio_xferAck_Reg_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(GPIO_xferAck_i),
         .Q(gpio_xferAck_Reg),
-        .R(rst));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+        .R(bus2ip_reset));
   LUT3 #(
     .INIT(8'h04)) 
     iGPIO_xferAck_i_1
-       (.I0(gpio_xferAck_Reg),
+       (.I0(GPIO_xferAck_i),
         .I1(bus2ip_cs),
-        .I2(GPIO_xferAck_i),
+        .I2(gpio_xferAck_Reg),
         .O(iGPIO_xferAck));
   FDRE iGPIO_xferAck_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(iGPIO_xferAck),
         .Q(GPIO_xferAck_i),
-        .R(rst));
+        .R(bus2ip_reset));
   LUT4 #(
-    .INIT(16'hFFEA)) 
+    .INIT(16'hFFF8)) 
     ip2bus_rdack_i_D1_i_1
-       (.I0(ip2Bus_RdAck_intr_reg_hole),
-        .I1(GPIO_xferAck_i),
-        .I2(bus2ip_rnw),
-        .I3(intr2bus_rdack),
+       (.I0(GPIO_xferAck_i),
+        .I1(bus2ip_rnw),
+        .I2(intr2bus_rdack),
+        .I3(ip2Bus_RdAck_intr_reg_hole),
         .O(ip2bus_rdack_i));
-  LUT4 #(
-    .INIT(16'hFFAE)) 
-    ip2bus_wrack_i_D1_i_1
-       (.I0(ip2Bus_WrAck_intr_reg_hole),
-        .I1(GPIO_xferAck_i),
-        .I2(bus2ip_rnw),
-        .I3(intr2bus_wrack),
-        .O(ip2bus_wrack_i));
 endmodule
 
 (* ORIG_REF_NAME = "address_decoder" *) 
 module MB_axi_gpio_0_0_address_decoder
    (\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ,
-    bus2ip_cs,
+    \MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ,
     Bus_RNW_reg_reg_0,
-    D,
-    irpt_rdack,
-    intr2bus_rdack0,
-    irpt_wrack,
+    Bus_RNW_reg_reg_1,
     interrupt_wrce_strb,
-    irpt_wrack_d1_reg,
+    intr2bus_rdack0,
+    irpt_rdack,
+    \Dual.gpio2_OE_reg[0] ,
+    rst_reg,
     ip2Bus_WrAck_intr_reg_hole0,
-    intr_rd_ce_or_reduce,
     ip2Bus_RdAck_intr_reg_hole0,
-    intr_wr_ce_or_reduce,
+    D,
     \s_axi_wdata[31] ,
     s_axi_wdata_0_sp_1,
-    \s_axi_wdata[0]_0 ,
+    Bus_RNW_reg_reg_2,
+    Bus_RNW_reg_reg_3,
+    \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6]_0 ,
     ip2bus_wrack_i_D1_reg,
     ip2bus_rdack_i_D1_reg,
     Q,
     s_axi_aclk,
-    \MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ,
-    ipif_glbl_irpt_enable_reg,
-    irpt_rdack_d1,
     irpt_wrack_d1,
+    irpt_rdack_d1,
+    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ,
+    Bus_RNW_reg_reg_4,
+    \Dual.gpio2_OE_reg[0]_0 ,
+    \Dual.gpio2_Data_In ,
+    SR,
     ip2Bus_WrAck_intr_reg_hole_d1,
     ip2Bus_RdAck_intr_reg_hole_d1,
+    gpio_xferAck_Reg,
+    GPIO_xferAck_i,
+    ipif_glbl_irpt_enable_reg,
+    \ip2bus_data_i_D1_reg[31] ,
+    \ip2bus_data_i_D1_reg[31]_0 ,
     p_1_in,
     p_0_in0_in,
     reg1,
     reg3,
-    \ip2bus_data_i_D1_reg[31] ,
-    \ip2bus_data_i_D1_reg[31]_0 ,
     s_axi_wdata,
-    \Dual.gpio2_OE_reg[0] ,
-    \Dual.gpio2_OE_reg[0]_0 ,
-    gpio_io_o,
     s_axi_aresetn,
     ip2bus_rdack_i_D1,
     s_axi_arready,
@@ -369,41 +395,45 @@ module MB_axi_gpio_0_0_address_decoder
     ip2bus_wrack_i_D1,
     s_axi_awready);
   output \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ;
-  output [0:0]bus2ip_cs;
+  output \MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ;
   output Bus_RNW_reg_reg_0;
-  output [3:0]D;
-  output irpt_rdack;
-  output intr2bus_rdack0;
-  output irpt_wrack;
+  output Bus_RNW_reg_reg_1;
   output interrupt_wrce_strb;
-  output irpt_wrack_d1_reg;
+  output intr2bus_rdack0;
+  output irpt_rdack;
+  output \Dual.gpio2_OE_reg[0] ;
+  output rst_reg;
   output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_rd_ce_or_reduce;
   output ip2Bus_RdAck_intr_reg_hole0;
-  output intr_wr_ce_or_reduce;
+  output [3:0]D;
   output \s_axi_wdata[31] ;
   output s_axi_wdata_0_sp_1;
-  output \s_axi_wdata[0]_0 ;
+  output Bus_RNW_reg_reg_2;
+  output Bus_RNW_reg_reg_3;
+  output \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6]_0 ;
   output ip2bus_wrack_i_D1_reg;
   output ip2bus_rdack_i_D1_reg;
   input Q;
   input s_axi_aclk;
-  input [6:0]\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_rdack_d1;
   input irpt_wrack_d1;
+  input irpt_rdack_d1;
+  input [6:0]\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
+  input Bus_RNW_reg_reg_4;
+  input \Dual.gpio2_OE_reg[0]_0 ;
+  input \Dual.gpio2_Data_In ;
+  input [0:0]SR;
   input ip2Bus_WrAck_intr_reg_hole_d1;
   input ip2Bus_RdAck_intr_reg_hole_d1;
-  input p_1_in;
-  input p_0_in0_in;
-  input [0:0]reg1;
-  input [0:0]reg3;
+  input gpio_xferAck_Reg;
+  input GPIO_xferAck_i;
+  input ipif_glbl_irpt_enable_reg;
   input \ip2bus_data_i_D1_reg[31] ;
   input \ip2bus_data_i_D1_reg[31]_0 ;
-  input [1:0]s_axi_wdata;
-  input \Dual.gpio2_OE_reg[0] ;
-  input \Dual.gpio2_OE_reg[0]_0 ;
-  input [0:0]gpio_io_o;
+  input p_1_in;
+  input p_0_in0_in;
+  input [1:0]reg1;
+  input [0:0]reg3;
+  input [2:0]s_axi_wdata;
   input s_axi_aresetn;
   input ip2bus_rdack_i_D1;
   input s_axi_arready;
@@ -413,18 +443,28 @@ module MB_axi_gpio_0_0_address_decoder
 
   wire Bus_RNW_reg_i_1_n_0;
   wire Bus_RNW_reg_reg_0;
+  wire Bus_RNW_reg_reg_1;
+  wire Bus_RNW_reg_reg_2;
+  wire Bus_RNW_reg_reg_3;
+  wire Bus_RNW_reg_reg_4;
   wire [3:0]D;
+  wire [6:0]\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
+  wire \Dual.gpio2_Data_In ;
   wire \Dual.gpio2_OE_reg[0] ;
   wire \Dual.gpio2_OE_reg[0]_0 ;
-  wire \Dual.gpio_Data_Out[0]_i_2_n_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[0].ce_out_i[0]_i_1_n_0 ;
   wire \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ;
   wire \GEN_BKEND_CE_REGISTERS[19].ce_out_i_reg_n_0_[19] ;
+  wire \GEN_BKEND_CE_REGISTERS[2].ce_out_i[2]_i_1_n_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6]_0 ;
+  wire GPIO_xferAck_i;
   wire \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ;
   wire \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ;
-  wire \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ;
-  wire [6:0]\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ;
+  wire \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_2_n_0 ;
+  wire \MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ;
   wire Q;
-  wire [0:0]bus2ip_cs;
+  wire [0:0]SR;
   wire ce_expnd_i_0;
   wire ce_expnd_i_1;
   wire ce_expnd_i_10;
@@ -434,9 +474,7 @@ module MB_axi_gpio_0_0_address_decoder
   wire ce_expnd_i_14;
   wire ce_expnd_i_15;
   wire ce_expnd_i_16;
-  wire ce_expnd_i_17;
   wire ce_expnd_i_18;
-  wire ce_expnd_i_19;
   wire ce_expnd_i_2;
   wire ce_expnd_i_3;
   wire ce_expnd_i_4;
@@ -446,18 +484,18 @@ module MB_axi_gpio_0_0_address_decoder
   wire ce_expnd_i_8;
   wire ce_expnd_i_9;
   wire cs_ce_clr;
-  wire [0:0]gpio_io_o;
+  wire \gpio_core_1/Dual.gpio2_OE0 ;
+  wire \gpio_core_1/Read_Reg_Rst ;
+  wire gpio_xferAck_Reg;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
-  wire intr_rd_ce_or_reduce;
-  wire intr_wr_ce_or_reduce;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
   wire ip2Bus_WrAck_intr_reg_hole0;
   wire ip2Bus_WrAck_intr_reg_hole_d1;
+  wire \ip2bus_data_i_D1[30]_i_2_n_0 ;
   wire \ip2bus_data_i_D1[31]_i_2_n_0 ;
   wire \ip2bus_data_i_D1[31]_i_3_n_0 ;
-  wire \ip2bus_data_i_D1[31]_i_4_n_0 ;
   wire \ip2bus_data_i_D1_reg[31] ;
   wire \ip2bus_data_i_D1_reg[31]_0 ;
   wire ip2bus_rdack_i_D1;
@@ -467,9 +505,7 @@ module MB_axi_gpio_0_0_address_decoder
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
   wire irpt_rdack_d1;
-  wire irpt_wrack;
   wire irpt_wrack_d1;
-  wire irpt_wrack_d1_reg;
   wire p_0_in0_in;
   wire p_10_in;
   wire p_11_in;
@@ -491,24 +527,24 @@ module MB_axi_gpio_0_0_address_decoder
   wire p_8_in;
   wire p_9_in;
   wire pselect_hit_i_1;
-  wire [0:0]reg1;
+  wire [1:0]reg1;
   wire [0:0]reg3;
+  wire rst_reg;
   wire s_axi_aclk;
   wire s_axi_aresetn;
   wire s_axi_arready;
   wire [3:0]s_axi_arready_0;
   wire s_axi_awready;
-  wire [1:0]s_axi_wdata;
-  wire \s_axi_wdata[0]_0 ;
+  wire [2:0]s_axi_wdata;
   wire \s_axi_wdata[31] ;
   wire s_axi_wdata_0_sn_1;
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     Bus_RNW_reg_i_1
-       (.I0(\Dual.gpio2_OE_reg[0] ),
+       (.I0(Bus_RNW_reg_reg_4),
         .I1(Q),
         .I2(Bus_RNW_reg_reg_0),
         .O(Bus_RNW_reg_i_1_n_0));
@@ -519,54 +555,75 @@ module MB_axi_gpio_0_0_address_decoder
         .Q(Bus_RNW_reg_reg_0),
         .R(1'b0));
   LUT6 #(
-    .INIT(64'hFFFFBFFF00008000)) 
+    .INIT(64'h000000000000B800)) 
+    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3[31]_i_1 
+       (.I0(\Dual.gpio2_OE_reg[0]_0 ),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.gpio2_Data_In ),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I5(\gpio_core_1/Read_Reg_Rst ),
+        .O(\Dual.gpio2_OE_reg[0] ));
+  LUT4 #(
+    .INIT(16'hFFDF)) 
+    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3[31]_i_2 
+       (.I0(Bus_RNW_reg_reg_4),
+        .I1(gpio_xferAck_Reg),
+        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ),
+        .I3(GPIO_xferAck_i),
+        .O(\gpio_core_1/Read_Reg_Rst ));
+  LUT6 #(
+    .INIT(64'hBA8AFFFFBA8A0000)) 
     \Dual.gpio2_OE[0]_i_1 
        (.I0(s_axi_wdata[0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
-        .I2(\Dual.gpio_Data_Out[0]_i_2_n_0 ),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I4(\Dual.gpio2_OE_reg[0] ),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ),
+        .I3(s_axi_wdata[1]),
+        .I4(\gpio_core_1/Dual.gpio2_OE0 ),
         .I5(\Dual.gpio2_OE_reg[0]_0 ),
         .O(s_axi_wdata_0_sn_1));
+  LUT5 #(
+    .INIT(32'h00400000)) 
+    \Dual.gpio2_OE[0]_i_2 
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I3(Bus_RNW_reg_reg_4),
+        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ),
+        .O(\gpio_core_1/Dual.gpio2_OE0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFEF00000020)) 
-    \Dual.gpio_Data_Out[0]_i_1 
-       (.I0(s_axi_wdata[0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
-        .I2(\Dual.gpio_Data_Out[0]_i_2_n_0 ),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I4(\Dual.gpio2_OE_reg[0] ),
-        .I5(gpio_io_o),
-        .O(\s_axi_wdata[0]_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+    .INIT(64'hAAAAAAAAAAAAAABA)) 
     \Dual.gpio_Data_Out[0]_i_2 
-       (.I0(bus2ip_cs),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .O(\Dual.gpio_Data_Out[0]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+       (.I0(SR),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I5(Bus_RNW_reg_reg_4),
+        .O(rst_reg));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
-    .INIT(8'h04)) 
+    .INIT(8'h01)) 
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i[0]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(pselect_hit_i_1),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
-        .O(ce_expnd_i_19));
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I1(\GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .O(\GEN_BKEND_CE_REGISTERS[0].ce_out_i[0]_i_1_n_0 ));
   FDRE \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] 
        (.C(s_axi_aclk),
         .CE(Q),
-        .D(ce_expnd_i_19),
+        .D(\GEN_BKEND_CE_REGISTERS[0].ce_out_i[0]_i_1_n_0 ),
         .Q(p_19_in),
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
-    .INIT(32'h00400000)) 
+    .INIT(32'h00002000)) 
     \GEN_BKEND_CE_REGISTERS[10].ce_out_i[10]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_9));
   FDRE \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] 
        (.C(s_axi_aclk),
@@ -576,13 +633,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
-    .INIT(32'h00800000)) 
+    .INIT(32'h00008000)) 
     \GEN_BKEND_CE_REGISTERS[11].ce_out_i[11]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_8));
   FDRE \GEN_BKEND_CE_REGISTERS[11].ce_out_i_reg[11] 
        (.C(s_axi_aclk),
@@ -592,13 +649,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
-    .INIT(32'h00001000)) 
+    .INIT(32'h00000200)) 
     \GEN_BKEND_CE_REGISTERS[12].ce_out_i[12]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
         .O(ce_expnd_i_7));
   FDRE \GEN_BKEND_CE_REGISTERS[12].ce_out_i_reg[12] 
        (.C(s_axi_aclk),
@@ -608,13 +665,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
-    .INIT(32'h00002000)) 
+    .INIT(32'h00000800)) 
     \GEN_BKEND_CE_REGISTERS[13].ce_out_i[13]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
         .O(ce_expnd_i_6));
   FDRE \GEN_BKEND_CE_REGISTERS[13].ce_out_i_reg[13] 
        (.C(s_axi_aclk),
@@ -624,13 +681,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
-    .INIT(32'h10000000)) 
+    .INIT(32'h00200000)) 
     \GEN_BKEND_CE_REGISTERS[14].ce_out_i[14]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_5));
   FDRE \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] 
        (.C(s_axi_aclk),
@@ -640,13 +697,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
-    .INIT(32'h20000000)) 
+    .INIT(32'h00800000)) 
     \GEN_BKEND_CE_REGISTERS[15].ce_out_i[15]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_4));
   FDRE \GEN_BKEND_CE_REGISTERS[15].ce_out_i_reg[15] 
        (.C(s_axi_aclk),
@@ -656,13 +713,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
-    .INIT(32'h00004000)) 
+    .INIT(32'h00200000)) 
     \GEN_BKEND_CE_REGISTERS[16].ce_out_i[16]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_3));
   FDRE \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] 
        (.C(s_axi_aclk),
@@ -672,13 +729,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
-    .INIT(32'h00008000)) 
+    .INIT(32'h00800000)) 
     \GEN_BKEND_CE_REGISTERS[17].ce_out_i[17]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_2));
   FDRE \GEN_BKEND_CE_REGISTERS[17].ce_out_i_reg[17] 
        (.C(s_axi_aclk),
@@ -688,13 +745,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
-    .INIT(32'h40000000)) 
+    .INIT(32'h20000000)) 
     \GEN_BKEND_CE_REGISTERS[18].ce_out_i[18]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_1));
   FDRE \GEN_BKEND_CE_REGISTERS[18].ce_out_i_reg[18] 
        (.C(s_axi_aclk),
@@ -713,11 +770,11 @@ module MB_axi_gpio_0_0_address_decoder
   LUT5 #(
     .INIT(32'h80000000)) 
     \GEN_BKEND_CE_REGISTERS[19].ce_out_i[19]_i_2 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_0));
   FDRE \GEN_BKEND_CE_REGISTERS[19].ce_out_i_reg[19] 
        (.C(s_axi_aclk),
@@ -725,13 +782,13 @@ module MB_axi_gpio_0_0_address_decoder
         .D(ce_expnd_i_0),
         .Q(\GEN_BKEND_CE_REGISTERS[19].ce_out_i_reg_n_0_[19] ),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'h08)) 
+    .INIT(8'h02)) 
     \GEN_BKEND_CE_REGISTERS[1].ce_out_i[1]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(pselect_hit_i_1),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I1(\GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
         .O(ce_expnd_i_18));
   FDRE \GEN_BKEND_CE_REGISTERS[1].ce_out_i_reg[1] 
        (.C(s_axi_aclk),
@@ -739,28 +796,38 @@ module MB_axi_gpio_0_0_address_decoder
         .D(ce_expnd_i_18),
         .Q(p_18_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h04)) 
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i[2]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(pselect_hit_i_1),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
-        .O(ce_expnd_i_17));
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I2(\GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ),
+        .O(\GEN_BKEND_CE_REGISTERS[2].ce_out_i[2]_i_1_n_0 ));
   FDRE \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2] 
        (.C(s_axi_aclk),
         .CE(Q),
-        .D(ce_expnd_i_17),
+        .D(\GEN_BKEND_CE_REGISTERS[2].ce_out_i[2]_i_1_n_0 ),
         .Q(p_17_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT3 #(
-    .INIT(8'h80)) 
+    .INIT(8'h08)) 
     \GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(pselect_hit_i_1),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I2(\GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ),
         .O(ce_expnd_i_16));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFEFF)) 
+    \GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2 
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I3(Q),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [5]),
+        .I5(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [4]),
+        .O(\GEN_BKEND_CE_REGISTERS[3].ce_out_i[3]_i_2_n_0 ));
   FDRE \GEN_BKEND_CE_REGISTERS[3].ce_out_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(Q),
@@ -769,13 +836,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
-    .INIT(32'h00000010)) 
+    .INIT(32'h00000002)) 
     \GEN_BKEND_CE_REGISTERS[4].ce_out_i[4]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
         .O(ce_expnd_i_15));
   FDRE \GEN_BKEND_CE_REGISTERS[4].ce_out_i_reg[4] 
        (.C(s_axi_aclk),
@@ -785,13 +852,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
-    .INIT(32'h00000020)) 
+    .INIT(32'h01000000)) 
     \GEN_BKEND_CE_REGISTERS[5].ce_out_i[5]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
         .O(ce_expnd_i_14));
   FDRE \GEN_BKEND_CE_REGISTERS[5].ce_out_i_reg[5] 
        (.C(s_axi_aclk),
@@ -801,13 +868,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
-    .INIT(32'h00100000)) 
+    .INIT(32'h00000020)) 
     \GEN_BKEND_CE_REGISTERS[6].ce_out_i[6]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_13));
   FDRE \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] 
        (.C(s_axi_aclk),
@@ -817,13 +884,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
-    .INIT(32'h00200000)) 
+    .INIT(32'h00000080)) 
     \GEN_BKEND_CE_REGISTERS[7].ce_out_i[7]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(ce_expnd_i_12));
   FDRE \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] 
        (.C(s_axi_aclk),
@@ -833,13 +900,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
-    .INIT(32'h00000040)) 
+    .INIT(32'h00000200)) 
     \GEN_BKEND_CE_REGISTERS[8].ce_out_i[8]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_11));
   FDRE \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] 
        (.C(s_axi_aclk),
@@ -849,13 +916,13 @@ module MB_axi_gpio_0_0_address_decoder
         .R(cs_ce_clr));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
-    .INIT(32'h00000080)) 
+    .INIT(32'h00000800)) 
     \GEN_BKEND_CE_REGISTERS[9].ce_out_i[9]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [0]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [1]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [0]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [1]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
         .O(ce_expnd_i_10));
   FDRE \GEN_BKEND_CE_REGISTERS[9].ce_out_i_reg[9] 
        (.C(s_axi_aclk),
@@ -863,204 +930,204 @@ module MB_axi_gpio_0_0_address_decoder
         .D(ce_expnd_i_10),
         .Q(p_10_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'hEF)) 
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_2 
-       (.I0(irpt_wrack_d1),
-        .I1(Bus_RNW_reg_reg_0),
+       (.I0(Bus_RNW_reg_reg_0),
+        .I1(irpt_wrack_d1),
         .I2(p_7_in),
-        .O(irpt_wrack_d1_reg));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT4 #(
-    .INIT(16'hFE00)) 
+        .O(Bus_RNW_reg_reg_1));
+  LUT6 #(
+    .INIT(64'hAAAAAAAAAAAAAAA2)) 
     \INTR_CTRLR_GEN.ip2Bus_RdAck_intr_reg_hole_d1_i_1 
-       (.I0(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ),
-        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
-        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ),
-        .I3(Bus_RNW_reg_reg_0),
-        .O(intr_rd_ce_or_reduce));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+       (.I0(Bus_RNW_reg_reg_0),
+        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ),
+        .I2(p_13_in),
+        .I3(p_12_in),
+        .I4(p_14_in),
+        .I5(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
+        .O(Bus_RNW_reg_reg_3));
   LUT5 #(
-    .INIT(32'h00FE0000)) 
+    .INIT(32'h0000FD00)) 
     \INTR_CTRLR_GEN.ip2Bus_RdAck_intr_reg_hole_i_1 
        (.I0(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ),
-        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
-        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ),
-        .I3(ip2Bus_RdAck_intr_reg_hole_d1),
-        .I4(Bus_RNW_reg_reg_0),
+        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_2_n_0 ),
+        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
+        .I3(Bus_RNW_reg_reg_0),
+        .I4(ip2Bus_RdAck_intr_reg_hole_d1),
         .O(ip2Bus_RdAck_intr_reg_hole0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h00FE)) 
+  LUT6 #(
+    .INIT(64'h00000000FFFFFFFD)) 
     \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_1 
        (.I0(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ),
-        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
-        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ),
-        .I3(Bus_RNW_reg_reg_0),
-        .O(intr_wr_ce_or_reduce));
-  LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+        .I1(p_13_in),
+        .I2(p_12_in),
+        .I3(p_14_in),
+        .I4(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
+        .I5(Bus_RNW_reg_reg_0),
+        .O(\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6]_0 ));
+  LUT6 #(
+    .INIT(64'h0000000000000001)) 
     \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2 
-       (.I0(p_15_in),
-        .I1(p_1_in_0),
-        .I2(\GEN_BKEND_CE_REGISTERS[19].ce_out_i_reg_n_0_[19] ),
-        .I3(p_13_in),
-        .I4(p_14_in),
+       (.I0(p_4_in),
+        .I1(p_3_in),
+        .I2(p_15_in),
+        .I3(p_6_in),
+        .I4(p_9_in),
+        .I5(p_11_in),
         .O(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hFFFE)) 
     \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3 
-       (.I0(p_11_in),
-        .I1(p_12_in),
-        .I2(p_9_in),
-        .I3(p_10_in),
+       (.I0(p_1_in_0),
+        .I1(\GEN_BKEND_CE_REGISTERS[19].ce_out_i_reg_n_0_[19] ),
+        .I2(p_10_in),
+        .I3(p_2_in),
         .O(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4 
-       (.I0(p_4_in),
-        .I1(p_6_in),
-        .I2(p_2_in),
-        .I3(p_3_in),
-        .O(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
-    .INIT(32'h000000FE)) 
+    .INIT(32'h000000FD)) 
     \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_1 
        (.I0(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0 ),
-        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
-        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0 ),
+        .I1(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_2_n_0 ),
+        .I2(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0 ),
         .I3(ip2Bus_WrAck_intr_reg_hole_d1),
         .I4(Bus_RNW_reg_reg_0),
         .O(ip2Bus_WrAck_intr_reg_hole0));
-  LUT6 #(
-    .INIT(64'h0000000000000010)) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_2 
+       (.I0(p_14_in),
+        .I1(p_12_in),
+        .I2(p_13_in),
+        .O(\INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'h00000001)) 
     \MEM_DECODE_GEN[0].cs_out_i[0]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [4]),
-        .I1(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [2]),
-        .I2(Q),
-        .I3(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [6]),
-        .I4(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [3]),
-        .I5(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 [5]),
+       (.I0(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [4]),
+        .I1(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [5]),
+        .I2(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [6]),
+        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [3]),
+        .I4(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] [2]),
         .O(pselect_hit_i_1));
   FDRE \MEM_DECODE_GEN[0].cs_out_i_reg[0] 
        (.C(s_axi_aclk),
         .CE(Q),
         .D(pselect_hit_i_1),
-        .Q(bus2ip_cs),
+        .Q(\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
-    .INIT(32'h44444440)) 
+    .INIT(32'h0000FE00)) 
     intr2bus_rdack_i_1
-       (.I0(irpt_rdack_d1),
-        .I1(Bus_RNW_reg_reg_0),
-        .I2(p_8_in),
-        .I3(p_7_in),
-        .I4(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .O(intr2bus_rdack0));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
-  LUT5 #(
-    .INIT(32'h000000FE)) 
-    intr2bus_wrack_i_1
        (.I0(p_8_in),
         .I1(p_7_in),
         .I2(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .I3(irpt_wrack_d1),
-        .I4(Bus_RNW_reg_reg_0),
+        .I3(Bus_RNW_reg_reg_0),
+        .I4(irpt_rdack_d1),
+        .O(intr2bus_rdack0));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h000000FE)) 
+    intr2bus_wrack_i_1
+       (.I0(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
+        .I1(p_7_in),
+        .I2(p_8_in),
+        .I3(Bus_RNW_reg_reg_0),
+        .I4(irpt_wrack_d1),
         .O(interrupt_wrce_strb));
   LUT6 #(
-    .INIT(64'hFFFFFFFF10000000)) 
+    .INIT(64'hAAAAAAAAAEAAAAAA)) 
     \ip2bus_data_i_D1[0]_i_1 
-       (.I0(p_7_in),
-        .I1(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .I2(Bus_RNW_reg_reg_0),
-        .I3(p_8_in),
-        .I4(ipif_glbl_irpt_enable_reg),
-        .I5(D[2]),
-        .O(D[3]));
-  LUT5 #(
-    .INIT(32'h00040400)) 
-    \ip2bus_data_i_D1[1]_i_1 
-       (.I0(p_17_in),
-        .I1(Bus_RNW_reg_reg_0),
-        .I2(p_19_in),
-        .I3(p_16_in),
-        .I4(p_18_in),
-        .O(D[2]));
-  LUT6 #(
-    .INIT(64'hEEEEAAAAFAAAAAAA)) 
-    \ip2bus_data_i_D1[30]_i_1 
        (.I0(D[2]),
-        .I1(p_1_in),
+        .I1(ipif_glbl_irpt_enable_reg),
         .I2(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .I3(p_0_in0_in),
+        .I3(p_8_in),
         .I4(Bus_RNW_reg_reg_0),
         .I5(p_7_in),
+        .O(D[3]));
+  LUT5 #(
+    .INIT(32'h00000600)) 
+    \ip2bus_data_i_D1[1]_i_1 
+       (.I0(p_18_in),
+        .I1(p_16_in),
+        .I2(p_17_in),
+        .I3(Bus_RNW_reg_reg_0),
+        .I4(p_19_in),
+        .O(D[2]));
+  LUT6 #(
+    .INIT(64'hEAFAEAAAEAAAEAAA)) 
+    \ip2bus_data_i_D1[30]_i_1 
+       (.I0(\ip2bus_data_i_D1[30]_i_2_n_0 ),
+        .I1(p_1_in),
+        .I2(Bus_RNW_reg_reg_0),
+        .I3(p_7_in),
+        .I4(p_0_in0_in),
+        .I5(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
         .O(D[1]));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF02)) 
-    \ip2bus_data_i_D1[31]_i_1 
-       (.I0(\ip2bus_data_i_D1[31]_i_2_n_0 ),
+    .INIT(64'h00000000023C0000)) 
+    \ip2bus_data_i_D1[30]_i_2 
+       (.I0(reg1[1]),
         .I1(p_18_in),
         .I2(p_16_in),
+        .I3(p_19_in),
+        .I4(Bus_RNW_reg_reg_0),
+        .I5(p_17_in),
+        .O(\ip2bus_data_i_D1[30]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFFFF01)) 
+    \ip2bus_data_i_D1[31]_i_1 
+       (.I0(\ip2bus_data_i_D1[31]_i_2_n_0 ),
+        .I1(p_16_in),
+        .I2(p_18_in),
         .I3(\ip2bus_data_i_D1[31]_i_3_n_0 ),
-        .I4(\ip2bus_data_i_D1[31]_i_4_n_0 ),
-        .I5(D[2]),
+        .I4(D[2]),
         .O(D[0]));
   LUT5 #(
-    .INIT(32'h0C800080)) 
+    .INIT(32'hCF7FFF7F)) 
     \ip2bus_data_i_D1[31]_i_2 
-       (.I0(reg1),
-        .I1(Bus_RNW_reg_reg_0),
-        .I2(p_19_in),
+       (.I0(reg1[0]),
+        .I1(p_19_in),
+        .I2(Bus_RNW_reg_reg_0),
         .I3(p_17_in),
         .I4(reg3),
         .O(\ip2bus_data_i_D1[31]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h80)) 
+  LUT5 #(
+    .INIT(32'hAA00C000)) 
     \ip2bus_data_i_D1[31]_i_3 
-       (.I0(\ip2bus_data_i_D1_reg[31]_0 ),
-        .I1(Bus_RNW_reg_reg_0),
-        .I2(p_7_in),
+       (.I0(\ip2bus_data_i_D1_reg[31] ),
+        .I1(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
+        .I2(\ip2bus_data_i_D1_reg[31]_0 ),
+        .I3(Bus_RNW_reg_reg_0),
+        .I4(p_7_in),
         .O(\ip2bus_data_i_D1[31]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT4 #(
-    .INIT(16'h4000)) 
-    \ip2bus_data_i_D1[31]_i_4 
-       (.I0(p_7_in),
-        .I1(Bus_RNW_reg_reg_0),
-        .I2(\ip2bus_data_i_D1_reg[31] ),
-        .I3(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .O(\ip2bus_data_i_D1[31]_i_4_n_0 ));
   LUT4 #(
     .INIT(16'hFB08)) 
     ipif_glbl_irpt_enable_reg_i_1
-       (.I0(s_axi_wdata[1]),
+       (.I0(s_axi_wdata[2]),
         .I1(p_8_in),
         .I2(Bus_RNW_reg_reg_0),
         .I3(ipif_glbl_irpt_enable_reg),
         .O(\s_axi_wdata[31] ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
-    .INIT(16'hFE00)) 
+    .INIT(16'hAAA8)) 
     irpt_rdack_d1_i_1
-       (.I0(p_8_in),
-        .I1(p_7_in),
-        .I2(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .I3(Bus_RNW_reg_reg_0),
+       (.I0(Bus_RNW_reg_reg_0),
+        .I1(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
+        .I2(p_7_in),
+        .I3(p_8_in),
         .O(irpt_rdack));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
-    .INIT(16'h00FE)) 
+    .INIT(16'h5554)) 
     irpt_wrack_d1_i_1
-       (.I0(p_8_in),
-        .I1(p_7_in),
-        .I2(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
-        .I3(Bus_RNW_reg_reg_0),
-        .O(irpt_wrack));
+       (.I0(Bus_RNW_reg_reg_0),
+        .I1(\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 ),
+        .I2(p_7_in),
+        .I3(p_8_in),
+        .O(Bus_RNW_reg_reg_2));
   LUT6 #(
     .INIT(64'hAAAAAAAAAAAEAAAA)) 
     s_axi_arready_INST_0
@@ -1085,7 +1152,7 @@ endmodule
 
 (* C_ALL_INPUTS = "0" *) (* C_ALL_INPUTS_2 = "1" *) (* C_ALL_OUTPUTS = "1" *) 
 (* C_ALL_OUTPUTS_2 = "0" *) (* C_DOUT_DEFAULT = "32'b00000000000000000000000000000000" *) (* C_DOUT_DEFAULT_2 = "32'b00000000000000000000000000000000" *) 
-(* C_FAMILY = "artix7" *) (* C_GPIO2_WIDTH = "1" *) (* C_GPIO_WIDTH = "1" *) 
+(* C_FAMILY = "artix7" *) (* C_GPIO2_WIDTH = "1" *) (* C_GPIO_WIDTH = "2" *) 
 (* C_INTERRUPT_PRESENT = "1" *) (* C_IS_DUAL = "1" *) (* C_S_AXI_ADDR_WIDTH = "9" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRI_DEFAULT = "32'b11111111111111111111111111111111" *) (* C_TRI_DEFAULT_2 = "32'b11111111111111111111111111111111" *) 
 (* ORIG_REF_NAME = "axi_gpio" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_group = "LOGICORE" *) 
@@ -1136,40 +1203,42 @@ module MB_axi_gpio_0_0_axi_gpio
   output s_axi_rvalid;
   input s_axi_rready;
   (* sigis = "INTR_LEVEL_HIGH" *) output ip2intc_irpt;
-  input [0:0]gpio_io_i;
-  output [0:0]gpio_io_o;
-  output [0:0]gpio_io_t;
+  input [1:0]gpio_io_i;
+  output [1:0]gpio_io_o;
+  output [1:0]gpio_io_t;
   input [0:0]gpio2_io_i;
   output [0:0]gpio2_io_o;
   output [0:0]gpio2_io_t;
 
   wire \<const0> ;
-  wire AXI_LITE_IPIF_I_n_17;
+  wire AXI_LITE_IPIF_I_n_12;
+  wire AXI_LITE_IPIF_I_n_13;
+  wire AXI_LITE_IPIF_I_n_23;
   wire AXI_LITE_IPIF_I_n_24;
   wire AXI_LITE_IPIF_I_n_25;
   wire AXI_LITE_IPIF_I_n_26;
-  wire AXI_LITE_IPIF_I_n_8;
+  wire AXI_LITE_IPIF_I_n_27;
+  wire AXI_LITE_IPIF_I_n_7;
   wire \Dual.gpio2_Data_In ;
   wire GPIO2_intr;
+  wire GPIO_xferAck_i;
   wire \INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_1 ;
   wire \INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_9 ;
   wire IP2INTC_Irpt_i;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ;
-  wire \I_SLAVE_ATTACHMENT/rst ;
-  wire [0:0]bus2ip_addr;
+  wire [5:5]bus2ip_addr;
   wire [1:1]bus2ip_cs;
+  wire bus2ip_reset;
   wire bus2ip_rnw;
   wire [0:0]gpio2_io_i;
-  wire gpio_core_1_n_4;
-  wire gpio_core_1_n_6;
-  wire [0:0]gpio_io_o;
+  wire gpio_core_1_n_7;
+  wire [1:0]gpio_io_o;
+  wire gpio_xferAck_Reg;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack;
   wire intr2bus_rdack0;
   wire intr2bus_wrack;
-  wire intr_rd_ce_or_reduce;
-  wire intr_wr_ce_or_reduce;
   wire ip2Bus_RdAck_intr_reg_hole;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
@@ -1187,11 +1256,10 @@ module MB_axi_gpio_0_0_axi_gpio
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
   wire irpt_rdack_d1;
-  wire irpt_wrack;
   wire irpt_wrack_d1;
   wire p_0_in0_in;
   wire p_1_in;
-  wire [31:31]reg1;
+  wire [30:31]reg1;
   wire [31:31]reg3;
   wire s_axi_aclk;
   wire [8:0]s_axi_araddr;
@@ -1211,6 +1279,7 @@ module MB_axi_gpio_0_0_axi_gpio
 
   assign gpio2_io_o[0] = \<const0> ;
   assign gpio2_io_t[0] = \<const0> ;
+  assign gpio_io_t[1] = \<const0> ;
   assign gpio_io_t[0] = \<const0> ;
   assign s_axi_bresp[1] = \<const0> ;
   assign s_axi_bresp[0] = \<const0> ;
@@ -1250,41 +1319,45 @@ module MB_axi_gpio_0_0_axi_gpio
   assign s_axi_wready = s_axi_awready;
   MB_axi_gpio_0_0_axi_lite_ipif AXI_LITE_IPIF_I
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
+        .Bus_RNW_reg_reg(AXI_LITE_IPIF_I_n_7),
+        .Bus_RNW_reg_reg_0(AXI_LITE_IPIF_I_n_25),
+        .Bus_RNW_reg_reg_1(AXI_LITE_IPIF_I_n_26),
         .D({ip2bus_data_i[0],ip2bus_data,ip2bus_data_i[30],ip2bus_data_i[31]}),
-        .\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] (gpio_core_1_n_6),
         .\Dual.gpio2_Data_In (\Dual.gpio2_Data_In ),
-        .\Dual.gpio2_OE_reg[0] (gpio_core_1_n_4),
+        .\Dual.gpio2_OE_reg[0] (AXI_LITE_IPIF_I_n_12),
+        .\Dual.gpio2_OE_reg[0]_0 (gpio_core_1_n_7),
+        .\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] (AXI_LITE_IPIF_I_n_27),
+        .GPIO_xferAck_i(GPIO_xferAck_i),
         .Q(bus2ip_addr),
-        .\bus2ip_addr_i_reg[3] (AXI_LITE_IPIF_I_n_8),
         .bus2ip_cs(bus2ip_cs),
+        .bus2ip_reset(bus2ip_reset),
         .bus2ip_rnw(bus2ip_rnw),
-        .gpio_io_o(gpio_io_o),
+        .gpio_xferAck_Reg(gpio_xferAck_Reg),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
-        .intr_rd_ce_or_reduce(intr_rd_ce_or_reduce),
-        .intr_wr_ce_or_reduce(intr_wr_ce_or_reduce),
+        .intr2bus_wrack(intr2bus_wrack),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
+        .ip2Bus_WrAck_intr_reg_hole(ip2Bus_WrAck_intr_reg_hole),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
         .ip2Bus_WrAck_intr_reg_hole_d1(ip2Bus_WrAck_intr_reg_hole_d1),
-        .\ip2bus_data_i_D1_reg[31] (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_9 ),
-        .\ip2bus_data_i_D1_reg[31]_0 (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_1 ),
+        .\ip2bus_data_i_D1_reg[31] (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_1 ),
+        .\ip2bus_data_i_D1_reg[31]_0 (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_9 ),
         .ip2bus_rdack_i_D1(ip2bus_rdack_i_D1),
         .ip2bus_rdack_i_D1_reg(s_axi_arready),
+        .ip2bus_wrack_i(ip2bus_wrack_i),
         .ip2bus_wrack_i_D1(ip2bus_wrack_i_D1),
         .ip2bus_wrack_i_D1_reg(s_axi_awready),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .irpt_rdack(irpt_rdack),
         .irpt_rdack_d1(irpt_rdack_d1),
-        .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
-        .irpt_wrack_d1_reg(AXI_LITE_IPIF_I_n_17),
         .p_0_in0_in(p_0_in0_in),
         .p_1_in(p_1_in),
         .p_5_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ),
-        .reg1(reg1),
+        .reg1({reg1[30],reg1[31]}),
         .reg3(reg3),
-        .rst(\I_SLAVE_ATTACHMENT/rst ),
+        .rst_reg(AXI_LITE_IPIF_I_n_13),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr[8:2]),
         .s_axi_aresetn(s_axi_aresetn),
@@ -1297,175 +1370,176 @@ module MB_axi_gpio_0_0_axi_gpio
         .\s_axi_rdata_i_reg[31] ({ip2bus_data_i_D1[0],ip2bus_data_i_D1[1],ip2bus_data_i_D1[30],ip2bus_data_i_D1[31]}),
         .s_axi_rready(s_axi_rready),
         .s_axi_rvalid_i_reg(s_axi_rvalid),
-        .s_axi_wdata({s_axi_wdata[31],s_axi_wdata[0]}),
-        .\s_axi_wdata[0]_0 (AXI_LITE_IPIF_I_n_26),
-        .\s_axi_wdata[31] (AXI_LITE_IPIF_I_n_24),
-        .s_axi_wdata_0_sp_1(AXI_LITE_IPIF_I_n_25),
+        .s_axi_wdata({s_axi_wdata[31],s_axi_wdata[1:0]}),
+        .\s_axi_wdata[31] (AXI_LITE_IPIF_I_n_23),
+        .s_axi_wdata_0_sp_1(AXI_LITE_IPIF_I_n_24),
         .s_axi_wvalid(s_axi_wvalid));
   GND GND
        (.G(\<const0> ));
   MB_axi_gpio_0_0_interrupt_control \INTR_CTRLR_GEN.INTERRUPT_CONTROL_I 
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
         .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_1 ),
-        .\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 (AXI_LITE_IPIF_I_n_17),
+        .\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 (AXI_LITE_IPIF_I_n_7),
         .GPIO2_intr(GPIO2_intr),
         .IP2INTC_Irpt_i(IP2INTC_Irpt_i),
+        .bus2ip_reset(bus2ip_reset),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack(intr2bus_rdack),
         .intr2bus_rdack0(intr2bus_rdack0),
         .intr2bus_wrack(intr2bus_wrack),
         .\ip_irpt_enable_reg_reg[0]_0 (\INTR_CTRLR_GEN.INTERRUPT_CONTROL_I_n_9 ),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
-        .ipif_glbl_irpt_enable_reg_reg_0(AXI_LITE_IPIF_I_n_24),
+        .ipif_glbl_irpt_enable_reg_reg_0(AXI_LITE_IPIF_I_n_23),
         .irpt_rdack(irpt_rdack),
         .irpt_rdack_d1(irpt_rdack_d1),
-        .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
+        .irpt_wrack_d1_reg_0(AXI_LITE_IPIF_I_n_25),
         .p_0_in0_in(p_0_in0_in),
         .p_1_in(p_1_in),
         .p_5_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ),
-        .rst(\I_SLAVE_ATTACHMENT/rst ),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata[1:0]));
   FDRE \INTR_CTRLR_GEN.ip2Bus_RdAck_intr_reg_hole_d1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(intr_rd_ce_or_reduce),
+        .D(AXI_LITE_IPIF_I_n_26),
         .Q(ip2Bus_RdAck_intr_reg_hole_d1),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \INTR_CTRLR_GEN.ip2Bus_RdAck_intr_reg_hole_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2Bus_RdAck_intr_reg_hole0),
         .Q(ip2Bus_RdAck_intr_reg_hole),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_d1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(intr_wr_ce_or_reduce),
+        .D(AXI_LITE_IPIF_I_n_27),
         .Q(ip2Bus_WrAck_intr_reg_hole_d1),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \INTR_CTRLR_GEN.ip2Bus_WrAck_intr_reg_hole_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2Bus_WrAck_intr_reg_hole0),
         .Q(ip2Bus_WrAck_intr_reg_hole),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   (* sigis = "INTR_LEVEL_HIGH" *) 
   FDRE \INTR_CTRLR_GEN.ip2intc_irpt_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(IP2INTC_Irpt_i),
         .Q(ip2intc_irpt),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   MB_axi_gpio_0_0_GPIO_Core gpio_core_1
-       (.\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31]_0 (AXI_LITE_IPIF_I_n_8),
+       (.\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31]_0 (AXI_LITE_IPIF_I_n_12),
         .\Dual.gpio2_Data_In (\Dual.gpio2_Data_In ),
-        .\Dual.gpio2_OE_reg[0]_0 (gpio_core_1_n_4),
-        .\Dual.gpio2_OE_reg[0]_1 (AXI_LITE_IPIF_I_n_25),
-        .\Dual.gpio_Data_Out_reg[0]_0 (AXI_LITE_IPIF_I_n_26),
+        .\Dual.gpio2_OE_reg[0]_0 (gpio_core_1_n_7),
+        .\Dual.gpio2_OE_reg[0]_1 (AXI_LITE_IPIF_I_n_24),
+        .\Dual.gpio_Data_Out_reg[0]_0 (AXI_LITE_IPIF_I_n_13),
         .GPIO2_intr(GPIO2_intr),
+        .GPIO_xferAck_i(GPIO_xferAck_i),
         .Q(bus2ip_addr),
         .bus2ip_cs(bus2ip_cs),
+        .bus2ip_reset(bus2ip_reset),
         .bus2ip_rnw(bus2ip_rnw),
         .gpio2_io_i(gpio2_io_i),
         .gpio_io_o(gpio_io_o),
-        .iGPIO_xferAck_reg_0(gpio_core_1_n_6),
+        .gpio_xferAck_Reg(gpio_xferAck_Reg),
         .intr2bus_rdack(intr2bus_rdack),
-        .intr2bus_wrack(intr2bus_wrack),
         .ip2Bus_RdAck_intr_reg_hole(ip2Bus_RdAck_intr_reg_hole),
-        .ip2Bus_WrAck_intr_reg_hole(ip2Bus_WrAck_intr_reg_hole),
         .ip2bus_rdack_i(ip2bus_rdack_i),
-        .ip2bus_wrack_i(ip2bus_wrack_i),
-        .reg1(reg1),
+        .reg1({reg1[30],reg1[31]}),
         .reg3(reg3),
-        .rst(\I_SLAVE_ATTACHMENT/rst ),
-        .s_axi_aclk(s_axi_aclk));
+        .s_axi_aclk(s_axi_aclk),
+        .s_axi_wdata(s_axi_wdata[1:0]));
   FDRE \ip2bus_data_i_D1_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_data_i[0]),
         .Q(ip2bus_data_i_D1[0]),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \ip2bus_data_i_D1_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_data),
         .Q(ip2bus_data_i_D1[1]),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \ip2bus_data_i_D1_reg[30] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_data_i[30]),
         .Q(ip2bus_data_i_D1[30]),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE \ip2bus_data_i_D1_reg[31] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_data_i[31]),
         .Q(ip2bus_data_i_D1[31]),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE ip2bus_rdack_i_D1_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_rdack_i),
         .Q(ip2bus_rdack_i_D1),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
   FDRE ip2bus_wrack_i_D1_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ip2bus_wrack_i),
         .Q(ip2bus_wrack_i_D1),
-        .R(\I_SLAVE_ATTACHMENT/rst ));
+        .R(bus2ip_reset));
 endmodule
 
 (* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module MB_axi_gpio_0_0_axi_lite_ipif
-   (rst,
+   (bus2ip_reset,
     p_5_in,
     bus2ip_rnw,
     bus2ip_cs,
     Bus_RNW_reg,
     s_axi_rvalid_i_reg,
     s_axi_bvalid_i_reg,
-    Q,
-    \bus2ip_addr_i_reg[3] ,
-    D,
-    irpt_rdack,
-    intr2bus_rdack0,
-    irpt_wrack,
+    Bus_RNW_reg_reg,
     interrupt_wrce_strb,
-    irpt_wrack_d1_reg,
+    intr2bus_rdack0,
+    irpt_rdack,
+    Q,
+    \Dual.gpio2_OE_reg[0] ,
+    rst_reg,
     ip2Bus_WrAck_intr_reg_hole0,
-    intr_rd_ce_or_reduce,
     ip2Bus_RdAck_intr_reg_hole0,
-    intr_wr_ce_or_reduce,
+    D,
+    ip2bus_wrack_i,
     ip2bus_rdack_i_D1_reg,
     ip2bus_wrack_i_D1_reg,
     \s_axi_wdata[31] ,
     s_axi_wdata_0_sp_1,
-    \s_axi_wdata[0]_0 ,
+    Bus_RNW_reg_reg_0,
+    Bus_RNW_reg_reg_1,
+    \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ,
     s_axi_rdata,
     s_axi_aclk,
     s_axi_arvalid,
-    \Dual.gpio2_OE_reg[0] ,
-    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ,
-    \Dual.gpio2_Data_In ,
-    ipif_glbl_irpt_enable_reg,
-    irpt_rdack_d1,
     irpt_wrack_d1,
+    irpt_rdack_d1,
+    \Dual.gpio2_OE_reg[0]_0 ,
+    \Dual.gpio2_Data_In ,
     ip2Bus_WrAck_intr_reg_hole_d1,
     ip2Bus_RdAck_intr_reg_hole_d1,
+    gpio_xferAck_Reg,
+    GPIO_xferAck_i,
+    ipif_glbl_irpt_enable_reg,
+    \ip2bus_data_i_D1_reg[31] ,
+    \ip2bus_data_i_D1_reg[31]_0 ,
     p_1_in,
     p_0_in0_in,
     reg1,
     reg3,
-    \ip2bus_data_i_D1_reg[31] ,
-    \ip2bus_data_i_D1_reg[31]_0 ,
+    intr2bus_wrack,
+    ip2Bus_WrAck_intr_reg_hole,
     s_axi_rready,
     s_axi_bready,
     s_axi_wdata,
-    gpio_io_o,
     s_axi_awvalid,
     s_axi_wvalid,
     \s_axi_rdata_i_reg[31] ,
@@ -1474,51 +1548,54 @@ module MB_axi_gpio_0_0_axi_lite_ipif
     ip2bus_wrack_i_D1,
     s_axi_araddr,
     s_axi_awaddr);
-  output rst;
+  output bus2ip_reset;
   output p_5_in;
   output bus2ip_rnw;
   output [0:0]bus2ip_cs;
   output Bus_RNW_reg;
   output s_axi_rvalid_i_reg;
   output s_axi_bvalid_i_reg;
-  output [0:0]Q;
-  output \bus2ip_addr_i_reg[3] ;
-  output [3:0]D;
-  output irpt_rdack;
-  output intr2bus_rdack0;
-  output irpt_wrack;
+  output Bus_RNW_reg_reg;
   output interrupt_wrce_strb;
-  output irpt_wrack_d1_reg;
+  output intr2bus_rdack0;
+  output irpt_rdack;
+  output [0:0]Q;
+  output \Dual.gpio2_OE_reg[0] ;
+  output rst_reg;
   output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_rd_ce_or_reduce;
   output ip2Bus_RdAck_intr_reg_hole0;
-  output intr_wr_ce_or_reduce;
+  output [3:0]D;
+  output ip2bus_wrack_i;
   output ip2bus_rdack_i_D1_reg;
   output ip2bus_wrack_i_D1_reg;
   output \s_axi_wdata[31] ;
   output s_axi_wdata_0_sp_1;
-  output \s_axi_wdata[0]_0 ;
+  output Bus_RNW_reg_reg_0;
+  output Bus_RNW_reg_reg_1;
+  output \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ;
   output [3:0]s_axi_rdata;
   input s_axi_aclk;
   input s_axi_arvalid;
-  input \Dual.gpio2_OE_reg[0] ;
-  input \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
-  input \Dual.gpio2_Data_In ;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_rdack_d1;
   input irpt_wrack_d1;
+  input irpt_rdack_d1;
+  input \Dual.gpio2_OE_reg[0]_0 ;
+  input \Dual.gpio2_Data_In ;
   input ip2Bus_WrAck_intr_reg_hole_d1;
   input ip2Bus_RdAck_intr_reg_hole_d1;
-  input p_1_in;
-  input p_0_in0_in;
-  input [0:0]reg1;
-  input [0:0]reg3;
+  input gpio_xferAck_Reg;
+  input GPIO_xferAck_i;
+  input ipif_glbl_irpt_enable_reg;
   input \ip2bus_data_i_D1_reg[31] ;
   input \ip2bus_data_i_D1_reg[31]_0 ;
+  input p_1_in;
+  input p_0_in0_in;
+  input [1:0]reg1;
+  input [0:0]reg3;
+  input intr2bus_wrack;
+  input ip2Bus_WrAck_intr_reg_hole;
   input s_axi_rready;
   input s_axi_bready;
-  input [1:0]s_axi_wdata;
-  input [0:0]gpio_io_o;
+  input [2:0]s_axi_wdata;
   input s_axi_awvalid;
   input s_axi_wvalid;
   input [3:0]\s_axi_rdata_i_reg[31] ;
@@ -1529,41 +1606,45 @@ module MB_axi_gpio_0_0_axi_lite_ipif
   input [6:0]s_axi_awaddr;
 
   wire Bus_RNW_reg;
+  wire Bus_RNW_reg_reg;
+  wire Bus_RNW_reg_reg_0;
+  wire Bus_RNW_reg_reg_1;
   wire [3:0]D;
-  wire \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
   wire \Dual.gpio2_Data_In ;
   wire \Dual.gpio2_OE_reg[0] ;
+  wire \Dual.gpio2_OE_reg[0]_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ;
+  wire GPIO_xferAck_i;
   wire [0:0]Q;
-  wire \bus2ip_addr_i_reg[3] ;
   wire [0:0]bus2ip_cs;
+  wire bus2ip_reset;
   wire bus2ip_rnw;
-  wire [0:0]gpio_io_o;
+  wire gpio_xferAck_Reg;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
-  wire intr_rd_ce_or_reduce;
-  wire intr_wr_ce_or_reduce;
+  wire intr2bus_wrack;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
+  wire ip2Bus_WrAck_intr_reg_hole;
   wire ip2Bus_WrAck_intr_reg_hole0;
   wire ip2Bus_WrAck_intr_reg_hole_d1;
   wire \ip2bus_data_i_D1_reg[31] ;
   wire \ip2bus_data_i_D1_reg[31]_0 ;
   wire ip2bus_rdack_i_D1;
   wire ip2bus_rdack_i_D1_reg;
+  wire ip2bus_wrack_i;
   wire ip2bus_wrack_i_D1;
   wire ip2bus_wrack_i_D1_reg;
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
   wire irpt_rdack_d1;
-  wire irpt_wrack;
   wire irpt_wrack_d1;
-  wire irpt_wrack_d1_reg;
   wire p_0_in0_in;
   wire p_1_in;
   wire p_5_in;
-  wire [0:0]reg1;
+  wire [1:0]reg1;
   wire [0:0]reg3;
-  wire rst;
+  wire rst_reg;
   wire s_axi_aclk;
   wire [6:0]s_axi_araddr;
   wire s_axi_aresetn;
@@ -1576,8 +1657,7 @@ module MB_axi_gpio_0_0_axi_lite_ipif
   wire [3:0]\s_axi_rdata_i_reg[31] ;
   wire s_axi_rready;
   wire s_axi_rvalid_i_reg;
-  wire [1:0]s_axi_wdata;
-  wire \s_axi_wdata[0]_0 ;
+  wire [2:0]s_axi_wdata;
   wire \s_axi_wdata[31] ;
   wire s_axi_wdata_0_sn_1;
   wire s_axi_wvalid;
@@ -1585,41 +1665,45 @@ module MB_axi_gpio_0_0_axi_lite_ipif
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
   MB_axi_gpio_0_0_slave_attachment I_SLAVE_ATTACHMENT
        (.Bus_RNW_reg_reg(Bus_RNW_reg),
+        .Bus_RNW_reg_reg_0(Bus_RNW_reg_reg),
+        .Bus_RNW_reg_reg_1(Bus_RNW_reg_reg_0),
+        .Bus_RNW_reg_reg_2(Bus_RNW_reg_reg_1),
         .D(D),
-        .\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] (\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ),
         .\Dual.gpio2_Data_In (\Dual.gpio2_Data_In ),
         .\Dual.gpio2_OE_reg[0] (\Dual.gpio2_OE_reg[0] ),
+        .\Dual.gpio2_OE_reg[0]_0 (\Dual.gpio2_OE_reg[0]_0 ),
         .\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] (p_5_in),
+        .\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] (\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ),
+        .GPIO_xferAck_i(GPIO_xferAck_i),
+        .\MEM_DECODE_GEN[0].cs_out_i_reg[0] (bus2ip_cs),
         .Q(Q),
-        .SS(rst),
-        .\bus2ip_addr_i_reg[3]_0 (\bus2ip_addr_i_reg[3] ),
-        .bus2ip_cs(bus2ip_cs),
+        .SR(bus2ip_reset),
         .bus2ip_rnw_i_reg_0(bus2ip_rnw),
-        .gpio_io_o(gpio_io_o),
+        .gpio_xferAck_Reg(gpio_xferAck_Reg),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
-        .intr_rd_ce_or_reduce(intr_rd_ce_or_reduce),
-        .intr_wr_ce_or_reduce(intr_wr_ce_or_reduce),
+        .intr2bus_wrack(intr2bus_wrack),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
+        .ip2Bus_WrAck_intr_reg_hole(ip2Bus_WrAck_intr_reg_hole),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
         .ip2Bus_WrAck_intr_reg_hole_d1(ip2Bus_WrAck_intr_reg_hole_d1),
         .\ip2bus_data_i_D1_reg[31] (\ip2bus_data_i_D1_reg[31] ),
         .\ip2bus_data_i_D1_reg[31]_0 (\ip2bus_data_i_D1_reg[31]_0 ),
         .ip2bus_rdack_i_D1(ip2bus_rdack_i_D1),
         .ip2bus_rdack_i_D1_reg(ip2bus_rdack_i_D1_reg),
+        .ip2bus_wrack_i(ip2bus_wrack_i),
         .ip2bus_wrack_i_D1(ip2bus_wrack_i_D1),
         .ip2bus_wrack_i_D1_reg(ip2bus_wrack_i_D1_reg),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .irpt_rdack(irpt_rdack),
         .irpt_rdack_d1(irpt_rdack_d1),
-        .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
-        .irpt_wrack_d1_reg(irpt_wrack_d1_reg),
         .p_0_in0_in(p_0_in0_in),
         .p_1_in(p_1_in),
         .reg1(reg1),
         .reg3(reg3),
+        .rst_reg_0(rst_reg),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr),
         .s_axi_aresetn(s_axi_aresetn),
@@ -1633,14 +1717,13 @@ module MB_axi_gpio_0_0_axi_lite_ipif
         .s_axi_rready(s_axi_rready),
         .s_axi_rvalid_i_reg_0(s_axi_rvalid_i_reg),
         .s_axi_wdata(s_axi_wdata),
-        .\s_axi_wdata[0]_0 (\s_axi_wdata[0]_0 ),
         .\s_axi_wdata[31] (\s_axi_wdata[31] ),
         .s_axi_wdata_0_sp_1(s_axi_wdata_0_sn_1),
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
 (* ORIG_REF_NAME = "cdc_sync" *) 
-module MB_axi_gpio_0_0_cdc_sync
+module MB_axi_gpio_0_0_cdc_sync__parameterized0
    (\Dual.gpio2_data_in_xor ,
     scndry_vect_out,
     \Dual.gpio2_Data_In ,
@@ -1664,8 +1747,8 @@ module MB_axi_gpio_0_0_cdc_sync
   LUT2 #(
     .INIT(4'h6)) 
     \Dual.gen_interrupt_dual.gpio2_data_in_xor_reg[0]_i_1 
-       (.I0(scndry_vect_out),
-        .I1(\Dual.gpio2_Data_In ),
+       (.I0(\Dual.gpio2_Data_In ),
+        .I1(scndry_vect_out),
         .O(\Dual.gpio2_data_in_xor ));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -1729,16 +1812,16 @@ module MB_axi_gpio_0_0_interrupt_control
     IP2INTC_Irpt_i,
     p_0_in0_in,
     \ip_irpt_enable_reg_reg[0]_0 ,
-    rst,
-    irpt_wrack,
+    bus2ip_reset,
+    irpt_wrack_d1_reg_0,
     s_axi_aclk,
     GPIO2_intr,
     interrupt_wrce_strb,
     irpt_rdack,
     intr2bus_rdack0,
     ipif_glbl_irpt_enable_reg_reg_0,
-    \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ,
     s_axi_wdata,
+    \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ,
     p_5_in,
     Bus_RNW_reg);
   output irpt_wrack_d1;
@@ -1751,16 +1834,16 @@ module MB_axi_gpio_0_0_interrupt_control
   output IP2INTC_Irpt_i;
   output p_0_in0_in;
   output \ip_irpt_enable_reg_reg[0]_0 ;
-  input rst;
-  input irpt_wrack;
+  input bus2ip_reset;
+  input irpt_wrack_d1_reg_0;
   input s_axi_aclk;
   input GPIO2_intr;
   input interrupt_wrce_strb;
   input irpt_rdack;
   input intr2bus_rdack0;
   input ipif_glbl_irpt_enable_reg_reg_0;
-  input \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ;
   input [1:0]s_axi_wdata;
+  input \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ;
   input p_5_in;
   input Bus_RNW_reg;
 
@@ -1775,6 +1858,7 @@ module MB_axi_gpio_0_0_interrupt_control
   wire \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ;
   wire GPIO2_intr;
   wire IP2INTC_Irpt_i;
+  wire bus2ip_reset;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack;
   wire intr2bus_rdack0;
@@ -1786,12 +1870,11 @@ module MB_axi_gpio_0_0_interrupt_control
   wire ipif_glbl_irpt_enable_reg_reg_0;
   wire irpt_rdack;
   wire irpt_rdack_d1;
-  wire irpt_wrack;
   wire irpt_wrack_d1;
+  wire irpt_wrack_d1_reg_0;
   wire p_0_in0_in;
   wire p_1_in;
   wire p_5_in;
-  wire rst;
   wire s_axi_aclk;
   wire [1:0]s_axi_wdata;
 
@@ -1800,76 +1883,76 @@ module MB_axi_gpio_0_0_interrupt_control
         .CE(1'b1),
         .D(1'b0),
         .Q(\DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly1 ),
-        .S(rst));
+        .S(bus2ip_reset));
   FDSE \DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly1 ),
         .Q(\DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2 ),
-        .S(rst));
+        .S(bus2ip_reset));
   FDSE \DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(GPIO2_intr),
         .Q(\DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly1 ),
-        .S(rst));
+        .S(bus2ip_reset));
   FDSE \DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly2_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly1 ),
         .Q(\DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly2 ),
-        .S(rst));
+        .S(bus2ip_reset));
   LUT5 #(
-    .INIT(32'hF44FF4F4)) 
+    .INIT(32'hFF4F44F4)) 
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1 
        (.I0(\DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly2 ),
         .I1(\DO_IRPT_INPUT[0].GEN_POS_EDGE_DETECT.irpt_dly1 ),
-        .I2(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
+        .I2(s_axi_wdata[0]),
         .I3(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ),
-        .I4(s_axi_wdata[0]),
+        .I4(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
         .O(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1_n_0 ));
   FDRE \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1_n_0 ),
         .Q(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
-        .R(rst));
+        .R(bus2ip_reset));
   LUT5 #(
-    .INIT(32'hF44FF4F4)) 
+    .INIT(32'hFF4F44F4)) 
     \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg[1]_i_1 
        (.I0(\DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly2 ),
         .I1(\DO_IRPT_INPUT[1].GEN_POS_EDGE_DETECT.irpt_dly1 ),
-        .I2(p_1_in),
+        .I2(s_axi_wdata[1]),
         .I3(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ),
-        .I4(s_axi_wdata[1]),
+        .I4(p_1_in),
         .O(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg[1]_i_1_n_0 ));
   FDRE \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg[1]_i_1_n_0 ),
         .Q(p_1_in),
-        .R(rst));
+        .R(bus2ip_reset));
   LUT5 #(
-    .INIT(32'hF0808080)) 
+    .INIT(32'hAA808080)) 
     \INTR_CTRLR_GEN.ip2intc_irpt_i_1 
-       (.I0(p_0_in0_in),
+       (.I0(ipif_glbl_irpt_enable_reg),
         .I1(p_1_in),
-        .I2(ipif_glbl_irpt_enable_reg),
-        .I3(\ip_irpt_enable_reg_reg[0]_0 ),
-        .I4(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
+        .I2(p_0_in0_in),
+        .I3(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
+        .I4(\ip_irpt_enable_reg_reg[0]_0 ),
         .O(IP2INTC_Irpt_i));
   FDRE intr2bus_rdack_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(intr2bus_rdack0),
         .Q(intr2bus_rdack),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE intr2bus_wrack_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(interrupt_wrce_strb),
         .Q(intr2bus_wrack),
-        .R(rst));
+        .R(bus2ip_reset));
   LUT4 #(
     .INIT(16'hFB08)) 
     \ip_irpt_enable_reg[0]_i_1 
@@ -1891,80 +1974,83 @@ module MB_axi_gpio_0_0_interrupt_control
         .CE(1'b1),
         .D(\ip_irpt_enable_reg[0]_i_1_n_0 ),
         .Q(\ip_irpt_enable_reg_reg[0]_0 ),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE \ip_irpt_enable_reg_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\ip_irpt_enable_reg[1]_i_1_n_0 ),
         .Q(p_0_in0_in),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE ipif_glbl_irpt_enable_reg_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(ipif_glbl_irpt_enable_reg_reg_0),
         .Q(ipif_glbl_irpt_enable_reg),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE irpt_rdack_d1_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(irpt_rdack),
         .Q(irpt_rdack_d1),
-        .R(rst));
+        .R(bus2ip_reset));
   FDRE irpt_wrack_d1_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(irpt_wrack),
+        .D(irpt_wrack_d1_reg_0),
         .Q(irpt_wrack_d1),
-        .R(rst));
+        .R(bus2ip_reset));
 endmodule
 
 (* ORIG_REF_NAME = "slave_attachment" *) 
 module MB_axi_gpio_0_0_slave_attachment
-   (SS,
+   (SR,
     \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] ,
     bus2ip_rnw_i_reg_0,
-    bus2ip_cs,
+    \MEM_DECODE_GEN[0].cs_out_i_reg[0] ,
     Bus_RNW_reg_reg,
     s_axi_rvalid_i_reg_0,
     s_axi_bvalid_i_reg_0,
-    Q,
-    \bus2ip_addr_i_reg[3]_0 ,
-    D,
-    irpt_rdack,
-    intr2bus_rdack0,
-    irpt_wrack,
+    Bus_RNW_reg_reg_0,
     interrupt_wrce_strb,
-    irpt_wrack_d1_reg,
+    intr2bus_rdack0,
+    irpt_rdack,
+    Q,
+    \Dual.gpio2_OE_reg[0] ,
+    rst_reg_0,
     ip2Bus_WrAck_intr_reg_hole0,
-    intr_rd_ce_or_reduce,
     ip2Bus_RdAck_intr_reg_hole0,
-    intr_wr_ce_or_reduce,
+    D,
+    ip2bus_wrack_i,
     ip2bus_rdack_i_D1_reg,
     ip2bus_wrack_i_D1_reg,
     \s_axi_wdata[31] ,
     s_axi_wdata_0_sp_1,
-    \s_axi_wdata[0]_0 ,
+    Bus_RNW_reg_reg_1,
+    Bus_RNW_reg_reg_2,
+    \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ,
     s_axi_rdata,
     s_axi_aclk,
     s_axi_arvalid,
-    \Dual.gpio2_OE_reg[0] ,
-    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ,
-    \Dual.gpio2_Data_In ,
-    ipif_glbl_irpt_enable_reg,
-    irpt_rdack_d1,
     irpt_wrack_d1,
+    irpt_rdack_d1,
+    \Dual.gpio2_OE_reg[0]_0 ,
+    \Dual.gpio2_Data_In ,
     ip2Bus_WrAck_intr_reg_hole_d1,
     ip2Bus_RdAck_intr_reg_hole_d1,
+    gpio_xferAck_Reg,
+    GPIO_xferAck_i,
+    ipif_glbl_irpt_enable_reg,
+    \ip2bus_data_i_D1_reg[31] ,
+    \ip2bus_data_i_D1_reg[31]_0 ,
     p_1_in,
     p_0_in0_in,
     reg1,
     reg3,
-    \ip2bus_data_i_D1_reg[31] ,
-    \ip2bus_data_i_D1_reg[31]_0 ,
+    intr2bus_wrack,
+    ip2Bus_WrAck_intr_reg_hole,
     s_axi_rready,
     s_axi_bready,
     s_axi_wdata,
-    gpio_io_o,
     s_axi_awvalid,
     s_axi_wvalid,
     \s_axi_rdata_i_reg[31]_0 ,
@@ -1973,51 +2059,54 @@ module MB_axi_gpio_0_0_slave_attachment
     ip2bus_wrack_i_D1,
     s_axi_araddr,
     s_axi_awaddr);
-  output [0:0]SS;
+  output [0:0]SR;
   output \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] ;
   output bus2ip_rnw_i_reg_0;
-  output [0:0]bus2ip_cs;
+  output \MEM_DECODE_GEN[0].cs_out_i_reg[0] ;
   output Bus_RNW_reg_reg;
   output s_axi_rvalid_i_reg_0;
   output s_axi_bvalid_i_reg_0;
-  output [0:0]Q;
-  output \bus2ip_addr_i_reg[3]_0 ;
-  output [3:0]D;
-  output irpt_rdack;
-  output intr2bus_rdack0;
-  output irpt_wrack;
+  output Bus_RNW_reg_reg_0;
   output interrupt_wrce_strb;
-  output irpt_wrack_d1_reg;
+  output intr2bus_rdack0;
+  output irpt_rdack;
+  output [0:0]Q;
+  output \Dual.gpio2_OE_reg[0] ;
+  output rst_reg_0;
   output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_rd_ce_or_reduce;
   output ip2Bus_RdAck_intr_reg_hole0;
-  output intr_wr_ce_or_reduce;
+  output [3:0]D;
+  output ip2bus_wrack_i;
   output ip2bus_rdack_i_D1_reg;
   output ip2bus_wrack_i_D1_reg;
   output \s_axi_wdata[31] ;
   output s_axi_wdata_0_sp_1;
-  output \s_axi_wdata[0]_0 ;
+  output Bus_RNW_reg_reg_1;
+  output Bus_RNW_reg_reg_2;
+  output \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ;
   output [3:0]s_axi_rdata;
   input s_axi_aclk;
   input s_axi_arvalid;
-  input \Dual.gpio2_OE_reg[0] ;
-  input \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
-  input \Dual.gpio2_Data_In ;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_rdack_d1;
   input irpt_wrack_d1;
+  input irpt_rdack_d1;
+  input \Dual.gpio2_OE_reg[0]_0 ;
+  input \Dual.gpio2_Data_In ;
   input ip2Bus_WrAck_intr_reg_hole_d1;
   input ip2Bus_RdAck_intr_reg_hole_d1;
-  input p_1_in;
-  input p_0_in0_in;
-  input [0:0]reg1;
-  input [0:0]reg3;
+  input gpio_xferAck_Reg;
+  input GPIO_xferAck_i;
+  input ipif_glbl_irpt_enable_reg;
   input \ip2bus_data_i_D1_reg[31] ;
   input \ip2bus_data_i_D1_reg[31]_0 ;
+  input p_1_in;
+  input p_0_in0_in;
+  input [1:0]reg1;
+  input [0:0]reg3;
+  input intr2bus_wrack;
+  input ip2Bus_WrAck_intr_reg_hole;
   input s_axi_rready;
   input s_axi_bready;
-  input [1:0]s_axi_wdata;
-  input [0:0]gpio_io_o;
+  input [2:0]s_axi_wdata;
   input s_axi_awvalid;
   input s_axi_wvalid;
   input [3:0]\s_axi_rdata_i_reg[31]_0 ;
@@ -2028,10 +2117,13 @@ module MB_axi_gpio_0_0_slave_attachment
   input [6:0]s_axi_awaddr;
 
   wire Bus_RNW_reg_reg;
+  wire Bus_RNW_reg_reg_0;
+  wire Bus_RNW_reg_reg_1;
+  wire Bus_RNW_reg_reg_2;
   wire [3:0]D;
-  wire \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ;
   wire \Dual.gpio2_Data_In ;
   wire \Dual.gpio2_OE_reg[0] ;
+  wire \Dual.gpio2_OE_reg[0]_0 ;
   wire \FSM_onehot_state[0]_i_1_n_0 ;
   wire \FSM_onehot_state[1]_i_1_n_0 ;
   wire \FSM_onehot_state[2]_i_1_n_0 ;
@@ -2039,36 +2131,36 @@ module MB_axi_gpio_0_0_slave_attachment
   wire \FSM_onehot_state_reg_n_0_[0] ;
   wire \FSM_onehot_state_reg_n_0_[3] ;
   wire \GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] ;
+  wire \GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ;
+  wire GPIO_xferAck_i;
   wire [3:0]\INCLUDE_DPHASE_TIMER.dpto_cnt_reg ;
+  wire \MEM_DECODE_GEN[0].cs_out_i_reg[0] ;
   wire [0:0]Q;
-  wire [0:0]SS;
-  wire [1:6]bus2ip_addr;
+  wire [0:0]SR;
+  wire [0:6]bus2ip_addr;
   wire \bus2ip_addr_i[8]_i_1_n_0 ;
-  wire \bus2ip_addr_i_reg[3]_0 ;
-  wire [0:0]bus2ip_cs;
   wire bus2ip_rnw_i_reg_0;
   wire clear;
-  wire [0:0]gpio_io_o;
+  wire gpio_xferAck_Reg;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
-  wire intr_rd_ce_or_reduce;
-  wire intr_wr_ce_or_reduce;
+  wire intr2bus_wrack;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
+  wire ip2Bus_WrAck_intr_reg_hole;
   wire ip2Bus_WrAck_intr_reg_hole0;
   wire ip2Bus_WrAck_intr_reg_hole_d1;
   wire \ip2bus_data_i_D1_reg[31] ;
   wire \ip2bus_data_i_D1_reg[31]_0 ;
   wire ip2bus_rdack_i_D1;
   wire ip2bus_rdack_i_D1_reg;
+  wire ip2bus_wrack_i;
   wire ip2bus_wrack_i_D1;
   wire ip2bus_wrack_i_D1_reg;
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
   wire irpt_rdack_d1;
-  wire irpt_wrack;
   wire irpt_wrack_d1;
-  wire irpt_wrack_d1_reg;
   wire is_read_i_1_n_0;
   wire is_read_reg_n_0;
   wire is_write_i_1_n_0;
@@ -2079,9 +2171,10 @@ module MB_axi_gpio_0_0_slave_attachment
   wire [8:2]p_1_in__0;
   wire p_5_in;
   wire [3:0]plusOp;
-  wire [0:0]reg1;
+  wire [1:0]reg1;
   wire [0:0]reg3;
   wire rst_i_1_n_0;
+  wire rst_reg_0;
   wire s_axi_aclk;
   wire [6:0]s_axi_araddr;
   wire s_axi_aresetn;
@@ -2098,8 +2191,7 @@ module MB_axi_gpio_0_0_slave_attachment
   wire s_axi_rresp_i;
   wire s_axi_rvalid_i_i_1_n_0;
   wire s_axi_rvalid_i_reg_0;
-  wire [1:0]s_axi_wdata;
-  wire \s_axi_wdata[0]_0 ;
+  wire [2:0]s_axi_wdata;
   wire \s_axi_wdata[31] ;
   wire s_axi_wdata_0_sn_1;
   wire s_axi_wvalid;
@@ -2112,16 +2204,6 @@ module MB_axi_gpio_0_0_slave_attachment
   wire \state_reg_n_0_[1] ;
 
   assign s_axi_wdata_0_sp_1 = s_axi_wdata_0_sn_1;
-  LUT6 #(
-    .INIT(64'h8A00800000000000)) 
-    \Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3[31]_i_1 
-       (.I0(bus2ip_addr[5]),
-        .I1(\Dual.gpio2_OE_reg[0] ),
-        .I2(bus2ip_addr[6]),
-        .I3(\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ),
-        .I4(\Dual.gpio2_Data_In ),
-        .I5(bus2ip_rnw_i_reg_0),
-        .O(\bus2ip_addr_i_reg[3]_0 ));
   LUT6 #(
     .INIT(64'hFFFF150015001500)) 
     \FSM_onehot_state[0]_i_1 
@@ -2176,7 +2258,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\FSM_onehot_state[0]_i_1_n_0 ),
         .Q(\FSM_onehot_state_reg_n_0_[0] ),
-        .S(SS));
+        .S(SR));
   (* FSM_ENCODED_STATES = "iSTATE:0010,iSTATE0:0100,iSTATE1:1000,iSTATE2:0001" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -2185,7 +2267,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\FSM_onehot_state[1]_i_1_n_0 ),
         .Q(s_axi_rresp_i),
-        .R(SS));
+        .R(SR));
   (* FSM_ENCODED_STATES = "iSTATE:0010,iSTATE0:0100,iSTATE1:1000,iSTATE2:0001" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -2194,7 +2276,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\FSM_onehot_state[2]_i_1_n_0 ),
         .Q(s_axi_bresp_i),
-        .R(SS));
+        .R(SR));
   (* FSM_ENCODED_STATES = "iSTATE:0010,iSTATE0:0100,iSTATE1:1000,iSTATE2:0001" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -2203,21 +2285,21 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\FSM_onehot_state[3]_i_1_n_0 ),
         .Q(\FSM_onehot_state_reg_n_0_[3] ),
-        .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+        .R(SR));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[0]_i_1 
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg [0]),
         .O(plusOp[0]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[1]_i_1 
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg [0]),
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg [1]),
         .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'h78)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[2]_i_1 
@@ -2231,7 +2313,7 @@ module MB_axi_gpio_0_0_slave_attachment
        (.I0(\state_reg_n_0_[0] ),
         .I1(\state_reg_n_0_[1] ),
         .O(clear));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[3]_i_2 
@@ -2266,18 +2348,24 @@ module MB_axi_gpio_0_0_slave_attachment
         .R(clear));
   MB_axi_gpio_0_0_address_decoder I_DECODER
        (.Bus_RNW_reg_reg_0(Bus_RNW_reg_reg),
+        .Bus_RNW_reg_reg_1(Bus_RNW_reg_reg_0),
+        .Bus_RNW_reg_reg_2(Bus_RNW_reg_reg_1),
+        .Bus_RNW_reg_reg_3(Bus_RNW_reg_reg_2),
+        .Bus_RNW_reg_reg_4(bus2ip_rnw_i_reg_0),
         .D(D),
-        .\Dual.gpio2_OE_reg[0] (bus2ip_rnw_i_reg_0),
-        .\Dual.gpio2_OE_reg[0]_0 (\Dual.gpio2_OE_reg[0] ),
+        .\Dual.ALLIN0_ND_G2.READ_REG2_GEN[0].reg3_reg[31] ({bus2ip_addr[0],bus2ip_addr[1],bus2ip_addr[2],bus2ip_addr[3],bus2ip_addr[4],Q,bus2ip_addr[6]}),
+        .\Dual.gpio2_Data_In (\Dual.gpio2_Data_In ),
+        .\Dual.gpio2_OE_reg[0] (\Dual.gpio2_OE_reg[0] ),
+        .\Dual.gpio2_OE_reg[0]_0 (\Dual.gpio2_OE_reg[0]_0 ),
         .\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14]_0 (\GEN_BKEND_CE_REGISTERS[14].ce_out_i_reg[14] ),
-        .\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ({Q,bus2ip_addr[1],bus2ip_addr[2],bus2ip_addr[3],bus2ip_addr[4],bus2ip_addr[5],bus2ip_addr[6]}),
+        .\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6]_0 (\GEN_BKEND_CE_REGISTERS[6].ce_out_i_reg[6] ),
+        .GPIO_xferAck_i(GPIO_xferAck_i),
+        .\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 (\MEM_DECODE_GEN[0].cs_out_i_reg[0] ),
         .Q(start2),
-        .bus2ip_cs(bus2ip_cs),
-        .gpio_io_o(gpio_io_o),
+        .SR(SR),
+        .gpio_xferAck_Reg(gpio_xferAck_Reg),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
-        .intr_rd_ce_or_reduce(intr_rd_ce_or_reduce),
-        .intr_wr_ce_or_reduce(intr_wr_ce_or_reduce),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
@@ -2291,20 +2379,18 @@ module MB_axi_gpio_0_0_slave_attachment
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .irpt_rdack(irpt_rdack),
         .irpt_rdack_d1(irpt_rdack_d1),
-        .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
-        .irpt_wrack_d1_reg(irpt_wrack_d1_reg),
         .p_0_in0_in(p_0_in0_in),
         .p_1_in(p_1_in),
         .reg1(reg1),
         .reg3(reg3),
+        .rst_reg(rst_reg_0),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_aresetn(s_axi_aresetn),
         .s_axi_arready(is_read_reg_n_0),
         .s_axi_arready_0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg ),
         .s_axi_awready(is_write_reg_n_0),
         .s_axi_wdata(s_axi_wdata),
-        .\s_axi_wdata[0]_0 (\s_axi_wdata[0]_0 ),
         .\s_axi_wdata[31] (\s_axi_wdata[31] ),
         .s_axi_wdata_0_sp_1(s_axi_wdata_0_sn_1));
   LUT3 #(
@@ -2314,7 +2400,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I1(s_axi_awaddr[0]),
         .I2(s_axi_arvalid),
         .O(p_1_in__0[2]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[3]_i_1 
@@ -2322,7 +2408,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I1(s_axi_awaddr[1]),
         .I2(s_axi_arvalid),
         .O(p_1_in__0[3]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[4]_i_1 
@@ -2330,7 +2416,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I1(s_axi_awaddr[2]),
         .I2(s_axi_arvalid),
         .O(p_1_in__0[4]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[5]_i_1 
@@ -2338,7 +2424,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I1(s_axi_awaddr[3]),
         .I2(s_axi_arvalid),
         .O(p_1_in__0[5]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[6]_i_1 
@@ -2346,7 +2432,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I1(s_axi_awaddr[4]),
         .I2(s_axi_arvalid),
         .O(p_1_in__0[6]));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[7]_i_1 
@@ -2363,7 +2449,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I3(\state_reg_n_0_[1] ),
         .I4(\state_reg_n_0_[0] ),
         .O(\bus2ip_addr_i[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \bus2ip_addr_i[8]_i_2 
@@ -2376,49 +2462,57 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[2]),
         .Q(bus2ip_addr[6]),
-        .R(SS));
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[3] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[3]),
-        .Q(bus2ip_addr[5]),
-        .R(SS));
+        .Q(Q),
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[4] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[4]),
         .Q(bus2ip_addr[4]),
-        .R(SS));
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[5] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[5]),
         .Q(bus2ip_addr[3]),
-        .R(SS));
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[6] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[6]),
         .Q(bus2ip_addr[2]),
-        .R(SS));
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[7] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[7]),
         .Q(bus2ip_addr[1]),
-        .R(SS));
+        .R(SR));
   FDRE \bus2ip_addr_i_reg[8] 
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(p_1_in__0[8]),
-        .Q(Q),
-        .R(SS));
+        .Q(bus2ip_addr[0]),
+        .R(SR));
   FDRE bus2ip_rnw_i_reg
        (.C(s_axi_aclk),
         .CE(\bus2ip_addr_i[8]_i_1_n_0 ),
         .D(s_axi_arvalid),
         .Q(bus2ip_rnw_i_reg_0),
-        .R(SS));
+        .R(SR));
+  LUT4 #(
+    .INIT(16'hFFF4)) 
+    ip2bus_wrack_i_D1_i_1
+       (.I0(bus2ip_rnw_i_reg_0),
+        .I1(GPIO_xferAck_i),
+        .I2(intr2bus_wrack),
+        .I3(ip2Bus_WrAck_intr_reg_hole),
+        .O(ip2bus_wrack_i));
   LUT5 #(
     .INIT(32'h8BBB8888)) 
     is_read_i_1
@@ -2433,7 +2527,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(is_read_i_1_n_0),
         .Q(is_read_reg_n_0),
-        .R(SS));
+        .R(SR));
   LUT6 #(
     .INIT(64'h2000FFFF20000000)) 
     is_write_i_1
@@ -2459,7 +2553,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(is_write_i_1_n_0),
         .Q(is_write_reg_n_0),
-        .R(SS));
+        .R(SR));
   LUT1 #(
     .INIT(2'h1)) 
     rst_i_1
@@ -2469,7 +2563,7 @@ module MB_axi_gpio_0_0_slave_attachment
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(rst_i_1_n_0),
-        .Q(SS),
+        .Q(SR),
         .R(1'b0));
   LUT5 #(
     .INIT(32'h08FF0808)) 
@@ -2487,7 +2581,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(s_axi_bvalid_i_i_1_n_0),
         .Q(s_axi_bvalid_i_reg_0),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \s_axi_rdata_i_reg[0] 
@@ -2495,7 +2589,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(s_axi_rresp_i),
         .D(\s_axi_rdata_i_reg[31]_0 [0]),
         .Q(s_axi_rdata[0]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \s_axi_rdata_i_reg[1] 
@@ -2503,7 +2597,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(s_axi_rresp_i),
         .D(\s_axi_rdata_i_reg[31]_0 [1]),
         .Q(s_axi_rdata[1]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \s_axi_rdata_i_reg[30] 
@@ -2511,7 +2605,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(s_axi_rresp_i),
         .D(\s_axi_rdata_i_reg[31]_0 [2]),
         .Q(s_axi_rdata[2]),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \s_axi_rdata_i_reg[31] 
@@ -2519,7 +2613,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(s_axi_rresp_i),
         .D(\s_axi_rdata_i_reg[31]_0 [3]),
         .Q(s_axi_rdata[3]),
-        .R(SS));
+        .R(SR));
   LUT5 #(
     .INIT(32'h08FF0808)) 
     s_axi_rvalid_i_i_1
@@ -2536,8 +2630,8 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(s_axi_rvalid_i_i_1_n_0),
         .Q(s_axi_rvalid_i_reg_0),
-        .R(SS));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+        .R(SR));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT5 #(
     .INIT(32'h000000F8)) 
     start2_i_1
@@ -2552,7 +2646,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(start2_i_1_n_0),
         .Q(start2),
-        .R(SS));
+        .R(SR));
   LUT5 #(
     .INIT(32'h0FCAFFCA)) 
     \state[0]_i_1 
@@ -2572,7 +2666,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .I4(\state_reg_n_0_[0] ),
         .I5(ip2bus_rdack_i_D1_reg),
         .O(\state[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \state[1]_i_2 
@@ -2586,7 +2680,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\state[0]_i_1_n_0 ),
         .Q(\state_reg_n_0_[0] ),
-        .R(SS));
+        .R(SR));
   FDRE #(
     .INIT(1'b0)) 
     \state_reg[1] 
@@ -2594,7 +2688,7 @@ module MB_axi_gpio_0_0_slave_attachment
         .CE(1'b1),
         .D(\state[1]_i_1_n_0 ),
         .Q(\state_reg_n_0_[1] ),
-        .R(SS));
+        .R(SR));
 endmodule
 `ifndef GLBL
 `define GLBL

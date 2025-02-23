@@ -3,8 +3,8 @@
 # SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
 # IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
 # SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
-# Start of session at: Sun Feb  9 14:48:08 2025
-# Process ID: 13884
+# Start of session at: Sun Feb 23 20:19:34 2025
+# Process ID: 21972
 # Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_simple_axi_writer_0_0_synth_1
 # Command line: vivado.exe -log MB_simple_axi_writer_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_simple_axi_writer_0_0.tcl
 # Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/MB_simple_axi_writer_0_0_synth_1/MB_simple_axi_writer_0_0.vds
@@ -19,6 +19,6 @@
 # Host memory       :68637 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78838 MB
-# Available Virtual :56181 MB
+# Available Virtual :51465 MB
 #-----------------------------------------------------------
 source MB_simple_axi_writer_0_0.tcl -notrace

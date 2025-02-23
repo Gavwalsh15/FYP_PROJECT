@@ -3,8 +3,8 @@
 # SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
 # IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
 # SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
-# Start of session at: Sun Feb  9 15:17:39 2025
-# Process ID: 23408
+# Start of session at: Sun Feb 23 20:20:45 2025
+# Process ID: 17532
 # Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/synth_1
 # Command line: vivado.exe -log MB_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_wrapper.tcl
 # Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/synth_1/MB_wrapper.vds
@@ -19,37 +19,34 @@
 # Host memory       :68637 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78838 MB
-# Available Virtual :56492 MB
+# Available Virtual :50998 MB
 #-----------------------------------------------------------
 source MB_wrapper.tcl -notrace
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 508.020 ; gain = 128.410
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 507.449 ; gain = 129.262
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1425.344 ; gain = 448.062
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1419.871 ; gain = 448.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1543.078 ; gain = 565.797
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1537.820 ; gain = 566.730
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1543.078 ; gain = 565.797
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1543.078 ; gain = 565.797
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 1543.078 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1558.121 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1558.121 ; gain = 0.000
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1558.121 ; gain = 580.840
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1537.820 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1537.820 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1537.820 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.820 ; gain = 566.730
 Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/ip/MB_clk_wiz_0_2/MB_clk_wiz_0_2/MB_clk_wiz_0_2_in_context.xdc, line 3).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/ip/MB_clk_wiz_0_2/MB_clk_wiz_0_2/MB_clk_wiz_0_2_in_context.xdc, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/mdm_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_bram_ctrl_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_bram_ctrl_0_bram. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_intc_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_gpio_1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/simple_axi_writer_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_gpio_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_uartlite_0. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_smc. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/microblaze_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint).
@@ -58,18 +55,19 @@ Applied set_property KEEP_HIERARCHY = SOFT for MB_i/microblaze_0_local_memory/il
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/clk_wiz_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for MB_i/rst_clk_wiz_0_50M. (constraint file  auto generated constraint).
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
+Applied set_property KEEP_HIERARCHY = SOFT for MB_i/axi_smc. (constraint file  auto generated constraint).
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
 
 Report Cell Usage: 
 +------+------------------------+------+
@@ -78,25 +76,23 @@ Report Cell Usage:
 |1     |MB_axi_bram_ctrl_0      |     1|
 |2     |MB_axi_bram_ctrl_0_bram |     1|
 |3     |MB_axi_gpio_0           |     1|
-|4     |MB_axi_gpio_1           |     1|
-|5     |MB_axi_intc_0           |     1|
-|6     |MB_axi_smc              |     1|
-|7     |MB_axi_uartlite_0       |     1|
-|8     |MB_clk_wiz_0            |     1|
-|9     |MB_dlmb_bram_if_cntlr   |     1|
-|10    |MB_dlmb_v10             |     1|
-|11    |MB_ilmb_bram_if_cntlr   |     1|
-|12    |MB_ilmb_v10             |     1|
-|13    |MB_lmb_bram             |     1|
-|14    |MB_mdm_1                |     1|
-|15    |MB_microblaze_0         |     1|
-|16    |MB_rst_clk_wiz_0_50M    |     1|
-|17    |MB_simple_axi_writer_0  |     1|
-|18    |IBUF                    |     2|
-|19    |OBUF                    |    17|
+|4     |MB_axi_smc              |     1|
+|5     |MB_axi_uartlite_0       |     1|
+|6     |MB_clk_wiz_0            |     1|
+|7     |MB_dlmb_bram_if_cntlr   |     1|
+|8     |MB_dlmb_v10             |     1|
+|9     |MB_ilmb_bram_if_cntlr   |     1|
+|10    |MB_ilmb_v10             |     1|
+|11    |MB_lmb_bram             |     1|
+|12    |MB_mdm_1                |     1|
+|13    |MB_microblaze_0         |     1|
+|14    |MB_rst_clk_wiz_0_50M    |     1|
+|15    |MB_simple_axi_writer_0  |     1|
+|16    |IBUF                    |     2|
+|17    |OBUF                    |     1|
 +------+------------------------+------+
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1558.121 ; gain = 580.840
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1558.121 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1558.121 ; gain = 0.000
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1558.121 ; gain = 980.250
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1558.121 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1537.820 ; gain = 566.730
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1537.820 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1537.820 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1537.820 ; gain = 960.289
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1537.820 ; gain = 0.000
