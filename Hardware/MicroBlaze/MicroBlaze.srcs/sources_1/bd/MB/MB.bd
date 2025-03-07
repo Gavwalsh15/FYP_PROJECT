@@ -365,7 +365,7 @@
         "ports": {
           "GPIO_start": {
             "direction": "I",
-            "left": "1",
+            "left": "2",
             "right": "0"
           },
           "GPIO_complete": {

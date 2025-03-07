@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-| Date         : Sun Feb 23 20:20:27 2025
+| Date         : Fri Mar  7 16:13:16 2025
 | Host         : DESKTOP-R5RVK16 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file MB_simple_axi_writer_0_0_utilization_synth.rpt -pb MB_simple_axi_writer_0_0_utilization_synth.pb
 | Design       : MB_simple_axi_writer_0_0
@@ -31,13 +31,13 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 3834 |     0 |          0 |     20800 | 18.43 |
-|   LUT as Logic          | 3834 |     0 |          0 |     20800 | 18.43 |
+| Slice LUTs*             | 3879 |     0 |          0 |     20800 | 18.65 |
+|   LUT as Logic          | 3879 |     0 |          0 |     20800 | 18.65 |
 |   LUT as Memory         |    0 |     0 |          0 |      9600 |  0.00 |
-| Slice Registers         | 3502 |     0 |          0 |     41600 |  8.42 |
-|   Register as Flip Flop | 3502 |     0 |          0 |     41600 |  8.42 |
+| Slice Registers         | 3492 |     0 |          0 |     41600 |  8.39 |
+|   Register as Flip Flop | 3492 |     0 |          0 |     41600 |  8.39 |
 |   Register as Latch     |    0 |     0 |          0 |     41600 |  0.00 |
-| F7 Muxes                |  833 |     0 |          0 |     16300 |  5.11 |
+| F7 Muxes                |  832 |     0 |          0 |     16300 |  5.10 |
 | F8 Muxes                |  256 |     0 |          0 |      8150 |  3.14 |
 +-------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -58,9 +58,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 272   |          Yes |           - |          Set |
-| 280   |          Yes |           - |        Reset |
+| 265   |          Yes |           - |        Reset |
 | 5     |          Yes |         Set |            - |
-| 2945  |          Yes |       Reset |            - |
+| 2950  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -152,17 +152,17 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 2945 |        Flop & Latch |
-| LUT6     | 2550 |                 LUT |
-| MUXF7    |  833 |               MuxFx |
-| LUT2     |  608 |                 LUT |
-| LUT3     |  453 |                 LUT |
-| LUT4     |  392 |                 LUT |
-| FDCE     |  280 |        Flop & Latch |
+| FDRE     | 2950 |        Flop & Latch |
+| LUT6     | 2868 |                 LUT |
+| MUXF7    |  832 |               MuxFx |
+| LUT2     |  614 |                 LUT |
+| LUT3     |  446 |                 LUT |
 | FDPE     |  272 |        Flop & Latch |
+| FDCE     |  265 |        Flop & Latch |
 | MUXF8    |  256 |               MuxFx |
-| LUT5     |  191 |                 LUT |
+| LUT5     |  215 |                 LUT |
 | CARRY4   |  184 |          CarryLogic |
+| LUT4     |  100 |                 LUT |
 | FDSE     |    5 |        Flop & Latch |
 | LUT1     |    3 |                 LUT |
 +----------+------+---------------------+

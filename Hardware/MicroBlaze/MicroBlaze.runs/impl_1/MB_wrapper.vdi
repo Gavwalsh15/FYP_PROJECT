@@ -3,8 +3,8 @@
 # SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
 # IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
 # SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
-# Start of session at: Sun Feb 23 20:21:30 2025
-# Process ID: 26152
+# Start of session at: Fri Mar  7 16:29:18 2025
+# Process ID: 21768
 # Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/impl_1
 # Command line: vivado.exe -log MB_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MB_wrapper.tcl -notrace
 # Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/impl_1/MB_wrapper.vdi
@@ -19,50 +19,47 @@
 # Host memory       :68637 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78838 MB
-# Available Virtual :51069 MB
+# Available Virtual :52633 MB
 #-----------------------------------------------------------
 source MB_wrapper.tcl -notrace
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
 CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
-create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 505.844 ; gain = 126.625
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.533 . Memory (MB): peak = 1070.645 ; gain = 0.000
-get_clocks: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1808.980 ; gain = 581.176
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1814.230 ; gain = 0.000
-link_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 1814.230 ; gain = 1246.996
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2184.078 ; gain = 0.000
-Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2184.078 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 2188.242 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2389.711 ; gain = 0.000
-opt_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:42 . Memory (MB): peak = 2389.711 ; gain = 575.480
-Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2389.711 ; gain = 0.000
-place_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.048 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.854 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.029 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.926 . Memory (MB): peak = 2389.711 ; gain = 0.000
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.034 . Memory (MB): peak = 2422.969 ; gain = 10.758
-Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.827 . Memory (MB): peak = 2437.238 ; gain = 24.746
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2437.238 ; gain = 0.000
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2437.238 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2437.238 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2437.238 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.890 . Memory (MB): peak = 2437.238 ; gain = 24.746
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 508.070 ; gain = 127.582
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.481 . Memory (MB): peak = 1069.738 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1808.480 ; gain = 0.000
+link_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 1808.480 ; gain = 1241.070
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2301.824 ; gain = 0.000
+opt_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 2301.824 ; gain = 493.344
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 2301.824 ; gain = 0.000
+place_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:19 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.616 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.668 . Memory (MB): peak = 2301.824 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2320.910 ; gain = 15.973
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.634 . Memory (MB): peak = 2330.195 ; gain = 25.258
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2330.195 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2330.195 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2330.195 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2330.195 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.691 . Memory (MB): peak = 2330.195 ; gain = 25.258
 
-Checksum: PlaceDB: 7d9c3ad ConstDB: 0 ShapeSum: 9d2eff6e RouteDB: a0815c57
-Post Restoration Checksum: NetGraph: 929a8916 | NumContArr: beb5ef6d | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Checksum: PlaceDB: e68553e5 ConstDB: 0 ShapeSum: ecfa0842 RouteDB: a0815c57
+Post Restoration Checksum: NetGraph: b0b25278 | NumContArr: 71e14ba7 | Constraints: c2a8fa9d | Timing: c2a8fa9d
  Number of Nodes with overlaps = 0
 
 Router Utilization Summary
@@ -71,27 +68,27 @@ Router Utilization Summary
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
-  Number of Failed Nets               = 12398
+  Number of Failed Nets               = 9273
     (Failed Nets is the sum of unrouted and partially routed nets)
-  Number of Unrouted Nets             = 12398
+  Number of Unrouted Nets             = 9273
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
- Number of Nodes with overlaps = 4260
- Number of Nodes with overlaps = 1879
- Number of Nodes with overlaps = 934
- Number of Nodes with overlaps = 370
- Number of Nodes with overlaps = 142
- Number of Nodes with overlaps = 47
- Number of Nodes with overlaps = 7
- Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 3848
+ Number of Nodes with overlaps = 1754
+ Number of Nodes with overlaps = 829
+ Number of Nodes with overlaps = 354
+ Number of Nodes with overlaps = 161
+ Number of Nodes with overlaps = 33
  Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 5.39982 %
-  Global Horizontal Routing Utilization  = 6.44417 %
+  Global Vertical Routing Utilization    = 4.78163 %
+  Global Horizontal Routing Utilization  = 5.59917 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -103,16 +100,16 @@ Router Utilization Summary
 
 
  Verification completed successfully
-Total Elapsed time in route_design: 54.351 secs
+Total Elapsed time in route_design: 41.316 secs
 
 Routing Is Done.
-route_design: Time (s): cpu = 00:01:16 ; elapsed = 00:00:56 . Memory (MB): peak = 2585.527 ; gain = 148.289
-generate_parallel_reports: Time (s): cpu = 00:00:19 ; elapsed = 00:00:11 . Memory (MB): peak = 2640.816 ; gain = 55.289
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 2667.207 ; gain = 9.934
-Wrote PlaceDB: Time (s): cpu = 00:00:03 ; elapsed = 00:00:00.845 . Memory (MB): peak = 2680.156 ; gain = 22.879
-Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2680.156 ; gain = 0.000
-Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.131 . Memory (MB): peak = 2680.156 ; gain = 0.000
-Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 2680.156 ; gain = 0.000
-Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2680.156 ; gain = 0.000
-Write Physdb Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 2680.156 ; gain = 22.879
-write_bitstream: Time (s): cpu = 00:00:16 ; elapsed = 00:00:12 . Memory (MB): peak = 3112.926 ; gain = 432.770
+route_design: Time (s): cpu = 00:00:58 ; elapsed = 00:00:42 . Memory (MB): peak = 2467.145 ; gain = 136.949
+generate_parallel_reports: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 2515.922 ; gain = 48.777
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2542.359 ; gain = 9.973
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.624 . Memory (MB): peak = 2557.277 ; gain = 24.848
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2557.277 ; gain = 0.000
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.104 . Memory (MB): peak = 2557.277 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2557.277 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2557.277 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.758 . Memory (MB): peak = 2557.277 ; gain = 24.848
+write_bitstream: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 2988.387 ; gain = 431.109

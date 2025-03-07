@@ -47,7 +47,7 @@
     },
     "boundary": {
       "ports": {
-        "GPIO_start": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "GPIO_start": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
         "GPIO_complete": [ { "direction": "out" } ],
         "M_AXI_ACLK": [ { "direction": "in" } ],
         "M_AXI_ARESETN": [ { "direction": "in" } ],

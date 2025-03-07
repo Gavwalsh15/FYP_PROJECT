@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1.2 (win64) Build 5164865 Thu Sep  5 14:37:11 MDT 2024
-//Date        : Sun Feb 23 20:19:16 2025
+//Date        : Fri Mar  7 16:12:14 2025
 //Host        : DESKTOP-R5RVK16 running 64-bit major release  (build 9200)
 //Command     : generate_target MB.bd
 //Design      : MB
@@ -497,7 +497,7 @@ module MB
         .slowest_sync_clk(microblaze_0_Clk));
   MB_simple_axi_writer_0_0 simple_axi_writer_0
        (.GPIO_complete(simple_axi_writer_0_GPIO_complete),
-        .GPIO_start(axi_gpio_0_gpio_io_o),
+        .GPIO_start({1'b0,axi_gpio_0_gpio_io_o}),
         .M_AXI_ACLK(microblaze_0_Clk),
         .M_AXI_ARADDR(simple_axi_writer_0_M_AXI_ARADDR),
         .M_AXI_ARESETN(rst_clk_wiz_0_50M_peripheral_aresetn),

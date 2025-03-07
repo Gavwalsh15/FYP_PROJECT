@@ -80,7 +80,7 @@ module MB_simple_axi_writer_0_0 (
   M_AXI_RREADY
 );
 
-input wire [1 : 0] GPIO_start;
+input wire [2 : 0] GPIO_start;
 output wire GPIO_complete;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI_ACLK, ASSOCIATED_BUSIF M_AXI, ASSOCIATED_RESET M_AXI_ARESETN, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 M_AXI_ACLK CLK" *)

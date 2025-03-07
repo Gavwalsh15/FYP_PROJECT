@@ -5,7 +5,7 @@ module simple_axi_writer #(
     parameter READ_ADDR = 32'hC000_0000,
     parameter WRITE_ADDR = 32'hC000_0100
 )(
-    input  wire [1:0] GPIO_start,
+    input  wire [2:0] GPIO_start,
     output reg        GPIO_complete,
     input  wire       M_AXI_ACLK,
     input  wire       M_AXI_ARESETN,
@@ -48,17 +48,19 @@ module simple_axi_writer #(
         DONE          = 5'b01001;
         
     // Control signal definitions
-    localparam [1:0]
-        NO_OP      = 2'b00,
-        START_HASH_SIGNAL = 2'b01,
-        RESET_HASH_SIGNAL = 2'b10;
+    localparam [2:0]
+        NO_OP      = 3'b000,
+        START_HASH_SIGNAL = 3'b001,
+        RESET_HASH_SIGNAL = 3'b010,
+        LARGE_HASH_SIGNAL = 3'b011;
 
     // Internal registers
     reg [4:0] state;
     wire [255:0] hash_out;
     wire hash_done;
     reg hash_start;
-    reg reset_hash;  // New reset signal
+    reg reset_hash; 
+    reg large_hash;
     reg [255:0] final_hash;
     reg [3:0] word_counter;  
     reg [31:0] current_word;
@@ -89,6 +91,7 @@ module simple_axi_writer #(
         .clk(M_AXI_ACLK),
         .rst(~M_AXI_ARESETN),
         .reset_hash(reset_hash),
+        .large_hash(large_hash),
         .start(hash_start),
         .message_block(message_block),
         .hash(hash_out),
@@ -100,6 +103,7 @@ module simple_axi_writer #(
         if (~M_AXI_ARESETN) begin
             state <= IDLE;
             reset_hash <= 1'b0;
+            large_hash <= 1'b0;
             axi_awvalid <= 1'b0;
             axi_wvalid <= 1'b0;
             axi_bready <= 1'b0;
@@ -120,6 +124,7 @@ module simple_axi_writer #(
                     case (GPIO_start)
                         START_HASH_SIGNAL: begin
                             reset_hash <= 1'b0;
+                            large_hash <= 1'b0;
                             state <= READ_BLOCK;
                             word_counter <= 4'b0000;
                             read_addr <= READ_ADDR;
@@ -144,6 +149,22 @@ module simple_axi_writer #(
                             message_block <= 512'b0;
                             current_word <= 32'b0;
                             final_hash <= 256'b0;
+                        end
+                        
+                        LARGE_HASH_SIGNAL: begin
+                            large_hash <= 1'b1;
+                            state <= IDLE;
+                            axi_awvalid <= 1'b0;
+                            axi_wvalid <= 1'b0;
+                            axi_bready <= 1'b0;
+                            axi_arvalid <= 1'b0;
+                            axi_rready <= 1'b0;
+                            GPIO_complete <= 1'b0;
+                            hash_start <= 1'b0;
+                            word_counter <= 4'b0000;
+                            read_addr <= READ_ADDR;
+                            write_addr <= WRITE_ADDR;
+                            current_word <= 32'b0;
                         end
                 
                         default: begin
@@ -214,8 +235,7 @@ module simple_axi_writer #(
                 WAIT_WRITE: begin
                     if (M_AXI_AWREADY && M_AXI_AWVALID) begin
                         axi_awvalid <= 1'b0;
-                    end
-                
+                    end 
                     if (M_AXI_WREADY && M_AXI_WVALID) begin
                         axi_wvalid <= 1'b0;
                         state <= RESPONSE;
@@ -249,6 +269,8 @@ module simple_axi_writer #(
                     hash_start <= 1'b0;
                     if(GPIO_start == RESET_HASH_SIGNAL) 
                         state <= IDLE;
+                    if(GPIO_start == LARGE_HASH_SIGNAL) 
+                        state <= IDLE;
                 end
 
                 default: state <= IDLE;
@@ -263,11 +285,11 @@ module sha256 (
     input wire clk,
     input wire rst,
     input wire reset_hash,
+    input wire large_hash,
     input wire start,
     input wire [511:0] message_block,
     output reg [255:0] hash,
-    output reg done,
-    output reg [31:0] hash_probe
+    output reg done
 );
 
     // State definitions
@@ -333,11 +355,25 @@ module sha256 (
     wire [31:0] t2_next = s0 + maj;
 
     always @(posedge clk or posedge rst) begin
+        if(large_hash) begin
+            state <= IDLE;
+            round_count <= 0;
+            done <= 0;
+            // Initialize working variables
+            a <= H0;
+            b <= H1;
+            c <= H2;
+            d <= H3;
+            e <= H4;
+            f <= H5;
+            g <= H6;
+            h <= H7;
+        end
+        
         if (rst || reset_hash) begin
             state <= IDLE;
             round_count <= 0;
             done <= 0;
-            hash_probe <= 0;
             
             // Initialize hash values
             H0 <= 32'h6a09e667;
@@ -438,7 +474,6 @@ module sha256 (
                     hash <= {H0 + a, H1 + b, H2 + c, H3 + d,
                             H4 + e, H5 + f, H6 + g, H7 + h};
                     done <= 1;
-                    hash_probe <= H0 + a;
                     state <= IDLE;
                 end
             endcase

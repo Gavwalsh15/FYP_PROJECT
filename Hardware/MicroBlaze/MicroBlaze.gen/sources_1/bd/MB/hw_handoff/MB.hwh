@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Feb 23 20:19:27 2025" VIVADOVERSION="2024.1.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  7 16:12:23 2025" VIVADOVERSION="2024.1.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.2" DEVICE="7a35t" NAME="MB" PACKAGE="cpg236" SPEEDGRADE="-1"/>
 
@@ -5561,7 +5561,7 @@
             <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio2_io_i"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="GPIO_start" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
+        <PORT DIR="I" LEFT="2" NAME="GPIO_start" RIGHT="0" SIGIS="undef" SIGNAME="axi_gpio_0_gpio_io_o">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="gpio_io_o"/>
           </CONNECTIONS>

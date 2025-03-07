@@ -14,6 +14,7 @@
 #define GPIO_NO_OP      0x0
 #define GPIO_START_HASH 0x1
 #define GPIO_RESET_HASH 0x2
+#define GPIO_LARGE_HASH 0x3
 
 XGpio RW_pin;
 
@@ -60,6 +61,10 @@ void start_hash(void) {
 
 void reset_hash(void) {
     send_gpio_command(GPIO_RESET_HASH);
+}
+
+void large_hash(void) {
+    send_gpio_command(GPIO_LARGE_HASH);
 }
 
 void write_to_bram(uint32_t offset, uint32_t data) {
@@ -113,67 +118,66 @@ int main() {
     }
 
     // Define both test blocks
-    uint32_t test_block2[16] = {
-        0x61626380, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000018
-    };
-
     uint32_t test_block1[16] = {
-        0x31323380, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000000,
-        0x00000000, 0x00000000, 0x00000000, 0x00000018
+        0x54686520, 0x6f6c6420, 0x72616469, 0x6f206372,
+        0x61636b6c, 0x65642074, 0x6f206c69, 0x66652c20,
+        0x77686973, 0x70657269, 0x6e672073, 0x65637265,
+        0x74732066, 0x726f6d20, 0x6120666f, 0x72676f74
     };
 
-    int current_block = 0; // Track which block we're using
+    uint32_t test_block2[16] = {
+        0x74656e20, 0x6572612e, 0x80000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000000,
+        0x00000000, 0x00000000, 0x00000000, 0x00000240
+    };
 
     while (1) {
-        // Select which test block to use
-        uint32_t *current_test_block = (current_block == 0) ? test_block1 : test_block2;
-
-        // Write the current test block to BRAM
-        xil_printf("\r\nWriting test block %d to BRAM...\r\n", current_block + 1);
-        for (int i = 0; i < 16; i++) {
-            write_to_bram(i, current_test_block[i]);
-        }
-		for (int i = 0; i < 16; i++) {
-			xil_printf("%08X", (unsigned int)message[i]);
-		}
-		xil_printf("\r\n");
-
-        xil_printf("\r\n=== Starting new hash computation for block %d ===\r\n", current_block + 1);
+        xil_printf("\r\n=== Starting new hash computation ===\r\n");
 
         // Reset the hash module
         reset_hash();
         msleep(100);  // Wait for reset to complete
 
-        // Start new hash computation
-        start_hash();
-        xil_printf("Hash computation started...\r\n");
+        // Write first block to BRAM
+        xil_printf("Writing first block to BRAM...\r\n");
+        for (int i = 0; i < 16; i++) {
+            write_to_bram(i, test_block1[i]);
+        }
 
-        // Wait for completion
+        // Process first block
+        start_hash();
+        xil_printf("Processing first block...\r\n");
         while (read_gpio() != 1);
 
-        xil_printf("Hash computation completed.\r\n");
+        // Write second block to BRAM
+		xil_printf("Writing second block to BRAM...\r\n");
+		for (int i = 0; i < 16; i++) {
+			write_to_bram(i, test_block2[i]);
+		}
 
-        // Read hash result
+        // Enable large hash mode before processing second block
+        large_hash();
+        msleep(100);
+
+        start_hash();
+        // Process second block
+        xil_printf("Processing second block...\r\n");
+        while (read_gpio() != 1);
+
+        // Read final hash result
+        xil_printf("\r\nReading final hash result...\r\n");
         uint32_t hash[8];
-        xil_printf("\r\nReading hash result...\r\n");
         for (int i = 0; i < 8; i++) {
             hash[i] = read_from_bram(i);
         }
 
         // Print complete hash in a single line
-        xil_printf("\r\nComplete hash for block %d: ", current_block + 1);
+        xil_printf("Final Hash: ");
         for (int i = 0; i < 8; i++) {
             xil_printf("%08X", (unsigned int)hash[i]);
         }
         xil_printf("\r\n");
-
-        // Switch to the other block for next iteration
-        current_block = !current_block;
 
         // Wait before next iteration
         xil_printf("\r\nWaiting for next iteration...\r\n");
