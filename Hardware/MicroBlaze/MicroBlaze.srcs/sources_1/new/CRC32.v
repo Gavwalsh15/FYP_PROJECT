@@ -1,4 +1,4 @@
-// Top level module containing both SHA-256 and AXI interfaces
+// Top level module SHA-256 and AXI interfaces
 module simple_axi_writer #(
     parameter integer AXI_ADDR_WIDTH = 32,
     parameter integer AXI_DATA_WIDTH = 32,
@@ -47,7 +47,7 @@ module simple_axi_writer #(
         NEXT_WORD     = 5'b01000,
         DONE          = 5'b01001;
         
-    // Control signal definitions
+    // Control MB signal definitions
     localparam [2:0]
         NO_OP      = 3'b000,
         START_HASH_SIGNAL = 3'b001,
@@ -209,7 +209,6 @@ module simple_axi_writer #(
                     write_addr <= WRITE_ADDR;
                 end
 
-                // In the WRITING state, we'll assert BREADY along with AWVALID/WVALID
                 WRITING: begin
                     hash_start <= 1'b0;
                     
@@ -227,7 +226,7 @@ module simple_axi_writer #(
                         endcase
                         axi_awvalid <= 1'b1;
                         axi_wvalid <= 1'b1;
-                        axi_bready <= 1'b1;  // Assert BREADY here
+                        axi_bready <= 1'b1;  
                         state <= WAIT_WRITE;
                     end
                 end
@@ -245,7 +244,7 @@ module simple_axi_writer #(
                 
                 RESPONSE: begin
                     if (M_AXI_BVALID && M_AXI_BREADY) begin
-                        axi_bready <= 1'b0;  // Only deassert after receiving response
+                        axi_bready <= 1'b0;  
                         if (word_counter == 3'b111) begin
                             state <= DONE;
                             GPIO_complete <= 1'b1;

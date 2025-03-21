@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="MB_simple_axi_writer_0_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1741363947">
+<GenRun Id="MB_simple_axi_writer_0_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1742560257">
   <File Type="PA-TCL" Name="MB_simple_axi_writer_0_0.tcl"/>
   <File Type="REPORTS-TCL" Name="MB_simple_axi_writer_0_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="MB_simple_axi_writer_0_0.vds"/>
