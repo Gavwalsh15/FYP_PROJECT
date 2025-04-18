@@ -1,0 +1,11 @@
+verilog xil_defaultlib --include "../../../../MicroBlaze.gen/sources_1/bd/MB/ipshared/3242" \
+"../../../bd/MB/ip/MB_uart_0_0/sim/MB_uart_0_0.v" \
+"../../../bd/MB/ip/MB_clk_wiz_1/MB_clk_wiz_1_clk_wiz.v" \
+"../../../bd/MB/ip/MB_clk_wiz_1/MB_clk_wiz_1.v" \
+"../../../bd/MB/ip/MB_sha256_0_1/sim/MB_sha256_0_1.v" \
+"../../../bd/MB/sim/MB.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

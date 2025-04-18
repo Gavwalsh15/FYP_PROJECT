@@ -1,0 +1,302 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xBC92F78EB88DB4D",
+      "device": "xc7a35tcpg236-1",
+      "gen_directory": "../../../../MicroBlaze.gen/sources_1/bd/MB",
+      "name": "MB",
+      "pfm_name": "xilinx:basys3:MicroBlaze:0.0",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2024.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "uart_0": "",
+      "clk_wiz": "",
+      "sha256_0": ""
+    },
+    "ports": {
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "MB_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0"
+          }
+        }
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "rx_0": {
+        "direction": "I"
+      },
+      "tx_0": {
+        "direction": "O"
+      }
+    },
+    "components": {
+      "uart_0": {
+        "vlnv": "xilinx.com:module_ref:uart:1.0",
+        "ip_revision": "1",
+        "xci_name": "MB_uart_0_0",
+        "xci_path": "ip\\MB_uart_0_0\\MB_uart_0_0.xci",
+        "inst_hier_path": "uart_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "uart",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "rx": {
+            "direction": "I"
+          },
+          "tx": {
+            "direction": "O"
+          },
+          "message_block": {
+            "direction": "O",
+            "left": "511",
+            "right": "0"
+          },
+          "message_ready": {
+            "direction": "O"
+          },
+          "single_hash": {
+            "direction": "O"
+          },
+          "large_hash": {
+            "direction": "O"
+          },
+          "byte_count": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          }
+        }
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "ip_revision": "14",
+        "xci_name": "MB_clk_wiz_1",
+        "xci_path": "ip\\MB_clk_wiz_1\\MB_clk_wiz_1.xci",
+        "inst_hier_path": "clk_wiz",
+        "parameters": {
+          "CLKOUT1_REQUESTED_OUT_FREQ": {
+            "value": "50"
+          },
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        },
+        "pfm_attributes": {
+          "CLOCK": "clk_out1 {id \"1\" is_default \"true\" proc_sys_reset \"\" status \"fixed\" freq_hz \"50000000\"}"
+        }
+      },
+      "sha256_0": {
+        "vlnv": "xilinx.com:module_ref:sha256:1.0",
+        "ip_revision": "1",
+        "xci_name": "MB_sha256_0_1",
+        "xci_path": "ip\\MB_sha256_0_1\\MB_sha256_0_1.xci",
+        "inst_hier_path": "sha256_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "sha256",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "start_hash": {
+            "direction": "I"
+          },
+          "large_hash": {
+            "direction": "I"
+          },
+          "start": {
+            "direction": "I"
+          },
+          "message_block": {
+            "direction": "I",
+            "left": "511",
+            "right": "0"
+          },
+          "hash": {
+            "direction": "O",
+            "left": "255",
+            "right": "0"
+          },
+          "hash_started": {
+            "direction": "O"
+          },
+          "done": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_wiz_clk_out1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "sha256_0/clk",
+          "uart_0/clk"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "clk_wiz/reset",
+          "sha256_0/reset",
+          "uart_0/reset"
+        ]
+      },
+      "rx_0_1": {
+        "ports": [
+          "rx_0",
+          "uart_0/rx"
+        ]
+      },
+      "sha256_0_done": {
+        "ports": [
+          "sha256_0/done"
+        ]
+      },
+      "sha256_0_hash": {
+        "ports": [
+          "sha256_0/hash"
+        ]
+      },
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz/clk_in1"
+        ]
+      },
+      "uart_0_large_hash": {
+        "ports": [
+          "uart_0/large_hash",
+          "sha256_0/large_hash"
+        ]
+      },
+      "uart_0_message_block": {
+        "ports": [
+          "uart_0/message_block",
+          "sha256_0/message_block"
+        ]
+      },
+      "uart_0_message_ready": {
+        "ports": [
+          "uart_0/message_ready",
+          "sha256_0/start"
+        ]
+      },
+      "uart_0_single_hash": {
+        "ports": [
+          "uart_0/single_hash",
+          "sha256_0/start_hash"
+        ]
+      },
+      "uart_0_tx": {
+        "ports": [
+          "uart_0/tx",
+          "tx_0"
+        ]
+      }
+    }
+  }
+}

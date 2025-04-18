@@ -25,21 +25,28 @@ def send_block(port, blocks):
     try:
         # Open serial port
         ser = serial.Serial(
-            port='COM4',  # e.g., '/dev/ttyUSB0' or 'COM3'
-            baudrate=115200,  # Adjust to match UartLite configuration
+            port=port,
+            baudrate=115200,
             timeout=1
         )
-        for block in blocks:
-            # Print block for verification
-            print("Sending Block (Hex):")
-            for i in range(0, len(block), 4):
-                print(''.join(f'{x:02X}' for x in block[i:i + 4]), end=' ')
 
-            print('\n')
+        block_ending = ',s'.encode()
+        start_time = time.time()
+        for j, block in enumerate(blocks, start=1):
+            # Avoid excessive print debugging
+            # print(f"Sending Block (Hex): {block.hex()}")
 
-            # Send the block
-            ser.write(block)
+            ser.write(block + block_ending)  # Send the block
 
+            # Check for response
+            if j < len(blocks):  # Don't wait after the last block
+                while ser.readline() != b'=== Waiting to receive block ===\r\n':
+                    time.sleep(0.0001)  # Short sleep to avoid hogging CPU
+                block_ending = ',l'.encode()
+
+        end_time = time.time()
+        total_time = end_time - start_time
+        print(f"Total Time Taken: {total_time:.4f} seconds")
         while True:
             if ser.in_waiting > 0:  # Check if data is available
                 data = ser.readline().decode('utf-8').strip()  # Read and decode
@@ -55,9 +62,7 @@ def send_block(port, blocks):
 
 def main():
     # Create block
-    _ , chunks = preprocess('abc')
-
-    # Send block
+    _ , chunks = preprocess(messageInput='abc')  # Send block
     send_block("COM4", chunks)
 
 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SHA_256_MB/src/helloworld.c&apos; to &apos;sha_controller.c&apos;" description="Rename resource &apos;helloworld.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/helloworld.c" name="sha_controller.c" stamp="1742572414121" updateReferences="true"/>
+</session>

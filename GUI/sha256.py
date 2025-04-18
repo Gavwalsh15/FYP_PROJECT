@@ -1,4 +1,5 @@
 import struct
+import time
 
 # SHA-256 constants (as per the standard)
 K = [
@@ -22,9 +23,16 @@ def right_rotate(value, bits):
     """Right rotate a 32-bit integer."""
     return ((value >> bits) | (value << (32 - bits))) & 0xffffffff
 
-def preprocess(message):
+
+def preprocess(messageInput=None, filePath=None):
     # Preprocessing
-    message = bytearray(message, 'utf-8')
+    message = None
+    if filePath:
+        with open(filePath, 'rb') as f:
+            message = bytearray(f.read())
+    elif messageInput:
+        message = bytearray(messageInput, 'utf-8')
+
     original_length_bits = len(message) * 8
     message.append(0x80)  # Append the '1' bit
     while len(message) % 64 != 56:
@@ -39,13 +47,17 @@ def preprocess(message):
 
     return message, chunks
 
-def sha256(message):
-    padded_message = preprocess(message)
+def sha256(message_Input):
+    padded_message, _ = preprocess(message_Input)
+    # Process each 512-bit chunk
+    H = [
+        0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+        0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+    ]
 
     # Process each 512-bit chunk
     for chunk_start in range(0, len(padded_message), 64):
         chunk = padded_message[chunk_start:chunk_start + 64]
-        print(f"\nProcessing chunk: {chunk.hex()}")
 
         # Prepare the message schedule array W
         W = [0] * 64
@@ -55,11 +67,9 @@ def sha256(message):
             s0 = right_rotate(W[i - 15], 7) ^ right_rotate(W[i - 15], 18) ^ (W[i - 15] >> 3)
             s1 = right_rotate(W[i - 2], 17) ^ right_rotate(W[i - 2], 19) ^ (W[i - 2] >> 10)
             W[i] = (W[i - 16] + s0 + W[i - 7] + s1) & 0xffffffff
-        # print(f"Message schedule W: {W}")
 
         # Initialize working variables
         a, b, c, d, e, f, g, h = H
-        print(f"Initial hash values: a={a:08x}, b={b:08x}, c={c:08x}, d={d:08x}, e={e:08x}, f={f:08x}, g={g:08x}, h={h:08x}")
 
         # Main compression loop
         for i in range(64):
@@ -80,8 +90,6 @@ def sha256(message):
             b = a
             a = (temp1 + temp2) & 0xffffffff
 
-            print(f"itter={i:02d}: a={a:08x}, b={b:08x}, c={c:08x}, d={d:08x}, e={e:08x}, f={f:08x}, g={g:08x}, h={h:08x} w={W[i]:08x}, temp1={temp1:08x}, temp2={temp2:08x}, ch={ch:08x}, maj={maj:08x}, S1={S1:08x}, S0={S0:08x}")
-
         # Update hash values
         H[0] = (H[0] + a) & 0xffffffff
         H[1] = (H[1] + b) & 0xffffffff
@@ -92,12 +100,14 @@ def sha256(message):
         H[6] = (H[6] + g) & 0xffffffff
         H[7] = (H[7] + h) & 0xffffffff
 
-        # print(f"Updated hash values: {H}")
-
     # Produce the final hash value (big-endian)
     final_hash = ''.join(f'{value:08x}' for value in H)
     return final_hash
 
 if __name__ == "__main__":
-    message = input("Enter the message to hash: ")
-    print("\n\nSHA-256 hash:", sha256(message))
+    messageInput = input("Enter the message to hash: ")
+    start_time = time.time()
+    print("\n\nSHA-256 hash:", sha256(messageInput))
+    end_time = time.time()
+    total_time = end_time - start_time
+    print(f"Total Time Taken: {total_time:.4f} seconds")
