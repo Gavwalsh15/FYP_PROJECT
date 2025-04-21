@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-//Date        : Fri Apr 18 15:52:05 2025
+//Date        : Sat Apr 19 18:41:29 2025
 //Host        : DESKTOP-R5RVK16 running 64-bit major release  (build 9200)
 //Command     : generate_target MB.bd
 //Design      : MB
@@ -22,15 +22,15 @@ module MB
   output tx_0;
 
   wire clk_wiz_clk_out1;
+  wire clk_wiz_clk_out2;
   wire reset_1;
   wire rx_0_1;
   wire sha256_0_done;
   wire [255:0]sha256_0_hash;
+  wire sha256_0_hash_started1;
   wire sys_clock_1;
-  wire uart_0_large_hash;
+  wire [1:0]uart_0_hash_state;
   wire [511:0]uart_0_message_block;
-  wire uart_0_message_ready;
-  wire uart_0_single_hash;
   wire uart_0_tx;
 
   assign reset_1 = reset;
@@ -40,23 +40,24 @@ module MB
   MB_clk_wiz_1 clk_wiz
        (.clk_in1(sys_clock_1),
         .clk_out1(clk_wiz_clk_out1),
+        .clk_out2(clk_wiz_clk_out2),
         .reset(reset_1));
   MB_sha256_0_1 sha256_0
        (.clk(clk_wiz_clk_out1),
         .done(sha256_0_done),
         .hash(sha256_0_hash),
-        .large_hash(uart_0_large_hash),
+        .hash_size(uart_0_hash_state),
+        .hash_started(sha256_0_hash_started1),
         .message_block(uart_0_message_block),
-        .reset(reset_1),
-        .start(uart_0_message_ready),
-        .start_hash(uart_0_single_hash));
+        .reset(reset_1));
   MB_uart_0_0 uart_0
-       (.clk(clk_wiz_clk_out1),
-        .large_hash(uart_0_large_hash),
+       (.clk(clk_wiz_clk_out2),
+        .hash(sha256_0_hash),
+        .hash_done(sha256_0_done),
+        .hash_started(sha256_0_hash_started1),
+        .hash_state(uart_0_hash_state),
         .message_block(uart_0_message_block),
-        .message_ready(uart_0_message_ready),
         .reset(reset_1),
         .rx(rx_0_1),
-        .single_hash(uart_0_single_hash),
         .tx(uart_0_tx));
 endmodule

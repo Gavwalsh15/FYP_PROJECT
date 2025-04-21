@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1744987381">
+<GenRun Id="impl_2" LaunchPart="xc7a35tcpg236-1" LaunchTime="1745084560">
   <File Type="ROUTE-PWR" Name="MB_wrapper_power_routed.rpt"/>
   <File Type="PA-TCL" Name="MB_wrapper.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="MB_wrapper_power_summary_routed.pb"/>
@@ -162,7 +162,6 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MB_clk_wiz_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_sha256_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_uart_0_0"/>
 </GenRun>

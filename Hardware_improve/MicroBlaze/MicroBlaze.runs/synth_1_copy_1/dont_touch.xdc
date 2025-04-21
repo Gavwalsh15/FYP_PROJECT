@@ -15,4 +15,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==MB_clk_wiz_
 # IP: bd/MB/ip/MB_sha256_0_1/MB_sha256_0_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==MB_sha256_0_1 || ORIG_REF_NAME==MB_sha256_0_1} -quiet] -quiet
 
-# XDC: c:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/MB_ooc.xdc
+# XDC: c:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/MB_ooc.xdc

@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
@@ -11,36 +11,35 @@
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
       <ZoomEndTime time="2,049"></ZoomEndTime>
-      <Cursor1Time time="395"></Cursor1Time>
+      <Cursor1Time time="663"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="278"></NameColumnWidth>
-      <ValueColumnWidth column_width="118"></ValueColumnWidth>
+      <ValueColumnWidth column_width="78"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="3" />
    <wave_markers>
    </wave_markers>
-   <wvobject fp_name="MB_i/sha256_0/hash" type="array">
+   <wvobject fp_name="MB_i/uart_0/hash" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">MB_i/sha256_0/hash[255:0]</obj_property>
+      <obj_property name="ElementShortName">MB_i/uart_0/hash[255:0]</obj_property>
       <obj_property name="ObjectShortName">hash[255:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="MB_i/uart_0/byte_count" type="array">
+   <wvobject fp_name="MB_i/uart_0/message_block" type="array">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">MB_i/uart_0/byte_count[8:0]</obj_property>
-      <obj_property name="ObjectShortName">byte_count[8:0]</obj_property>
+      <obj_property name="ElementShortName">MB_i/uart_0/message_block[511:0]</obj_property>
+      <obj_property name="ObjectShortName">message_block[511:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject fp_name="u_ila_0_message_block" type="array">
+   <wvobject fp_name="MB_i/uart_0/tx" type="logic">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">u_ila_0_message_block[511:0]</obj_property>
-      <obj_property name="ObjectShortName">u_ila_0_message_block[511:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">MB_i/uart_0/tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

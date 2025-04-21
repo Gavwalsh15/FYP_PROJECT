@@ -60,13 +60,13 @@ module MB_uart_0_0 (
   rx,
   tx,
   message_block,
-  message_ready,
-  single_hash,
-  large_hash,
-  byte_count
+  hash_state,
+  hash_done,
+  hash,
+  hash_started
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
@@ -75,23 +75,23 @@ input wire reset;
 input wire rx;
 output wire tx;
 output wire [511 : 0] message_block;
-output wire message_ready;
-output wire single_hash;
-output wire large_hash;
-output wire [8 : 0] byte_count;
+output wire [1 : 0] hash_state;
+input wire hash_done;
+input wire [255 : 0] hash;
+input wire hash_started;
 
   uart #(
-    .CLK_FREQ(50000000),
-    .BAUD_RATE(115200)
+    .CLK_FREQ(100000000),
+    .BAUD_RATE(2000000)
   ) inst (
     .clk(clk),
     .reset(reset),
     .rx(rx),
     .tx(tx),
     .message_block(message_block),
-    .message_ready(message_ready),
-    .single_hash(single_hash),
-    .large_hash(large_hash),
-    .byte_count(byte_count)
+    .hash_state(hash_state),
+    .hash_done(hash_done),
+    .hash(hash),
+    .hash_started(hash_started)
   );
 endmodule

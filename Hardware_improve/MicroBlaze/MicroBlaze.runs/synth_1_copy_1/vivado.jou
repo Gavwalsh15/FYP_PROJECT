@@ -3,12 +3,12 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Fri Apr 18 15:43:04 2025
-# Process ID: 17912
-# Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/synth_1_copy_1
+# Start of session at: Sat Apr 19 18:42:43 2025
+# Process ID: 14640
+# Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.runs/synth_1_copy_1
 # Command line: vivado.exe -log MB_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_wrapper.tcl
-# Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/synth_1_copy_1/MB_wrapper.vds
-# Journal file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware/MicroBlaze/MicroBlaze.runs/synth_1_copy_1\vivado.jou
+# Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.runs/synth_1_copy_1/MB_wrapper.vds
+# Journal file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.runs/synth_1_copy_1\vivado.jou
 # Running On        :DESKTOP-R5RVK16
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :19045
@@ -19,6 +19,6 @@
 # Host memory       :68637 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78838 MB
-# Available Virtual :53103 MB
+# Available Virtual :48874 MB
 #-----------------------------------------------------------
 source MB_wrapper.tcl -notrace

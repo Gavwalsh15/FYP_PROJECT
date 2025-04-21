@@ -1,157 +1,66 @@
-`timescale 1ns/1ps
+module sha256_tb;
 
-module uart_tb();
+    // Inputs
+    reg clk;
+    reg reset;
+    reg [1:0] hash_size;
+    reg [511:0] message_block;
 
-// Parameters
-parameter CLK_FREQ = 50_000_000;
-parameter BAUD_RATE = 115200;
-parameter CLK_PERIOD = 20; // 50MHz clock period in ns
-parameter BIT_PERIOD = (CLK_FREQ/BAUD_RATE) * 1000; // Period for each UART bit in ns
+    // Outputs
+    wire [255:0] hash;
+    wire hash_started;
+    wire done;
 
-// Testbench signals
-reg clk;
-reg reset;
-reg rx;
-wire tx;
-wire [511:0] message_block;
-wire message_ready;
-wire single_hash;
-wire large_hash;
-reg hash_status;
-reg [255:0] hash;
+    // Instantiate the SHA-256 module
+    sha256 uut (
+        .clk(clk),
+        .reset(reset),
+        .hash_size(hash_size), // 01 for single block , 10 for multi
+        .message_block(message_block),
+        .hash(hash),
+        .hash_started(hash_started),
+        .done(done)
+    );
 
-// Instantiate UART module
-uart #(
-    .CLK_FREQ(CLK_FREQ),
-    .BAUD_RATE(BAUD_RATE)
-) uart_inst (
-    .clk(clk),
-    .reset(reset),
-    .rx(rx),
-    .tx(tx),
-    .message_block(message_block),
-    .message_ready(message_ready),
-    .single_hash(single_hash),
-    .large_hash(large_hash),
-    .hash_status(hash_status),
-    .hash(hash)
-);
-
-// Clock generation
-initial begin
-    clk = 0;
-    forever #(CLK_PERIOD/2) clk = ~clk;
-end
-
-// Test stimulus
-initial begin
-    // Initialize signals
-    reset = 1;
-    rx = 1;
-    hash_status = 0;
-    hash = 256'h0;
-    
-    // Release reset
-    #100;
-    reset = 0;
-    #100;
-
-    // Send 'a' (0x61)
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 1; #BIT_PERIOD; // LSB
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
-
-    // Send 'b' (0x62)
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 0; #BIT_PERIOD; // LSB
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
-
-    // Send 'c' (0x63)
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 1; #BIT_PERIOD; // LSB
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
-
-    // Send 0x80
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 0; #BIT_PERIOD; // LSB
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
-
-    // Send 56 zeros
-    repeat(56) begin
-        rx = 0; #BIT_PERIOD; // Start bit
-        rx = 0; #BIT_PERIOD; // LSB
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD;
-        rx = 0; #BIT_PERIOD; // MSB
-        rx = 1; #BIT_PERIOD; // Stop bit
+    // Clock generation
+    always begin
+        #5 clk = ~clk; // 100 MHz clock
     end
 
-    // Send 0x18
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 0; #BIT_PERIOD; // LSB
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
+    // Stimulus process
+    initial begin
+        // Initialize the inputs
+        clk = 0;
+        reset = 0;
+        message_block = 512'h61626380000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000018; // Example input block
 
-    // Send 's' (0x73)
-    rx = 0; #BIT_PERIOD; // Start bit
-    rx = 1; #BIT_PERIOD; // LSB
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 1; #BIT_PERIOD;
-    rx = 0; #BIT_PERIOD; // MSB
-    rx = 1; #BIT_PERIOD; // Stop bit
+        // Display header
+        $display("Starting Single Hash Testbench...");
 
-    // Wait for message_ready
-    @(posedge message_ready);
-    $display("Message received!");
-    $display("Message block: %h", message_block);
-    $display("Single hash: %b", single_hash);
-    $display("Large hash: %b", large_hash);
-    
-    #1000;
-    $display("Simulation completed");
-    $finish;
-end
+        // Apply reset
+        reset = 1;
+        #10; // Wait for a few cycles
+        reset = 0;
+        hash_size = 2'b01; // Set hash size to SIGNLEHASH
+        #10;
+        hash_size = 2'b00;
+
+        // Test: Start a single hash computation
+        $display("Testing Single Hash...");
+        #10; // Wait a few cycles
+
+        // Monitor output
+        #10;
+        $display("Final hash: %h", hash);
+        $display("Done: %b", done);
+        
+        // Finish the simulation
+        $finish;
+    end
+
+    // Monitor the signals
+    initial begin
+        $monitor("At time %t, hash_started: %b, done: %b, hash: %h", $time, hash_started, done, hash);
+    end
 
 endmodule

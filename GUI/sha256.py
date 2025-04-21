@@ -1,5 +1,6 @@
 import struct
 import time
+import hashlib
 
 # SHA-256 constants (as per the standard)
 K = [
@@ -68,6 +69,7 @@ def sha256(message_Input):
             s1 = right_rotate(W[i - 2], 17) ^ right_rotate(W[i - 2], 19) ^ (W[i - 2] >> 10)
             W[i] = (W[i - 16] + s0 + W[i - 7] + s1) & 0xffffffff
 
+
         # Initialize working variables
         a, b, c, d, e, f, g, h = H
 
@@ -109,5 +111,11 @@ if __name__ == "__main__":
     start_time = time.time()
     print("\n\nSHA-256 hash:", sha256(messageInput))
     end_time = time.time()
+    total_time = end_time - start_time
+    print(f"Total Time Taken: {total_time:.4f} seconds")
+
+    start_time = time.time()
+    encoded_text = messageInput.encode('utf-8')
+    print("\n\nSHA-256 hash:", hashlib.sha256(encoded_text).hexdigest())
     total_time = end_time - start_time
     print(f"Total Time Taken: {total_time:.4f} seconds")

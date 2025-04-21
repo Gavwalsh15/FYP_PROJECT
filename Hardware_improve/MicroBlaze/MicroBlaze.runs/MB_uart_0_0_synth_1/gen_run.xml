@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="MB_uart_0_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1744987926">
+<GenRun Id="MB_uart_0_0_synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1745084491">
   <File Type="PA-TCL" Name="MB_uart_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="MB_uart_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MB_uart_0_0_reports.tcl"/>

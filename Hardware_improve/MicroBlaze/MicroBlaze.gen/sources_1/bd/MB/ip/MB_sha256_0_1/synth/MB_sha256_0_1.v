@@ -58,13 +58,11 @@
 module MB_sha256_0_1 (
   clk,
   reset,
-  start_hash,
-  large_hash,
-  start,
+  hash_size,
   message_block,
   hash,
-  hash_started,
-  done
+  done,
+  hash_started
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET reset, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_clk_out1, INSERT_VIP 0" *)
@@ -73,23 +71,19 @@ input wire clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset RST" *)
 input wire reset;
-input wire start_hash;
-input wire large_hash;
-input wire start;
+input wire [1 : 0] hash_size;
 input wire [511 : 0] message_block;
 output wire [255 : 0] hash;
-output wire hash_started;
 output wire done;
+output wire hash_started;
 
   sha256 inst (
     .clk(clk),
     .reset(reset),
-    .start_hash(start_hash),
-    .large_hash(large_hash),
-    .start(start),
+    .hash_size(hash_size),
     .message_block(message_block),
     .hash(hash),
-    .hash_started(hash_started),
-    .done(done)
+    .done(done),
+    .hash_started(hash_started)
   );
 endmodule

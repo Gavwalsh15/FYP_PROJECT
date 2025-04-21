@@ -83,7 +83,7 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "50000000",
+                "value": "100000000",
                 "value_src": "ip_prop"
               },
               "PHASE": {
@@ -117,19 +117,21 @@
             "left": "511",
             "right": "0"
           },
-          "message_ready": {
-            "direction": "O"
-          },
-          "single_hash": {
-            "direction": "O"
-          },
-          "large_hash": {
-            "direction": "O"
-          },
-          "byte_count": {
+          "hash_state": {
             "direction": "O",
-            "left": "8",
+            "left": "1",
             "right": "0"
+          },
+          "hash_done": {
+            "direction": "I"
+          },
+          "hash": {
+            "direction": "I",
+            "left": "255",
+            "right": "0"
+          },
+          "hash_started": {
+            "direction": "I"
           }
         }
       },
@@ -140,11 +142,44 @@
         "xci_path": "ip\\MB_clk_wiz_1\\MB_clk_wiz_1.xci",
         "inst_hier_path": "clk_wiz",
         "parameters": {
+          "CLKOUT1_JITTER": {
+            "value": "151.636"
+          },
+          "CLKOUT1_PHASE_ERROR": {
+            "value": "98.575"
+          },
           "CLKOUT1_REQUESTED_OUT_FREQ": {
             "value": "50"
           },
+          "CLKOUT2_JITTER": {
+            "value": "130.958"
+          },
+          "CLKOUT2_PHASE_ERROR": {
+            "value": "98.575"
+          },
+          "CLKOUT2_REQUESTED_OUT_FREQ": {
+            "value": "100"
+          },
+          "CLKOUT2_USED": {
+            "value": "true"
+          },
           "CLK_IN1_BOARD_INTERFACE": {
             "value": "sys_clock"
+          },
+          "MMCM_CLKFBOUT_MULT_F": {
+            "value": "10.000"
+          },
+          "MMCM_CLKOUT0_DIVIDE_F": {
+            "value": "20.000"
+          },
+          "MMCM_CLKOUT1_DIVIDE": {
+            "value": "10"
+          },
+          "MMCM_DIVCLK_DIVIDE": {
+            "value": "1"
+          },
+          "NUM_OUT_CLKS": {
+            "value": "2"
           },
           "RESET_BOARD_INTERFACE": {
             "value": "reset"
@@ -201,14 +236,10 @@
               }
             }
           },
-          "start_hash": {
-            "direction": "I"
-          },
-          "large_hash": {
-            "direction": "I"
-          },
-          "start": {
-            "direction": "I"
+          "hash_size": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
           },
           "message_block": {
             "direction": "I",
@@ -220,10 +251,10 @@
             "left": "255",
             "right": "0"
           },
-          "hash_started": {
+          "done": {
             "direction": "O"
           },
-          "done": {
+          "hash_started": {
             "direction": "O"
           }
         }
@@ -233,7 +264,12 @@
       "clk_wiz_clk_out1": {
         "ports": [
           "clk_wiz/clk_out1",
-          "sha256_0/clk",
+          "sha256_0/clk"
+        ]
+      },
+      "clk_wiz_clk_out2": {
+        "ports": [
+          "clk_wiz/clk_out2",
           "uart_0/clk"
         ]
       },
@@ -253,12 +289,20 @@
       },
       "sha256_0_done": {
         "ports": [
-          "sha256_0/done"
+          "sha256_0/done",
+          "uart_0/hash_done"
         ]
       },
       "sha256_0_hash": {
         "ports": [
-          "sha256_0/hash"
+          "sha256_0/hash",
+          "uart_0/hash"
+        ]
+      },
+      "sha256_0_hash_started1": {
+        "ports": [
+          "sha256_0/hash_started",
+          "uart_0/hash_started"
         ]
       },
       "sys_clock_1": {
@@ -267,28 +311,16 @@
           "clk_wiz/clk_in1"
         ]
       },
-      "uart_0_large_hash": {
+      "uart_0_hash_state": {
         "ports": [
-          "uart_0/large_hash",
-          "sha256_0/large_hash"
+          "uart_0/hash_state",
+          "sha256_0/hash_size"
         ]
       },
       "uart_0_message_block": {
         "ports": [
           "uart_0/message_block",
           "sha256_0/message_block"
-        ]
-      },
-      "uart_0_message_ready": {
-        "ports": [
-          "uart_0/message_ready",
-          "sha256_0/start"
-        ]
-      },
-      "uart_0_single_hash": {
-        "ports": [
-          "uart_0/single_hash",
-          "sha256_0/start_hash"
         ]
       },
       "uart_0_tx": {

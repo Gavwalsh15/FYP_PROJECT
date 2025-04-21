@@ -1,31 +1,31 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-565,-57",
+   "Default View_TopLeft":"-590,-81",
    "ExpandedHierarchyInLayout":"",
    "PinnedPorts":"",
-   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 threadsafe
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
-preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 160 -defaultsOSRD
-preplace port port-id_reset -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
-preplace port port-id_rx_0 -pg 1 -lvl 0 -x -10 -y 330 -defaultsOSRD
-preplace port port-id_tx_0 -pg 1 -lvl 4 -x 980 -y 290 -defaultsOSRD
-preplace inst uart_0 -pg 1 -lvl 3 -x 770 -y 330 -defaultsOSRD
-preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 150 -defaultsOSRD
-preplace inst sha256_0 -pg 1 -lvl 2 -x 420 -y 110 -defaultsOSRD
-preplace netloc clk_wiz_clk_out1 1 1 2 220 310 N
-preplace netloc reset_1 1 0 3 20 80 210 330 NJ
-preplace netloc rx_0_1 1 0 3 NJ 330 200J 350 NJ
-preplace netloc sha256_0_done 1 2 1 N 130
-preplace netloc sha256_0_hash 1 2 1 N 90
-preplace netloc sys_clock_1 1 0 1 NJ 160
-preplace netloc uart_0_large_hash 1 1 3 250 230 580J 200 930
-preplace netloc uart_0_message_block 1 1 3 260 220 NJ 220 910
-preplace netloc uart_0_message_ready 1 1 3 240 240 590J 210 920
-preplace netloc uart_0_single_hash 1 1 3 230 440 NJ 440 910
-preplace netloc uart_0_tx 1 3 1 940 280n
-levelinfo -pg 1 -10 110 420 770 980
-pagesize -pg 1 -db -bbox -sgen -130 0 1060 450
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
+preplace port port-id_rx_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_tx_0 -pg 1 -lvl 4 -x 920 -y 90 -defaultsOSRD
+preplace inst uart_0 -pg 1 -lvl 3 -x 730 -y 110 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 310 -defaultsOSRD
+preplace inst sha256_0 -pg 1 -lvl 2 -x 390 -y 320 -defaultsOSRD
+preplace netloc reset_1 1 0 3 20 230 200 80 NJ
+preplace netloc rx_0_1 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc sha256_0_done 1 2 1 550 120n
+preplace netloc sha256_0_hash 1 2 1 560 140n
+preplace netloc sys_clock_1 1 0 1 NJ 320
+preplace netloc uart_0_hash_state 1 1 3 220 220 NJ 220 890
+preplace netloc uart_0_message_block 1 1 3 230 230 NJ 230 900
+preplace netloc uart_0_tx 1 3 1 N 90
+preplace netloc sha256_0_hash_started1 1 2 1 570 160n
+preplace netloc clk_wiz_clk_out1 1 1 1 N 290
+preplace netloc clk_wiz_clk_out2 1 1 2 210 110 550J
+levelinfo -pg 1 0 110 390 730 920
+pagesize -pg 1 -db -bbox -sgen -110 0 1000 410
 "
 }
 {

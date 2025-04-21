@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1_copy_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1744987381" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/MB_wrapper.dcp">
+<GenRun Id="synth_1_copy_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1745084560" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/MB_wrapper.dcp">
   <File Type="PA-TCL" Name="MB_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="MB_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MB_wrapper_reports.tcl"/>
@@ -77,7 +77,6 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MB_clk_wiz_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_sha256_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_uart_0_0"/>
 </GenRun>

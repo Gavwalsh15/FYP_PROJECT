@@ -2,19 +2,20 @@
 module sha256 (
     input wire clk,
     input wire reset,
-    input wire start_hash,
-    input wire large_hash,
-    input wire start,
+    input wire [1:0] hash_size,
     input wire [511:0] message_block,
     output reg [255:0] hash,
-    output reg hash_started,
-    output reg done
+    output reg done,
+    output reg hash_started
 );
 
     // State definitions
     localparam IDLE = 2'b00;
     localparam PROCESS = 2'b01;
     localparam FINISH = 2'b10;
+    
+    localparam SIGNLEHASH = 2'b01;
+    localparam LARGEHASH = 2'b10;
 
     reg [1:0] state;
     reg [5:0] round_count;
@@ -22,8 +23,8 @@ module sha256 (
     // Hash registers
     reg [31:0] H0, H1, H2, H3, H4, H5, H6, H7;
     reg [31:0] a, b, c, d, e, f, g, h;
-    reg [31:0] T1, T2;
     wire [31:0] ch, maj, s0, s1;
+    
 
     // Message schedule array
     reg [31:0] W [0:63];
@@ -73,25 +74,8 @@ module sha256 (
     wire [31:0] t1_next = h + s1 + ch + K[round_count] + w_next;
     wire [31:0] t2_next = s0 + maj;
 
-    always @(posedge clk or posedge reset) begin
-        if(large_hash) begin
-            hash_started <= 0;
-            state <= IDLE;
-            round_count <= 0;
-            done <= 0;
-            
-            // Initialize working variables
-            a <= H0;
-            b <= H1;
-            c <= H2;
-            d <= H3;
-            e <= H4;
-            f <= H5;
-            g <= H6;
-            h <= H7;
-        end
-        
-        if (reset || start_hash) begin
+    always @(posedge clk or posedge reset) begin   
+        if (reset) begin
             hash_started <= 0;
             state <= IDLE;
             round_count <= 0;
@@ -120,8 +104,40 @@ module sha256 (
         end else begin
             case (state)
                 IDLE: begin
-                    if (start) begin
+                case (hash_size)
+                    SIGNLEHASH: begin
                         hash_started <= 1;
+                        round_count <= 0;
+                        done <= 0;
+                        
+                        // Initialize hash values
+                        H0 <= 32'h6a09e667;
+                        H1 <= 32'hbb67ae85;
+                        H2 <= 32'h3c6ef372;
+                        H3 <= 32'ha54ff53a;
+                        H4 <= 32'h510e527f;
+                        H5 <= 32'h9b05688c;
+                        H6 <= 32'h1f83d9ab;
+                        H7 <= 32'h5be0cd19;
+                    end
+                    LARGEHASH: begin
+                        hash_started <= 1;
+                        round_count <= 0;
+                        done <= 0;
+                        
+                        a <= H0;
+                        b <= H1;
+                        c <= H2;
+                        d <= H3;
+                        e <= H4;
+                        f <= H5;
+                        g <= H6;
+                        h <= H7;
+                    end
+                endcase
+                
+                    if (hash_started && hash_size == 2'b00) begin
+                        hash_started <= 0;
 
                         // Load message block into W
                         W[0] <= message_block[511:480];
@@ -163,11 +179,7 @@ module sha256 (
                     if (round_count >= 16) begin
                         W[round_count] <= w_next;
                     end
-
-                    // Store T1 and T2
-                    T1 <= t1_next;
-                    T2 <= t2_next;
-
+                    
                     // Update working variables
                     h <= g;
                     g <= f;
