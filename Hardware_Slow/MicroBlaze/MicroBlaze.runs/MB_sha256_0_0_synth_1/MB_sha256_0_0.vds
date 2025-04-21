@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.2 (64-bit)
+# SW Build 5164865 on Thu Sep  5 14:37:11 MDT 2024
+# IP Build 5164407 on Fri Sep  6 08:18:11 MDT 2024
+# SharedData Build 5164864 on Thu Sep 05 13:09:09 MDT 2024
+# Start of session at: Mon Feb  3 16:41:42 2025
+# Process ID: 7800
+# Current directory: C:/Viv/Hardware/MicroBlaze/MicroBlaze.runs/MB_sha256_0_0_synth_1
+# Command line: vivado.exe -log MB_sha256_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MB_sha256_0_0.tcl
+# Log file: C:/Viv/Hardware/MicroBlaze/MicroBlaze.runs/MB_sha256_0_0_synth_1/MB_sha256_0_0.vds
+# Journal file: C:/Viv/Hardware/MicroBlaze/MicroBlaze.runs/MB_sha256_0_0_synth_1\vivado.jou
+# Running On        :DESKTOP-R5RVK16
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :AMD Ryzen 9 5900X 12-Core Processor            
+# CPU Frequency     :3693 MHz
+# CPU Physical cores:12
+# CPU Logical cores :24
+# Host memory       :68637 MB
+# Swap memory       :10200 MB
+# Total Virtual     :78838 MB
+# Available Virtual :57377 MB
+#-----------------------------------------------------------
+source MB_sha256_0_0.tcl -notrace
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {WARNING}' to undo this change.
+CRITICAL WARNING: [Common 17-1355] You are suppressing all messages of type 'CRITICAL WARNING'. You may potentially disregard important DRC, CDC, and implementation messages that can negatively impact your design.  If this is not desired, please run 'reset_msg_config -suppress -severity {CRITICAL WARNING}' to undo this change.
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 507.273 ; gain = 127.414
+ERROR: [Runs 36-287] File does not exist or is not accessible:'c:/Viv/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/ip/MB_sha256_0_0/synth/MB_sha256_0_0.v'
+ERROR: [Synth 8-10555] cannot open Verilog file 'c:/Viv/Hardware/MicroBlaze/MicroBlaze.gen/sources_1/bd/MB/ip/MB_sha256_0_0/synth/MB_sha256_0_0.v'
+TypeError in method 'delete_UTask', argument 1 of type 'UTask *'
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details

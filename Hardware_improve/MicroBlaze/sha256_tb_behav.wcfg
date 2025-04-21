@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sha256_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="sha256_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,982.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,800.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="278"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="42" />
+   <wvobject fp_name="/sha256_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/hash_size" type="array">
+      <obj_property name="ElementShortName">hash_size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hash_size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/message_block" type="array">
+      <obj_property name="ElementShortName">message_block[511:0]</obj_property>
+      <obj_property name="ObjectShortName">message_block[511:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/hash" type="array">
+      <obj_property name="ElementShortName">hash[255:0]</obj_property>
+      <obj_property name="ObjectShortName">hash[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/hash_started" type="logic">
+      <obj_property name="ElementShortName">hash_started</obj_property>
+      <obj_property name="ObjectShortName">hash_started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/hash_size" type="array">
+      <obj_property name="ElementShortName">hash_size[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hash_size[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/message_block" type="array">
+      <obj_property name="ElementShortName">message_block[511:0]</obj_property>
+      <obj_property name="ObjectShortName">message_block[511:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/hash" type="array">
+      <obj_property name="ElementShortName">hash[255:0]</obj_property>
+      <obj_property name="ObjectShortName">hash[255:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/hash_started" type="logic">
+      <obj_property name="ElementShortName">hash_started</obj_property>
+      <obj_property name="ObjectShortName">hash_started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/K" type="array">
+      <obj_property name="ElementShortName">K[0:63][31:0]</obj_property>
+      <obj_property name="ObjectShortName">K[0:63][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H0" type="array">
+      <obj_property name="ElementShortName">H0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H0[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H1" type="array">
+      <obj_property name="ElementShortName">H1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H2" type="array">
+      <obj_property name="ElementShortName">H2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H3" type="array">
+      <obj_property name="ElementShortName">H3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H4" type="array">
+      <obj_property name="ElementShortName">H4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H5" type="array">
+      <obj_property name="ElementShortName">H5[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H5[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H6" type="array">
+      <obj_property name="ElementShortName">H6[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H6[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/H7" type="array">
+      <obj_property name="ElementShortName">H7[31:0]</obj_property>
+      <obj_property name="ObjectShortName">H7[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/a" type="array">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/b" type="array">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/c" type="array">
+      <obj_property name="ElementShortName">c[31:0]</obj_property>
+      <obj_property name="ObjectShortName">c[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/d" type="array">
+      <obj_property name="ElementShortName">d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/e" type="array">
+      <obj_property name="ElementShortName">e[31:0]</obj_property>
+      <obj_property name="ObjectShortName">e[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/f" type="array">
+      <obj_property name="ElementShortName">f[31:0]</obj_property>
+      <obj_property name="ObjectShortName">f[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/g" type="array">
+      <obj_property name="ElementShortName">g[31:0]</obj_property>
+      <obj_property name="ObjectShortName">g[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/h" type="array">
+      <obj_property name="ElementShortName">h[31:0]</obj_property>
+      <obj_property name="ObjectShortName">h[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/W" type="array">
+      <obj_property name="ElementShortName">W[0:63][31:0]</obj_property>
+      <obj_property name="ObjectShortName">W[0:63][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/w_index" type="array">
+      <obj_property name="ElementShortName">w_index[5:0]</obj_property>
+      <obj_property name="ObjectShortName">w_index[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/round_counter" type="array">
+      <obj_property name="ElementShortName">round_counter[6:0]</obj_property>
+      <obj_property name="ObjectShortName">round_counter[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/temp1" type="array">
+      <obj_property name="ElementShortName">temp1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/temp2" type="array">
+      <obj_property name="ElementShortName">temp2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/IDLE" type="array">
+      <obj_property name="ElementShortName">IDLE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">IDLE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/INIT" type="array">
+      <obj_property name="ElementShortName">INIT[2:0]</obj_property>
+      <obj_property name="ObjectShortName">INIT[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/PREPARE_W" type="array">
+      <obj_property name="ElementShortName">PREPARE_W[2:0]</obj_property>
+      <obj_property name="ObjectShortName">PREPARE_W[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/PROCESS" type="array">
+      <obj_property name="ElementShortName">PROCESS[2:0]</obj_property>
+      <obj_property name="ObjectShortName">PROCESS[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sha256_tb/uut/FINALIZE" type="array">
+      <obj_property name="ElementShortName">FINALIZE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">FINALIZE[2:0]</obj_property>
+   </wvobject>
+</wave_config>
