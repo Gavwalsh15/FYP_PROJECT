@@ -1,6 +1,6 @@
 module uart #(
     parameter CLK_FREQ = 100_000_000,
-    parameter BAUD_RATE = 2000000 
+    parameter BAUD_RATE = 5_000_000
 ) (
     input wire clk,
     input wire reset,
@@ -56,41 +56,8 @@ always @(posedge clk or posedge reset) begin
         tx_clk_count  <= 0;
         tx_state      <= TX_IDLE;
         tx_byte_count <= 0;
+        tx_data       <= 0;
     end else begin
-        case (tx_state)
-            TX_IDLE: begin
-                if (send_response && hash_done) begin
-                    tx_state      <= TX_SENDING_HASH;
-                    tx_active     <= 1;
-                    tx            <= 0; // Start bit
-                    tx_clk_count  <= CLKS_PER_BIT - 1;
-                    tx_bit_count  <= 0;
-                    tx_byte_count <= 0;
-                end else if (!tx_active && state == IDLE) begin
-                    tx_active     <= 1;
-                    tx            <= 0; // Start bit
-                    tx_data       <= 8'hFF;
-                    tx_clk_count  <= CLKS_PER_BIT - 1;
-                    tx_bit_count  <= 0;
-                end
-            end
-
-            TX_SENDING_HASH: begin
-                if (!tx_active) begin
-                    if (tx_byte_count < 32) begin // 256 bits = 32 bytes
-                        tx_active     <= 1;
-                        tx            <= 0; 
-                        tx_data       <= hash[tx_byte_count*8 +: 8];
-                        tx_clk_count  <= CLKS_PER_BIT - 1;
-                        tx_bit_count  <= 0;
-                        tx_byte_count <= tx_byte_count + 1;
-                    end else begin
-                        tx_state <= TX_IDLE;
-                    end
-                end
-            end
-        endcase
-
         // Bit-level transmission
         if (tx_active) begin
             if (tx_clk_count > 0) begin
@@ -103,11 +70,41 @@ always @(posedge clk or posedge reset) begin
                 end else if (tx_bit_count == 8) begin
                     tx           <= 1; // Stop bit
                     tx_bit_count <= tx_bit_count + 1;
-                end else begin
-                    tx_active <= 0;
+                end else if (tx_bit_count == 9) begin
+                    tx_active    <= 0;
+                    tx_bit_count <= 0;
                 end
             end
         end
+
+        // State machine
+        case (tx_state)
+            TX_IDLE: begin
+                if (send_response && hash_done) begin
+                    tx_state      <= TX_SENDING_HASH;
+                    tx_active     <= 1;
+                    tx            <= 0; // Start bit
+                    tx_clk_count  <= CLKS_PER_BIT - 1;
+                    tx_bit_count  <= 0;
+                    tx_byte_count <= 0;
+                end
+            end
+
+            TX_SENDING_HASH: begin
+                if (tx_byte_count < 32) begin
+                    if (!tx_active) begin
+                        tx_active     <= 1;
+                        tx            <= 0; // Start bit
+                        tx_data       <= hash[(31 - tx_byte_count)*8 +: 8];
+                        tx_clk_count  <= CLKS_PER_BIT - 1;
+                        tx_bit_count  <= 0;
+                        tx_byte_count <= tx_byte_count + 1;
+                    end
+                end else if (!tx_active) begin
+                    tx_state      <= TX_IDLE;
+                end
+            end
+        endcase
     end
 end
 
@@ -129,7 +126,7 @@ always @(posedge clk or posedge reset) begin
                 if(hash_started)
                     hash_state <= NOOPHASH;
                     
-                if(tx_byte_count < 32)
+                if(tx_byte_count < 32) 
                     send_response <= 1'b0;
 
                 if (rx == 1'b0) begin
@@ -168,7 +165,7 @@ always @(posedge clk or posedge reset) begin
                         if (byte_count < 64) begin  
                             message_block[byte_count*8 +: 8] <= data_byte;
                             byte_count <= byte_count + 9'b1;
-                        end else if (byte_count == 64) begin  // command char
+                        end else if (byte_count == 64) begin  // command
                             case (data_byte)
                                 8'h73: begin  // 's'
                                     hash_state <= SIGNLEHASH;

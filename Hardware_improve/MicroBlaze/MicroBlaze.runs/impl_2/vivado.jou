@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sat Apr 19 18:43:25 2025
-# Process ID: 3532
+# Start of session at: Fri Apr 25 17:24:26 2025
+# Process ID: 25512
 # Current directory: C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.runs/impl_2
 # Command line: vivado.exe -log MB_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MB_wrapper.tcl -notrace
 # Log file: C:/Users/gavwa/Desktop/Workin_Dir/Hardware_improve/MicroBlaze/MicroBlaze.runs/impl_2/MB_wrapper.vdi
@@ -19,6 +19,6 @@
 # Host memory       :68637 MB
 # Swap memory       :10200 MB
 # Total Virtual     :78838 MB
-# Available Virtual :48922 MB
+# Available Virtual :51308 MB
 #-----------------------------------------------------------
 source MB_wrapper.tcl -notrace

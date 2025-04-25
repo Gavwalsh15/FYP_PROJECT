@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "uart,Vivado 2024.1" *)
 (* CHECK_LICENSE_TYPE = "MB_uart_0_0,uart,{}" *)
-(* CORE_GENERATION_INFO = "MB_uart_0_0,uart,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=uart,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLK_FREQ=100000000,BAUD_RATE=2000000}" *)
+(* CORE_GENERATION_INFO = "MB_uart_0_0,uart,{x_ipProduct=Vivado 2024.1,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=uart,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,CLK_FREQ=100000000,BAUD_RATE=5000000}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module MB_uart_0_0 (
@@ -83,7 +83,7 @@ input wire hash_started;
 
   uart #(
     .CLK_FREQ(100000000),
-    .BAUD_RATE(2000000)
+    .BAUD_RATE(5000000)
   ) inst (
     .clk(clk),
     .reset(reset),

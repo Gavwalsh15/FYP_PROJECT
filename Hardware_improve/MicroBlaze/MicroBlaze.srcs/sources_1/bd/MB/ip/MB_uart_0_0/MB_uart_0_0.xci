@@ -9,12 +9,12 @@
     "parameters": {
       "component_parameters": {
         "CLK_FREQ": [ { "value": "100000000", "resolve_type": "user", "format": "long", "usage": "all" } ],
-        "BAUD_RATE": [ { "value": "2000000", "resolve_type": "user", "format": "long", "usage": "all" } ],
+        "BAUD_RATE": [ { "value": "5000000", "resolve_type": "user", "format": "long", "usage": "all" } ],
         "Component_Name": [ { "value": "MB_uart_0_0", "resolve_type": "user", "usage": "all" } ]
       },
       "model_parameters": {
         "CLK_FREQ": [ { "value": "100000000", "resolve_type": "generated", "format": "long", "usage": "all" } ],
-        "BAUD_RATE": [ { "value": "2000000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
+        "BAUD_RATE": [ { "value": "5000000", "resolve_type": "generated", "format": "long", "usage": "all" } ]
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "artix7" } ],

@@ -1,31 +1,31 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.25",
-   "Default View_TopLeft":"-590,-81",
+   "Default View_TopLeft":"-588,-74",
    "ExpandedHierarchyInLayout":"",
    "PinnedPorts":"",
-   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0
+   "guistr":"# # String gsaved with Nlview 7.7.1 2023-07-26 3bc4126617 VDI=43 GEI=38 GUI=JA:21.0 threadsafe
 #  -string -flagsOSRD
-preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD
-preplace port port-id_reset -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
-preplace port port-id_rx_0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port port-id_tx_0 -pg 1 -lvl 4 -x 920 -y 90 -defaultsOSRD
-preplace inst uart_0 -pg 1 -lvl 3 -x 730 -y 110 -defaultsOSRD
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 320 -defaultsOSRD
+preplace port port-id_reset -pg 1 -lvl 0 -x -10 -y 230 -defaultsOSRD
+preplace port port-id_rx_0 -pg 1 -lvl 0 -x -10 -y 100 -defaultsOSRD
+preplace port port-id_tx_0 -pg 1 -lvl 4 -x 930 -y 90 -defaultsOSRD
+preplace inst uart_0 -pg 1 -lvl 3 -x 740 -y 110 -defaultsOSRD
 preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 310 -defaultsOSRD
-preplace inst sha256_0 -pg 1 -lvl 2 -x 390 -y 320 -defaultsOSRD
-preplace netloc reset_1 1 0 3 20 230 200 80 NJ
-preplace netloc rx_0_1 1 0 3 NJ 100 NJ 100 NJ
-preplace netloc sha256_0_done 1 2 1 550 120n
-preplace netloc sha256_0_hash 1 2 1 560 140n
-preplace netloc sys_clock_1 1 0 1 NJ 320
-preplace netloc uart_0_hash_state 1 1 3 220 220 NJ 220 890
-preplace netloc uart_0_message_block 1 1 3 230 230 NJ 230 900
-preplace netloc uart_0_tx 1 3 1 N 90
-preplace netloc sha256_0_hash_started1 1 2 1 570 160n
+preplace inst sha256_0 -pg 1 -lvl 2 -x 400 -y 320 -defaultsOSRD
 preplace netloc clk_wiz_clk_out1 1 1 1 N 290
-preplace netloc clk_wiz_clk_out2 1 1 2 210 110 550J
-levelinfo -pg 1 0 110 390 730 920
-pagesize -pg 1 -db -bbox -sgen -110 0 1000 410
+preplace netloc clk_wiz_clk_out2 1 1 2 200 110 560J
+preplace netloc reset_1 1 0 3 20 230 220 80 NJ
+preplace netloc rx_0_1 1 0 3 NJ 100 NJ 100 NJ
+preplace netloc sha256_0_done 1 2 1 560 120n
+preplace netloc sha256_0_hash 1 2 1 570 140n
+preplace netloc sha256_0_hash_started1 1 2 1 580 160n
+preplace netloc sys_clock_1 1 0 1 NJ 320
+preplace netloc uart_0_hash_state 1 1 3 230 220 NJ 220 900
+preplace netloc uart_0_message_block 1 1 3 240 230 NJ 230 910
+preplace netloc uart_0_tx 1 3 1 N 90
+levelinfo -pg 1 -10 110 400 740 930
+pagesize -pg 1 -db -bbox -sgen -130 0 1010 410
 "
 }
 {

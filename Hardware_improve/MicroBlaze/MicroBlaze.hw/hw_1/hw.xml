@@ -5,7 +5,7 @@
 <!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="2">
-  <device name="xc7a35t_0" gui_info="dashboard1=dashboard_1[xc7a35t_0/XADC=XADC_PLOT_1;],dashboard2=hw_ila_1[xc7a35t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a35t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a35t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a35t_0/hw_ila_1/Waveform=ILA_WAVE_1;xc7a35t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;]"/>
+  <device name="xc7a35t_0" gui_info="dashboard1=dashboard_1[xc7a35t_0/XADC=XADC_PLOT_1;],dashboard2=hw_ila_1[xc7a35t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a35t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a35t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a35t_0/hw_ila_1/Waveform=ILA_WAVE_1;xc7a35t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;],dashboard3=hw_ila_2[xc7a35t_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xc7a35t_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;xc7a35t_0/hw_ila_2/Waveform=ILA_WAVE_1;xc7a35t_0/hw_ila_2/Settings=ILA_SETTINGS_1;xc7a35t_0/hw_ila_2/Status=ILA_STATUS_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xc7a35t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_2/MB_wrapper.ltx"/>
@@ -23,12 +23,18 @@
       <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
       <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
     </Object>
+    <Object name="u_ila_1" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
   </ObjectList>
   <ObjectList object_type="hw_probe" gui_info="">
     <Object name="MB_i/sha256_0/start" gui_info=""/>
     <Object name="MB_i/uart_0/byte_count[8:0]" gui_info=""/>
     <Object name="MB_i/uart_0/inst/send_response_reg_n_0" gui_info=""/>
     <Object name="MB_i/uart_0/inst/tx_byte_count" gui_info=""/>
+    <Object name="MB_i/uart_0/inst/tx_data[7:0]" gui_info="Trigger Setup=0"/>
+    <Object name="MB_i/uart_0/inst/tx_state__0[1:0]" gui_info=""/>
     <Object name="MB_i/uart_0/tx" gui_info=""/>
   </ObjectList>
   <ObjectList object_type="hw_sysmon" gui_info="">
@@ -2350,6 +2356,282 @@
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[255:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/sha256_0_hash[255]"/>
+        <net name="MB_i/sha256_0_hash[254]"/>
+        <net name="MB_i/sha256_0_hash[253]"/>
+        <net name="MB_i/sha256_0_hash[252]"/>
+        <net name="MB_i/sha256_0_hash[251]"/>
+        <net name="MB_i/sha256_0_hash[250]"/>
+        <net name="MB_i/sha256_0_hash[249]"/>
+        <net name="MB_i/sha256_0_hash[248]"/>
+        <net name="MB_i/sha256_0_hash[247]"/>
+        <net name="MB_i/sha256_0_hash[246]"/>
+        <net name="MB_i/sha256_0_hash[245]"/>
+        <net name="MB_i/sha256_0_hash[244]"/>
+        <net name="MB_i/sha256_0_hash[243]"/>
+        <net name="MB_i/sha256_0_hash[242]"/>
+        <net name="MB_i/sha256_0_hash[241]"/>
+        <net name="MB_i/sha256_0_hash[240]"/>
+        <net name="MB_i/sha256_0_hash[239]"/>
+        <net name="MB_i/sha256_0_hash[238]"/>
+        <net name="MB_i/sha256_0_hash[237]"/>
+        <net name="MB_i/sha256_0_hash[236]"/>
+        <net name="MB_i/sha256_0_hash[235]"/>
+        <net name="MB_i/sha256_0_hash[234]"/>
+        <net name="MB_i/sha256_0_hash[233]"/>
+        <net name="MB_i/sha256_0_hash[232]"/>
+        <net name="MB_i/sha256_0_hash[231]"/>
+        <net name="MB_i/sha256_0_hash[230]"/>
+        <net name="MB_i/sha256_0_hash[229]"/>
+        <net name="MB_i/sha256_0_hash[228]"/>
+        <net name="MB_i/sha256_0_hash[227]"/>
+        <net name="MB_i/sha256_0_hash[226]"/>
+        <net name="MB_i/sha256_0_hash[225]"/>
+        <net name="MB_i/sha256_0_hash[224]"/>
+        <net name="MB_i/sha256_0_hash[223]"/>
+        <net name="MB_i/sha256_0_hash[222]"/>
+        <net name="MB_i/sha256_0_hash[221]"/>
+        <net name="MB_i/sha256_0_hash[220]"/>
+        <net name="MB_i/sha256_0_hash[219]"/>
+        <net name="MB_i/sha256_0_hash[218]"/>
+        <net name="MB_i/sha256_0_hash[217]"/>
+        <net name="MB_i/sha256_0_hash[216]"/>
+        <net name="MB_i/sha256_0_hash[215]"/>
+        <net name="MB_i/sha256_0_hash[214]"/>
+        <net name="MB_i/sha256_0_hash[213]"/>
+        <net name="MB_i/sha256_0_hash[212]"/>
+        <net name="MB_i/sha256_0_hash[211]"/>
+        <net name="MB_i/sha256_0_hash[210]"/>
+        <net name="MB_i/sha256_0_hash[209]"/>
+        <net name="MB_i/sha256_0_hash[208]"/>
+        <net name="MB_i/sha256_0_hash[207]"/>
+        <net name="MB_i/sha256_0_hash[206]"/>
+        <net name="MB_i/sha256_0_hash[205]"/>
+        <net name="MB_i/sha256_0_hash[204]"/>
+        <net name="MB_i/sha256_0_hash[203]"/>
+        <net name="MB_i/sha256_0_hash[202]"/>
+        <net name="MB_i/sha256_0_hash[201]"/>
+        <net name="MB_i/sha256_0_hash[200]"/>
+        <net name="MB_i/sha256_0_hash[199]"/>
+        <net name="MB_i/sha256_0_hash[198]"/>
+        <net name="MB_i/sha256_0_hash[197]"/>
+        <net name="MB_i/sha256_0_hash[196]"/>
+        <net name="MB_i/sha256_0_hash[195]"/>
+        <net name="MB_i/sha256_0_hash[194]"/>
+        <net name="MB_i/sha256_0_hash[193]"/>
+        <net name="MB_i/sha256_0_hash[192]"/>
+        <net name="MB_i/sha256_0_hash[191]"/>
+        <net name="MB_i/sha256_0_hash[190]"/>
+        <net name="MB_i/sha256_0_hash[189]"/>
+        <net name="MB_i/sha256_0_hash[188]"/>
+        <net name="MB_i/sha256_0_hash[187]"/>
+        <net name="MB_i/sha256_0_hash[186]"/>
+        <net name="MB_i/sha256_0_hash[185]"/>
+        <net name="MB_i/sha256_0_hash[184]"/>
+        <net name="MB_i/sha256_0_hash[183]"/>
+        <net name="MB_i/sha256_0_hash[182]"/>
+        <net name="MB_i/sha256_0_hash[181]"/>
+        <net name="MB_i/sha256_0_hash[180]"/>
+        <net name="MB_i/sha256_0_hash[179]"/>
+        <net name="MB_i/sha256_0_hash[178]"/>
+        <net name="MB_i/sha256_0_hash[177]"/>
+        <net name="MB_i/sha256_0_hash[176]"/>
+        <net name="MB_i/sha256_0_hash[175]"/>
+        <net name="MB_i/sha256_0_hash[174]"/>
+        <net name="MB_i/sha256_0_hash[173]"/>
+        <net name="MB_i/sha256_0_hash[172]"/>
+        <net name="MB_i/sha256_0_hash[171]"/>
+        <net name="MB_i/sha256_0_hash[170]"/>
+        <net name="MB_i/sha256_0_hash[169]"/>
+        <net name="MB_i/sha256_0_hash[168]"/>
+        <net name="MB_i/sha256_0_hash[167]"/>
+        <net name="MB_i/sha256_0_hash[166]"/>
+        <net name="MB_i/sha256_0_hash[165]"/>
+        <net name="MB_i/sha256_0_hash[164]"/>
+        <net name="MB_i/sha256_0_hash[163]"/>
+        <net name="MB_i/sha256_0_hash[162]"/>
+        <net name="MB_i/sha256_0_hash[161]"/>
+        <net name="MB_i/sha256_0_hash[160]"/>
+        <net name="MB_i/sha256_0_hash[159]"/>
+        <net name="MB_i/sha256_0_hash[158]"/>
+        <net name="MB_i/sha256_0_hash[157]"/>
+        <net name="MB_i/sha256_0_hash[156]"/>
+        <net name="MB_i/sha256_0_hash[155]"/>
+        <net name="MB_i/sha256_0_hash[154]"/>
+        <net name="MB_i/sha256_0_hash[153]"/>
+        <net name="MB_i/sha256_0_hash[152]"/>
+        <net name="MB_i/sha256_0_hash[151]"/>
+        <net name="MB_i/sha256_0_hash[150]"/>
+        <net name="MB_i/sha256_0_hash[149]"/>
+        <net name="MB_i/sha256_0_hash[148]"/>
+        <net name="MB_i/sha256_0_hash[147]"/>
+        <net name="MB_i/sha256_0_hash[146]"/>
+        <net name="MB_i/sha256_0_hash[145]"/>
+        <net name="MB_i/sha256_0_hash[144]"/>
+        <net name="MB_i/sha256_0_hash[143]"/>
+        <net name="MB_i/sha256_0_hash[142]"/>
+        <net name="MB_i/sha256_0_hash[141]"/>
+        <net name="MB_i/sha256_0_hash[140]"/>
+        <net name="MB_i/sha256_0_hash[139]"/>
+        <net name="MB_i/sha256_0_hash[138]"/>
+        <net name="MB_i/sha256_0_hash[137]"/>
+        <net name="MB_i/sha256_0_hash[136]"/>
+        <net name="MB_i/sha256_0_hash[135]"/>
+        <net name="MB_i/sha256_0_hash[134]"/>
+        <net name="MB_i/sha256_0_hash[133]"/>
+        <net name="MB_i/sha256_0_hash[132]"/>
+        <net name="MB_i/sha256_0_hash[131]"/>
+        <net name="MB_i/sha256_0_hash[130]"/>
+        <net name="MB_i/sha256_0_hash[129]"/>
+        <net name="MB_i/sha256_0_hash[128]"/>
+        <net name="MB_i/sha256_0_hash[127]"/>
+        <net name="MB_i/sha256_0_hash[126]"/>
+        <net name="MB_i/sha256_0_hash[125]"/>
+        <net name="MB_i/sha256_0_hash[124]"/>
+        <net name="MB_i/sha256_0_hash[123]"/>
+        <net name="MB_i/sha256_0_hash[122]"/>
+        <net name="MB_i/sha256_0_hash[121]"/>
+        <net name="MB_i/sha256_0_hash[120]"/>
+        <net name="MB_i/sha256_0_hash[119]"/>
+        <net name="MB_i/sha256_0_hash[118]"/>
+        <net name="MB_i/sha256_0_hash[117]"/>
+        <net name="MB_i/sha256_0_hash[116]"/>
+        <net name="MB_i/sha256_0_hash[115]"/>
+        <net name="MB_i/sha256_0_hash[114]"/>
+        <net name="MB_i/sha256_0_hash[113]"/>
+        <net name="MB_i/sha256_0_hash[112]"/>
+        <net name="MB_i/sha256_0_hash[111]"/>
+        <net name="MB_i/sha256_0_hash[110]"/>
+        <net name="MB_i/sha256_0_hash[109]"/>
+        <net name="MB_i/sha256_0_hash[108]"/>
+        <net name="MB_i/sha256_0_hash[107]"/>
+        <net name="MB_i/sha256_0_hash[106]"/>
+        <net name="MB_i/sha256_0_hash[105]"/>
+        <net name="MB_i/sha256_0_hash[104]"/>
+        <net name="MB_i/sha256_0_hash[103]"/>
+        <net name="MB_i/sha256_0_hash[102]"/>
+        <net name="MB_i/sha256_0_hash[101]"/>
+        <net name="MB_i/sha256_0_hash[100]"/>
+        <net name="MB_i/sha256_0_hash[99]"/>
+        <net name="MB_i/sha256_0_hash[98]"/>
+        <net name="MB_i/sha256_0_hash[97]"/>
+        <net name="MB_i/sha256_0_hash[96]"/>
+        <net name="MB_i/sha256_0_hash[95]"/>
+        <net name="MB_i/sha256_0_hash[94]"/>
+        <net name="MB_i/sha256_0_hash[93]"/>
+        <net name="MB_i/sha256_0_hash[92]"/>
+        <net name="MB_i/sha256_0_hash[91]"/>
+        <net name="MB_i/sha256_0_hash[90]"/>
+        <net name="MB_i/sha256_0_hash[89]"/>
+        <net name="MB_i/sha256_0_hash[88]"/>
+        <net name="MB_i/sha256_0_hash[87]"/>
+        <net name="MB_i/sha256_0_hash[86]"/>
+        <net name="MB_i/sha256_0_hash[85]"/>
+        <net name="MB_i/sha256_0_hash[84]"/>
+        <net name="MB_i/sha256_0_hash[83]"/>
+        <net name="MB_i/sha256_0_hash[82]"/>
+        <net name="MB_i/sha256_0_hash[81]"/>
+        <net name="MB_i/sha256_0_hash[80]"/>
+        <net name="MB_i/sha256_0_hash[79]"/>
+        <net name="MB_i/sha256_0_hash[78]"/>
+        <net name="MB_i/sha256_0_hash[77]"/>
+        <net name="MB_i/sha256_0_hash[76]"/>
+        <net name="MB_i/sha256_0_hash[75]"/>
+        <net name="MB_i/sha256_0_hash[74]"/>
+        <net name="MB_i/sha256_0_hash[73]"/>
+        <net name="MB_i/sha256_0_hash[72]"/>
+        <net name="MB_i/sha256_0_hash[71]"/>
+        <net name="MB_i/sha256_0_hash[70]"/>
+        <net name="MB_i/sha256_0_hash[69]"/>
+        <net name="MB_i/sha256_0_hash[68]"/>
+        <net name="MB_i/sha256_0_hash[67]"/>
+        <net name="MB_i/sha256_0_hash[66]"/>
+        <net name="MB_i/sha256_0_hash[65]"/>
+        <net name="MB_i/sha256_0_hash[64]"/>
+        <net name="MB_i/sha256_0_hash[63]"/>
+        <net name="MB_i/sha256_0_hash[62]"/>
+        <net name="MB_i/sha256_0_hash[61]"/>
+        <net name="MB_i/sha256_0_hash[60]"/>
+        <net name="MB_i/sha256_0_hash[59]"/>
+        <net name="MB_i/sha256_0_hash[58]"/>
+        <net name="MB_i/sha256_0_hash[57]"/>
+        <net name="MB_i/sha256_0_hash[56]"/>
+        <net name="MB_i/sha256_0_hash[55]"/>
+        <net name="MB_i/sha256_0_hash[54]"/>
+        <net name="MB_i/sha256_0_hash[53]"/>
+        <net name="MB_i/sha256_0_hash[52]"/>
+        <net name="MB_i/sha256_0_hash[51]"/>
+        <net name="MB_i/sha256_0_hash[50]"/>
+        <net name="MB_i/sha256_0_hash[49]"/>
+        <net name="MB_i/sha256_0_hash[48]"/>
+        <net name="MB_i/sha256_0_hash[47]"/>
+        <net name="MB_i/sha256_0_hash[46]"/>
+        <net name="MB_i/sha256_0_hash[45]"/>
+        <net name="MB_i/sha256_0_hash[44]"/>
+        <net name="MB_i/sha256_0_hash[43]"/>
+        <net name="MB_i/sha256_0_hash[42]"/>
+        <net name="MB_i/sha256_0_hash[41]"/>
+        <net name="MB_i/sha256_0_hash[40]"/>
+        <net name="MB_i/sha256_0_hash[39]"/>
+        <net name="MB_i/sha256_0_hash[38]"/>
+        <net name="MB_i/sha256_0_hash[37]"/>
+        <net name="MB_i/sha256_0_hash[36]"/>
+        <net name="MB_i/sha256_0_hash[35]"/>
+        <net name="MB_i/sha256_0_hash[34]"/>
+        <net name="MB_i/sha256_0_hash[33]"/>
+        <net name="MB_i/sha256_0_hash[32]"/>
+        <net name="MB_i/sha256_0_hash[31]"/>
+        <net name="MB_i/sha256_0_hash[30]"/>
+        <net name="MB_i/sha256_0_hash[29]"/>
+        <net name="MB_i/sha256_0_hash[28]"/>
+        <net name="MB_i/sha256_0_hash[27]"/>
+        <net name="MB_i/sha256_0_hash[26]"/>
+        <net name="MB_i/sha256_0_hash[25]"/>
+        <net name="MB_i/sha256_0_hash[24]"/>
+        <net name="MB_i/sha256_0_hash[23]"/>
+        <net name="MB_i/sha256_0_hash[22]"/>
+        <net name="MB_i/sha256_0_hash[21]"/>
+        <net name="MB_i/sha256_0_hash[20]"/>
+        <net name="MB_i/sha256_0_hash[19]"/>
+        <net name="MB_i/sha256_0_hash[18]"/>
+        <net name="MB_i/sha256_0_hash[17]"/>
+        <net name="MB_i/sha256_0_hash[16]"/>
+        <net name="MB_i/sha256_0_hash[15]"/>
+        <net name="MB_i/sha256_0_hash[14]"/>
+        <net name="MB_i/sha256_0_hash[13]"/>
+        <net name="MB_i/sha256_0_hash[12]"/>
+        <net name="MB_i/sha256_0_hash[11]"/>
+        <net name="MB_i/sha256_0_hash[10]"/>
+        <net name="MB_i/sha256_0_hash[9]"/>
+        <net name="MB_i/sha256_0_hash[8]"/>
+        <net name="MB_i/sha256_0_hash[7]"/>
+        <net name="MB_i/sha256_0_hash[6]"/>
+        <net name="MB_i/sha256_0_hash[5]"/>
+        <net name="MB_i/sha256_0_hash[4]"/>
+        <net name="MB_i/sha256_0_hash[3]"/>
+        <net name="MB_i/sha256_0_hash[2]"/>
+        <net name="MB_i/sha256_0_hash[1]"/>
+        <net name="MB_i/sha256_0_hash[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
@@ -3314,10 +3596,8 @@
         <net name="MB_i/uart_0/byte_count[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila_data" busType="bus" source="netlist" spec="ILA_DATA_V2_RT">
       <probeOptions Id="DebugProbeParams">
-        <Option Id="CAPTURE_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
@@ -3328,7 +3608,6 @@
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq256&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
@@ -3590,17 +3869,15 @@
         <net name="MB_i/uart_0/hash[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila_trigger" busType="net" source="netlist" spec="ILA_TRIGGER_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
-        <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
-        <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="MAP" value="probe1[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -3609,6 +3886,27 @@
       </probeOptions>
       <nets>
         <net name="MB_i/uart_0/hash_done"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/byte_count[0]_i_1_n_0"/>
       </nets>
     </probe>
     <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
@@ -3664,6 +3962,24 @@
         <net name="MB_i/uart_0/inst/byte_count[0]"/>
       </nets>
     </probe>
+    <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/send_response_i_1_n_0"/>
+      </nets>
+    </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
@@ -3685,25 +4001,139 @@
         <net name="MB_i/uart_0/inst/send_response_reg_n_0"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
       <probeOptions Id="DebugProbeParams">
-        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
-        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
         <Option Id="DISPLAY_AS_ENUM" value="1"/>
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe4[0]"/>
+        <Option Id="MAP" value="probe0[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
-        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
         <Option Id="WAVEFORM_STYLE" value="Digital"/>
       </probeOptions>
       <nets>
         <net name="MB_i/uart_0/inst/tx_byte_count"/>
+      </nets>
+    </probe>
+    <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[5:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/tx_byte_count[5]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count[4]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count[3]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count[2]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count[1]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[6]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/tx_byte_count[7]"/>
+      </nets>
+    </probe>
+    <probe type="ila_data" busType="net" source="netlist" spec="ILA_DATA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[5:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[5]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[4]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[3]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[2]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[1]"/>
+        <net name="MB_i/uart_0/inst/tx_byte_count_1[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq8&apos;hXX"/>
+        <Option Id="COMPARE_VALUE.0" value="gt8&apos;b0000_0001"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[7:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="gt8&apos;b0000_0001"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/tx_data[7]"/>
+        <net name="MB_i/uart_0/inst/tx_data[6]"/>
+        <net name="MB_i/uart_0/inst/tx_data[5]"/>
+        <net name="MB_i/uart_0/inst/tx_data[4]"/>
+        <net name="MB_i/uart_0/inst/tx_data[3]"/>
+        <net name="MB_i/uart_0/inst/tx_data[2]"/>
+        <net name="MB_i/uart_0/inst/tx_data[1]"/>
+        <net name="MB_i/uart_0/inst/tx_data[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq2&apos;hX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[1:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq2&apos;hX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+        <Option Id="ENUM.iSTATE" value="eq2&apos;b10"/>
+        <Option Id="ENUM.TX_IDLE" value="eq2&apos;b00"/>
+        <Option Id="ENUM.TX_SENDING_HASH" value="eq2&apos;b01"/>
+      </probeOptions>
+      <nets>
+        <net name="MB_i/uart_0/inst/tx_state__0[1]"/>
+        <net name="MB_i/uart_0/inst/tx_state__0[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -4664,7 +5094,7 @@
         <net name="MB_i/uart_0/message_block[8]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq512&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq512&apos;hXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX"/>

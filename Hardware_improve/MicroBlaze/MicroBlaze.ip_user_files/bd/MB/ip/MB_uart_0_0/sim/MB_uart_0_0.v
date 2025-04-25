@@ -82,7 +82,7 @@ input wire hash_started;
 
   uart #(
     .CLK_FREQ(100000000),
-    .BAUD_RATE(2000000)
+    .BAUD_RATE(5000000)
   ) inst (
     .clk(clk),
     .reset(reset),
