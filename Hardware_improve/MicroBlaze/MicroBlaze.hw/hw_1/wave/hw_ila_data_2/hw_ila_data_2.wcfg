@@ -11,11 +11,11 @@
    <zoom_setting>
       <ZoomStartTime time="0"></ZoomStartTime>
       <ZoomEndTime time="22"></ZoomEndTime>
-      <Cursor1Time time="1,024"></Cursor1Time>
+      <Cursor1Time time="0"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="384"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <ValueColumnWidth column_width="90"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="1" />
    <wvobject fp_name="MB_i/uart_0/inst/tx_state__0" type="array">

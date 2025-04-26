@@ -18,10 +18,14 @@
   <File Type="BITSTR-MMI" Name="MB_wrapper.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="MB_wrapper_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="MB_wrapper.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MB_wrapper_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="MB_wrapper.ltx"/>
+  <File Type="BOOT-PDI-FILE" Name="MB_wrapper_boot.pdi"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="NPI_FILE" Name="MB_wrapper.npi"/>
   <File Type="OPT-DRC" Name="MB_wrapper_drc_opted.rpt"/>
+  <File Type="RBD_FILE" Name="MB_wrapper.rbd"/>
   <File Type="OPT-HWDEF" Name="MB_wrapper.hwdef"/>
   <File Type="PLACE-IO" Name="MB_wrapper_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="MB_wrapper_utilization_placed.rpt"/>
@@ -55,17 +59,13 @@
   <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="MB_wrapper_timing_summary_postroute_physopted.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="MB_wrapper_bus_skew_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="MB_wrapper_bus_skew_postroute_physopted.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="MB_wrapper_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="MB_wrapper_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="MB_wrapper_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="MB_wrapper.pdi"/>
-  <File Type="BOOT-PDI-FILE" Name="MB_wrapper_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="MB_wrapper_pld.pdi"/>
   <File Type="RCFI_FILE" Name="MB_wrapper.rcfi"/>
   <File Type="CFI_FILE" Name="MB_wrapper.cfi"/>
   <File Type="RNPI_FILE" Name="MB_wrapper.rnpi"/>
-  <File Type="NPI_FILE" Name="MB_wrapper.npi"/>
-  <File Type="RBD_FILE" Name="MB_wrapper.rbd"/>
   <File Type="ROUTE-RQS" Name="MB_wrapper_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="MB_wrapper_postroute_physopted.rqs"/>
   <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
@@ -142,14 +142,14 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_bram_ctrl_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_bram_if_cntlr_8"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_bram_ctrl_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_microblaze_0_6"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_uartlite_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_dlmb_v10_8"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_v10_8"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_uartlite_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_dlmb_bram_if_cntlr_8"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_v10_8"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_clk_wiz_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_rst_clk_wiz_0_50M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_axi_smc_4"/>

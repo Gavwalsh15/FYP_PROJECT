@@ -1,7 +1,6 @@
 import struct
 import serial
 import time
-import os
 import csv
 
 COM_PORT = 'COM4'
@@ -10,7 +9,7 @@ BAUD_RATE = 5_000_000
 
 def preprocess(message_input):
     """
-    Padding Stage
+    Padding Stage for SHA_256
     """
     message = bytearray(message_input, 'utf-8')
     original_length_bits = len(message) * 8
@@ -23,8 +22,11 @@ def preprocess(message_input):
 
     return chunks
 
-def preprocessFP(FilePath):
-    with open(FilePath, 'rb') as f:
+def preprocess_fp(file_path):
+    """
+    Process Files into bytearray then chunks for SHA_256
+    """
+    with open(file_path, 'rb') as f:
         message = bytearray(f.read())
     original_length_bits = len(message) * 8
     message.append(0x80)
@@ -35,7 +37,10 @@ def preprocessFP(FilePath):
     chunks = [message[i:i + chunk_size] for i in range(0, len(message), chunk_size)]
     return chunks
 
-def send_block(text, uart):
+def send_block(text, uart_inst):
+    """
+    Send Text Chunks to FPGA
+    """
     try:
         blocks = preprocess(text)
         print("Chunks", len(blocks))
@@ -44,34 +49,34 @@ def send_block(text, uart):
         else:
             block_ending = 's'.encode()
         for j, block in enumerate(blocks, start=1):
-            uart.write(block[::-1] + block_ending)
-            uart.flush()
+            uart_inst.write(block[::-1] + block_ending)
+            uart_inst.flush()
             if j < len(blocks):
                 if j == len(blocks) - 1:
                     block_ending = 'L'.encode()
                 else:
                     block_ending = 'l'.encode()
 
-        data = uart.read(33) # not entirely sure why it sends 33 but we move
+        data = uart_inst.read(33) # not entirely sure why it sends 33 but we move
         print(data[1::].hex())
-
-
-
 
     except Exception as e:
         print(f"Error: {e}")
 
-def send_block_file(file_path, uart):
+def send_block_file(file_path, uart_inst):
+    """
+    Send File Chunks to FPGA
+    """
     try:
-        blocks = preprocessFP(file_path)
+        blocks = preprocess_fp(file_path)
         print("Chunks", len(blocks))
         if len(blocks) == 1:
             block_ending = 'S'.encode()
         else:
             block_ending = 's'.encode()
         for j, block in enumerate(blocks, start=1):
-            uart.write(block[::-1] + block_ending)
-            uart.flush()
+            uart_inst.write(block[::-1] + block_ending)
+            uart_inst.flush()
             if j < len(blocks):
                 # wait_for_ready(uart)
                 if j == len(blocks) - 1:
@@ -80,8 +85,9 @@ def send_block_file(file_path, uart):
                     block_ending = 'l'.encode()
 
 
-        data = uart.read(33)  # not entirely sure why it sends 33 but we move
+        data = uart_inst.read(33)  # not entirely sure why it sends 33 but we move
         print(data[1::].hex())
+
     except Exception as e:
         print(f"Error: {e}")
 
@@ -118,7 +124,7 @@ if __name__ == "__main__":
         ]
 
     # Create or open CSV file
-    csv_filename = 'data_plotting/transfer_stats.csv'
+    csv_filename = 'uart_stats.csv'
     csv_header = ['Size (bytes)', 'Transfer Time (s)']
 
     with open(csv_filename, 'w', newline='') as csvfile:
@@ -146,4 +152,4 @@ if __name__ == "__main__":
             print(f"{total_time:.4f}")
             uart.close()
 
-print(f"Statistics have been saved to {csv_filename}")
+    print(f"Statistics have been saved to {csv_filename}")

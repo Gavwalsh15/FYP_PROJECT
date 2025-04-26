@@ -67,14 +67,14 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_bram_ctrl_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_bram_if_cntlr_8"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_bram_ctrl_0_3"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_microblaze_0_6"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_axi_uartlite_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_dlmb_v10_8"/>
-  <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_v10_8"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_axi_uartlite_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_dlmb_bram_if_cntlr_8"/>
+  <BlockFileSet Type="BlockSrcs" Name="MB_ilmb_v10_8"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_clk_wiz_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_rst_clk_wiz_0_50M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MB_axi_smc_4"/>

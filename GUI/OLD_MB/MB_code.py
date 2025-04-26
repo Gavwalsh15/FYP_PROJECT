@@ -79,7 +79,7 @@ def main():
         writer.writerow(csv_header)
 
         for files in messages:
-            _ , chunks = preprocess(messageInput=files)  # Send block
+            _ , chunks = preprocess(message_input=files)  # Send block
             total_time = send_block("COM4", chunks)
 
             writer.writerow([len(files), f"{total_time:.4f}"])

@@ -1,5 +1,5 @@
 // Top level module SHA-256 and AXI interfaces
-module simple_axi_writer #(
+module sha_256 #(
     parameter integer AXI_ADDR_WIDTH = 32,
     parameter integer AXI_DATA_WIDTH = 32,
     parameter READ_ADDR = 32'hC000_0000,
